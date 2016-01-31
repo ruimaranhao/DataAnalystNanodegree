@@ -236,8 +236,7 @@ div#notebook {
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
 <span class="kn">import</span> <span class="nn">seaborn</span> <span class="kn">as</span> <span class="nn">sns</span>
 
-<span class="kn">from</span> <span class="nn">sklearn.feature_selection</span> <span class="kn">import</span> <span class="n">SelectKBest</span>
-<span class="kn">from</span> <span class="nn">sklearn.feature_selection</span> <span class="kn">import</span> <span class="n">f_regression</span>
+<span class="kn">from</span> <span class="nn">sklearn.feature_selection</span> <span class="kn">import</span> <span class="n">SelectKBest</span><span class="p">,</span> <span class="n">f_regression</span>
 </pre></div>
 
 </div>
@@ -998,9 +997,9 @@ Xwhhf3J4Xwjxr+ro6CA4OJiHHnpIGr4Qo4yM9IUQQggHISN9IYQQwkFI0xdCCCEchDR9IYQQwkFI
     <span class="n">percent_NaN</span> <span class="o">=</span> <span class="nb">round</span><span class="p">(</span><span class="n">percent_NaN</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">percent_NaN</span>
 
-<span class="k">print</span> <span class="nb">str</span><span class="p">(</span><span class="n">NaN_counter</span><span class="p">(</span><span class="s">&#39;salary&#39;</span><span class="p">))</span>
-<span class="k">print</span> <span class="nb">str</span><span class="p">(</span><span class="n">NaN_counter</span><span class="p">(</span><span class="s">&#39;exercised_stock_options&#39;</span><span class="p">))</span>
-<span class="k">print</span> <span class="nb">str</span><span class="p">(</span><span class="n">NaN_counter</span><span class="p">(</span><span class="s">&#39;bonus&#39;</span><span class="p">))</span>
+<span class="k">for</span> <span class="n">feat</span> <span class="ow">in</span> <span class="n">data_dict</span><span class="p">[</span><span class="s">&#39;TOTAL&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+    <span class="k">if</span> <span class="n">feat</span> <span class="o">!=</span> <span class="s">&#39;email_address&#39;</span><span class="p">:</span>
+        <span class="k">print</span> <span class="s">&quot;NaNs in {}: {}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">feat</span><span class="p">,</span> <span class="n">NaN_counter</span><span class="p">(</span><span class="n">feat</span><span class="p">))</span>
 </pre></div>
 
 </div>
@@ -1013,9 +1012,26 @@ Xwhhf3J4Xwjxr+ro6CA4OJiHHnpIGr4Qo4yM9IUQQggHISN9IYQQwkFI0xdCCCEchDR9IYQQwkFI
 
 <div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>34.93
-30.14
-43.84
+<pre>NaNs in salary: 34.93
+NaNs in to_messages: 41.1
+NaNs in deferral_payments: 73.29
+NaNs in total_payments: 14.38
+NaNs in exercised_stock_options: 30.14
+NaNs in bonus: 43.84
+NaNs in restricted_stock: 24.66
+NaNs in shared_receipt_with_poi: 41.1
+NaNs in restricted_stock_deferred: 87.67
+NaNs in total_stock_value: 13.7
+NaNs in expenses: 34.93
+NaNs in loan_advances: 97.26
+NaNs in from_messages: 41.1
+NaNs in other: 36.3
+NaNs in from_this_person_to_poi: 41.1
+NaNs in poi: 0.0
+NaNs in director_fees: 88.36
+NaNs in deferred_income: 66.44
+NaNs in long_term_incentive: 54.79
+NaNs in from_poi_to_this_person: 41.1
 </pre>
 </div>
 </div>
@@ -1031,10 +1047,14 @@ Xwhhf3J4Xwjxr+ro6CA4OJiHHnpIGr4Qo4yM9IUQQggHISN9IYQQwkFI0xdCCCEchDR9IYQQwkFI
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span class="c">#find number of persons of interest</span>
 <span class="n">poi</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">npoi</span> <span class="o">=</span> <span class="mi">0</span>
 <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">data_dict</span><span class="p">:</span>
     <span class="k">if</span> <span class="n">data_dict</span><span class="p">[</span><span class="n">p</span><span class="p">][</span><span class="s">&#39;poi&#39;</span><span class="p">]:</span>
         <span class="n">poi</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">npoi</span> <span class="o">+=</span> <span class="mi">1</span>
 <span class="k">print</span> <span class="n">poi</span>
+<span class="k">print</span> <span class="n">npoi</span>
 </pre></div>
 
 </div>
@@ -1048,6 +1068,7 @@ Xwhhf3J4Xwjxr+ro6CA4OJiHHnpIGr4Qo4yM9IUQQggHISN9IYQQwkFI0xdCCCEchDR9IYQQwkFI
 <div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>18
+128
 </pre>
 </div>
 </div>
@@ -1062,7 +1083,7 @@ Xwhhf3J4Xwjxr+ro6CA4OJiHHnpIGr4Qo4yM9IUQQggHISN9IYQQwkFI0xdCCCEchDR9IYQQwkFI
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Summary">Summary<a class="anchor-link" href="#Summary">&#182;</a></h3><p>The dataset contains a total of 146 data points, each with 21 features. Of the 146 records, 18 are labeled as persons of interest. Two of these entries are to be removed because they are not persons.</p>
-<p>Furthermore, there are some high percentages of NaN. As an example, 34.72% of the salaries, 29.86% of exercised_stock_options, and 43.75% of bonus are NaN.</p>
+<p>Furthermore, there are some high percentages of NaN, as reported before, director with 88.36% being the feature with highest percentage of NaNs.</p>
 
 </div>
 </div>
@@ -1201,7 +1222,17 @@ Number of employees: 142
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="After-removing-outliers-and-add-new-features-to-the-dataset,-I-am-using-SelectKBest-to-find-the-best-features.-This-has-been-used-to-update-the-feature_list-defined-before.">After removing outliers and add new features to the dataset, I am using SelectKBest to find the best features. This has been used to update the feature_list defined before.<a class="anchor-link" href="#After-removing-outliers-and-add-new-features-to-the-dataset,-I-am-using-SelectKBest-to-find-the-best-features.-This-has-been-used-to-update-the-feature_list-defined-before.">&#182;</a></h3>
+<h3 id="After-removing-outliers,-add-new-features-to-the-dataset,-and-apply-feature-scaling,-I-am-using-SelectKBest-to-find-the-best-features.-This-has-been-used-to-update-the-feature_list-defined-before.">After removing outliers, add new features to the dataset, and apply feature scaling, I am using SelectKBest to find the best features. This has been used to update the feature_list defined before.<a class="anchor-link" href="#After-removing-outliers,-add-new-features-to-the-dataset,-and-apply-feature-scaling,-I-am-using-SelectKBest-to-find-the-best-features.-This-has-been-used-to-update-the-feature_list-defined-before.">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Apply-feature-scaling">Apply feature scaling<a class="anchor-link" href="#Apply-feature-scaling">&#182;</a></h4><p>Since the range of values of raw data varies widely, to avoid potential artifacts in the classification algorithms, I am normalization the features using MinMaxScaler. This feature scaling has no, or marginal, impact on the classification algorithm.</p>
+
 </div>
 </div>
 </div>
@@ -1210,8 +1241,7 @@ Number of employees: 142
 <div class="prompt input_prompt">In&nbsp;[13]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="c">### Store to my_dataset for easy export below.</span>
-<span class="n">my_dataset</span> <span class="o">=</span> <span class="n">data_dict</span>
+<div class=" highlight hl-ipython2"><pre><span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">MinMaxScaler</span>
 
 <span class="n">flist</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;salary&#39;</span><span class="p">,</span>
  <span class="s">&#39;to_messages&#39;</span><span class="p">,</span>
@@ -1232,17 +1262,62 @@ Number of employees: 142
  <span class="s">&#39;director_fees&#39;</span><span class="p">,</span>
  <span class="s">&#39;deferred_income&#39;</span><span class="p">,</span>
  <span class="s">&#39;long_term_incentive&#39;</span><span class="p">,</span>
- <span class="s">&#39;from_poi_to_this_person&#39;</span><span class="p">]</span>
+ <span class="s">&#39;from_poi_to_this_person&#39;</span><span class="p">,</span> 
+ <span class="s">&#39;wealth&#39;</span><span class="p">,</span> <span class="s">&#39;ratio_sent_poi&#39;</span><span class="p">,</span> <span class="s">&#39;ratio_rcv_poi&#39;</span><span class="p">]</span>
+
+<span class="c">### Store to my_dataset for easy export below.</span>
+<span class="n">my_dataset</span> <span class="o">=</span> <span class="n">data_dict</span>
 
 <span class="n">data</span> <span class="o">=</span> <span class="n">featureFormat</span><span class="p">(</span><span class="n">my_dataset</span><span class="p">,</span> <span class="n">flist</span><span class="p">,</span> <span class="n">sort_keys</span> <span class="o">=</span> <span class="bp">True</span><span class="p">)</span>
 <span class="n">labels</span><span class="p">,</span> <span class="n">features</span> <span class="o">=</span> <span class="n">targetFeatureSplit</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
 
-<span class="n">kbest</span> <span class="o">=</span> <span class="n">SelectKBest</span><span class="p">(</span><span class="n">f_regression</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">scaler</span> <span class="o">=</span> <span class="n">MinMaxScaler</span><span class="p">()</span>
+<span class="n">features</span> <span class="o">=</span> <span class="n">scaler</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">features</span><span class="p">)</span>
+
+<span class="k">print</span> <span class="n">features</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>[[  1.91563800e-01   4.55198951e-01   4.33029255e-02 ...,   8.60184356e-02
+    5.80357143e-01   4.19642857e-01]
+ [  0.00000000e+00   4.31090330e-02   1.76193863e-03 ...,   6.07657893e-03
+    0.00000000e+00   0.00000000e+00]
+ [  3.73622021e-02   1.56980101e-02   8.84703391e-03 ...,   1.01897640e-01
+    0.00000000e+00   1.00000000e+00]
+ ..., 
+ [  0.00000000e+00   1.56980101e-02   0.00000000e+00 ...,   3.48435575e-03
+    0.00000000e+00   0.00000000e+00]
+ [  0.00000000e+00   1.56980101e-02   3.47914948e-03 ...,   2.22694842e-01
+    0.00000000e+00   0.00000000e+00]
+ [  0.00000000e+00   1.56980101e-02   5.32030805e-04 ...,   4.65563605e-03
+    0.00000000e+00   0.00000000e+00]]
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[14]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span class="n">kbest</span> <span class="o">=</span> <span class="n">SelectKBest</span><span class="p">(</span><span class="n">f_regression</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
 
 <span class="n">X_new</span> <span class="o">=</span> <span class="n">kbest</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">features</span><span class="p">,</span> <span class="n">labels</span><span class="p">)</span>
 
 <span class="n">pairs</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">flist</span><span class="p">,</span> <span class="n">kbest</span><span class="o">.</span><span class="n">scores_</span><span class="p">),</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">reverse</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
-
 <span class="n">pprint</span><span class="o">.</span><span class="n">pprint</span><span class="p">(</span><span class="n">pairs</span><span class="p">)</span>
 </pre></div>
 
@@ -1258,23 +1333,26 @@ Number of employees: 142
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>[(&apos;exercised_stock_options&apos;, 102.45258245307906),
  (&apos;deferred_income&apos;, 64.196870594214801),
- (&apos;from_messages&apos;, 59.509832726244511),
- (&apos;bonus&apos;, 57.412332328908263),
+ (&apos;from_poi_to_this_person&apos;, 61.018831625055704),
+ (&apos;from_messages&apos;, 59.50983272624449),
+ (&apos;bonus&apos;, 57.412332328908235),
  (&apos;restricted_stock_deferred&apos;, 52.526260661330944),
- (&apos;deferral_payments&apos;, 49.913259030355306),
+ (&apos;deferral_payments&apos;, 49.913259030355412),
  (&apos;restricted_stock&apos;, 49.551893864045951),
- (&apos;total_payments&apos;, 35.552051858302711),
- (&apos;long_term_incentive&apos;, 27.754547277447401),
- (&apos;salary&apos;, 25.995931831498432),
- (&apos;expenses&apos;, 25.055852430123178),
- (&apos;total_stock_value&apos;, 20.7467993205582),
+ (&apos;total_payments&apos;, 35.552051858302754),
+ (&apos;ratio_sent_poi&apos;, 29.053305037434416),
+ (&apos;long_term_incentive&apos;, 27.75454727744739),
+ (&apos;salary&apos;, 25.995931831498421),
+ (&apos;expenses&apos;, 25.055852430123274),
+ (&apos;total_stock_value&apos;, 20.746799320558189),
  (&apos;from_this_person_to_poi&apos;, 18.289684043404524),
- (&apos;director_fees&apos;, 17.145051599663137),
- (&apos;poi&apos;, 14.499919583848534),
- (&apos;to_messages&apos;, 8.8086536471804351),
- (&apos;other&apos;, 6.2248683163393332),
- (&apos;loan_advances&apos;, 2.9376171731188969),
- (&apos;shared_receipt_with_poi&apos;, 1.1304454953978316)]
+ (&apos;director_fees&apos;, 17.145051599663148),
+ (&apos;poi&apos;, 14.499919583848524),
+ (&apos;to_messages&apos;, 8.8086536471804227),
+ (&apos;other&apos;, 6.2248683163393395),
+ (&apos;wealth&apos;, 5.1926070546643492),
+ (&apos;loan_advances&apos;, 2.937617173118896),
+ (&apos;shared_receipt_with_poi&apos;, 1.1304454953978305)]
 </pre>
 </div>
 </div>
@@ -1294,7 +1372,7 @@ Number of employees: 142
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[14]:</div>
+<div class="prompt input_prompt">In&nbsp;[15]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span class="c"># this list is augmented after Task 3.</span>
@@ -1331,7 +1409,7 @@ Number of employees: 142
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[15]:</div>
+<div class="prompt input_prompt">In&nbsp;[16]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span class="c">### Please name your classifier clf for easy export below.</span>
@@ -1383,7 +1461,7 @@ Number of employees: 142
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[16]:</div>
+<div class="prompt input_prompt">In&nbsp;[17]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span class="kn">from</span> <span class="nn">sklearn.neighbors</span> <span class="kn">import</span> <span class="n">KNeighborsClassifier</span>
@@ -1430,7 +1508,7 @@ Number of employees: 142
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[17]:</div>
+<div class="prompt input_prompt">In&nbsp;[18]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span class="kn">from</span> <span class="nn">sklearn</span> <span class="kn">import</span> <span class="n">tree</span>
@@ -1457,8 +1535,8 @@ Number of employees: 142
             max_features=None, max_leaf_nodes=None, min_samples_leaf=1,
             min_samples_split=40, min_weight_fraction_leaf=0.0,
             random_state=None, splitter=&apos;best&apos;)
-	Accuracy: 0.82385	Precision: 0.26984	Recall: 0.08500	F1: 0.12928	F2: 0.09849
-	Total predictions: 13000	True positives:  170	False positives:  460	False negatives: 1830	True negatives: 10540
+	Accuracy: 0.82346	Precision: 0.26475	Recall: 0.08300	F1: 0.12638	F2: 0.09621
+	Total predictions: 13000	True positives:  166	False positives:  461	False negatives: 1834	True negatives: 10539
 
 </pre>
 </div>
@@ -1483,14 +1561,14 @@ Number of employees: 142
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>I have selected the KNeighborsClassifier(algorithm='auto', leaf_size=30, metric='minkowski', metric_params=None, n_neighbors=5, p=2, weights='distance') classifier as the best performer because it shows better recall (i.e. the proportion of persons identified as POIs, who actually are POIs) than the alternatives at the expense of precision. I believe however that recall is more important in this context. False positives can always be double-checked manually.</p>
+<p>I have selected the KNeighborsClassifier(algorithm='auto', leaf_size=30, metric='minkowski', metric_params=None, n_neighbors=5, p=2, weights='distance') classifier as the best performer because it shows better recall (i.e.the number of identified POIs divided by the total number of POIs) than the alternatives at the expense of precision (i.e., the proportion identified POIs, who actually are POIs). I believe however that recall is more important in this context. False positives can always be double-checked manually.</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[18]:</div>
+<div class="prompt input_prompt">In&nbsp;[19]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span class="n">clf</span> <span class="o">=</span> <span class="n">KNeighborsClassifier</span><span class="p">(</span><span class="n">algorithm</span><span class="o">=</span><span class="s">&#39;auto&#39;</span><span class="p">,</span> <span class="n">leaf_size</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span> <span class="n">metric</span><span class="o">=</span><span class="s">&#39;minkowski&#39;</span><span class="p">,</span> 
@@ -1564,22 +1642,501 @@ Number of employees: 142
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Validation allows to evaluate the performance of a algorithm. It gives us more evidence to draw conclusions wrt.  generalization beyond the dataset used to train it (overfitting). One of the biggest mistakes one can make is to use the same data fro training and testing.</p>
-<p>To cross validate algorithm I thought was best, I ran 1000 randomized trials and evaluated the mean evaluation metrics. Given the imbalance in the dataset betweet POIs and non-POIs, accuracy would not have been an appropriate evaluation metric. I used precision and recall instead:</p>
+<h4 id="Autotuning-using-GridSearchCV">Autotuning using GridSearchCV<a class="anchor-link" href="#Autotuning-using-GridSearchCV">&#182;</a></h4><p>Taken from <a href="https://en.wikipedia.org/wiki/Hyperparameter_optimization">https://en.wikipedia.org/wiki/Hyperparameter_optimization</a>:</p>
+<p>In the context of machine learning, hyperparameter optimization or model selection is the problem of choosing a set of hyperparameters for a learning algorithm, usually with the goal of optimizing a measure of the algorithm's performance on an independent data set. Often cross-validation is used to estimate this generalization performance.</p>
+<p>The traditional way of performing hyperparameter optimization has been grid search, or a parameter sweep, which is simply an exhaustive searching through a manually specified subset of the hyperparameter space of a learning algorithm. A grid search algorithm must be guided by some performance metric, typically measured by cross-validation on the training set or evaluation on a held-out validation set.</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[29]:</div>
+<div class="prompt input_prompt">In&nbsp;[20]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">accuracy_score</span><span class="p">,</span> <span class="n">precision_score</span><span class="p">,</span> <span class="n">recall_score</span>
+<div class=" highlight hl-ipython2"><pre><span class="kn">from</span> <span class="nn">sklearn.grid_search</span> <span class="kn">import</span> <span class="n">GridSearchCV</span>
+<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">accuracy_score</span><span class="p">,</span> <span class="n">precision_score</span><span class="p">,</span> <span class="n">recall_score</span>
 <span class="kn">from</span> <span class="nn">numpy</span> <span class="kn">import</span> <span class="n">mean</span>
 <span class="kn">import</span> <span class="nn">progressbar</span>
 
-<span class="n">precision</span><span class="p">,</span> <span class="n">recall</span> <span class="o">=</span> <span class="p">[],</span> <span class="p">[]</span>
+
+
+<span class="k">def</span> <span class="nf">test_clf</span><span class="p">(</span><span class="n">grid_search</span><span class="p">,</span> <span class="n">features</span><span class="p">,</span> <span class="n">labels</span><span class="p">,</span> <span class="n">parameters</span><span class="p">,</span> <span class="n">iterations</span><span class="o">=</span><span class="mi">100</span><span class="p">):</span>
+    <span class="n">precision</span><span class="p">,</span> <span class="n">recall</span> <span class="o">=</span> <span class="p">[],</span> <span class="p">[]</span>
+    
+    <span class="n">progress</span> <span class="o">=</span> <span class="n">progressbar</span><span class="o">.</span><span class="n">ProgressBar</span><span class="p">(</span><span class="n">widgets</span><span class="o">=</span><span class="p">[</span><span class="n">progressbar</span><span class="o">.</span><span class="n">Bar</span><span class="p">(</span><span class="s">&#39;=&#39;</span><span class="p">,</span> <span class="s">&#39;[&#39;</span><span class="p">,</span> <span class="s">&#39;]&#39;</span><span class="p">),</span> <span class="s">&#39; &#39;</span><span class="p">,</span>
+                                            <span class="n">progressbar</span><span class="o">.</span><span class="n">Percentage</span><span class="p">(),</span> <span class="s">&#39; &#39;</span><span class="p">,</span>
+                                            <span class="n">progressbar</span><span class="o">.</span><span class="n">ETA</span><span class="p">()])</span>
+    
+    <span class="k">for</span> <span class="n">iteration</span> <span class="ow">in</span> <span class="n">progress</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">iterations</span><span class="p">)):</span>
+        <span class="n">features_train</span><span class="p">,</span> <span class="n">features_test</span><span class="p">,</span> <span class="n">labels_train</span><span class="p">,</span> <span class="n">labels_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">features</span><span class="p">,</span> <span class="n">labels</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="n">iteration</span><span class="p">)</span>
+        <span class="n">grid_search</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">features_train</span><span class="p">,</span> <span class="n">labels_train</span><span class="p">)</span>
+        <span class="n">predictions</span> <span class="o">=</span> <span class="n">grid_search</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">features_test</span><span class="p">)</span>
+        <span class="n">precision</span> <span class="o">=</span> <span class="n">precision</span> <span class="o">+</span> <span class="p">[</span><span class="n">precision_score</span><span class="p">(</span><span class="n">labels_test</span><span class="p">,</span> <span class="n">predictions</span><span class="p">)]</span>
+        <span class="n">recall</span> <span class="o">=</span> <span class="n">recall</span> <span class="o">+</span> <span class="p">[</span><span class="n">recall_score</span><span class="p">(</span><span class="n">labels_test</span><span class="p">,</span> <span class="n">predictions</span><span class="p">)]</span>
+    <span class="k">print</span> <span class="s">&#39;</span><span class="se">\n</span><span class="s">Precision:&#39;</span><span class="p">,</span> <span class="n">mean</span><span class="p">(</span><span class="n">precision</span><span class="p">)</span>
+    <span class="k">print</span> <span class="s">&#39;Recall:&#39;</span><span class="p">,</span> <span class="n">mean</span><span class="p">(</span><span class="n">recall</span><span class="p">)</span>
+    <span class="n">best_params</span> <span class="o">=</span> <span class="n">grid_search</span><span class="o">.</span><span class="n">best_estimator_</span><span class="o">.</span><span class="n">get_params</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">param_name</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">parameters</span><span class="o">.</span><span class="n">keys</span><span class="p">()):</span>
+        <span class="k">print</span> <span class="s">&#39;</span><span class="si">%s</span><span class="s">=</span><span class="si">%r</span><span class="s">, &#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">param_name</span><span class="p">,</span> <span class="n">best_params</span><span class="p">[</span><span class="n">param_name</span><span class="p">])</span>
+
+
+<span class="n">parameters</span> <span class="o">=</span> <span class="p">{</span><span class="s">&#39;algorithm&#39;</span> <span class="p">:</span> <span class="p">[</span><span class="s">&#39;auto&#39;</span><span class="p">,</span> <span class="s">&#39;ball_tree&#39;</span><span class="p">,</span> <span class="s">&#39;kd_tree&#39;</span><span class="p">,</span> <span class="s">&#39;brute&#39;</span><span class="p">],</span>
+              <span class="s">&#39;p&#39;</span> <span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="c">#</span>
+              <span class="s">&#39;leaf_size&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">40</span><span class="p">],</span>
+              <span class="s">&#39;n_neighbors&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">],</span>
+              <span class="s">&#39;weights&#39;</span> <span class="p">:</span> <span class="p">[</span><span class="s">&#39;uniform&#39;</span><span class="p">,</span> <span class="s">&#39;distance&#39;</span><span class="p">]}</span>
+
+<span class="c">#Note about p: Power parameter for the Minkowski metric. When p = 1, this is equivalent to using </span>
+<span class="c">#manhattan_distance (l1), and euclidean_distance (l2) for p = 2. For arbitrary p, minkowski_distance </span>
+<span class="c">#(l_p) is used.</span>
+
+<span class="n">grid_search</span> <span class="o">=</span> <span class="n">GridSearchCV</span><span class="p">(</span><span class="n">clf</span><span class="p">,</span> <span class="n">parameters</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">n_jobs</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+
+<span class="n">grid_search</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">features_train</span><span class="p">,</span> <span class="n">labels_train</span><span class="p">)</span>
+
+
+<span class="c">#</span>
+<span class="c">#test_clf(grid_search, features, labels, parameters)</span>
+<span class="c">#</span>
+<span class="c">#import tester</span>
+<span class="c">#tester.main()</span>
+
+<span class="n">pprint</span><span class="o">.</span><span class="n">pprint</span><span class="p">(</span><span class="n">grid_search</span><span class="o">.</span><span class="n">grid_scores_</span><span class="p">)</span>
+
+<span class="n">best_params</span> <span class="o">=</span> <span class="n">grid_search</span><span class="o">.</span><span class="n">best_params_</span>
+<span class="k">for</span> <span class="n">param_name</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">parameters</span><span class="o">.</span><span class="n">keys</span><span class="p">()):</span>
+     <span class="k">print</span> <span class="s">&#39;</span><span class="si">%s</span><span class="s">=</span><span class="si">%r</span><span class="s">, &#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">param_name</span><span class="p">,</span> <span class="n">best_params</span><span class="p">[</span><span class="n">param_name</span><span class="p">])</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Fitting 3 folds for each of 288 candidates, totalling 864 fits
+</pre>
+</div>
+</div>
+
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stderr output_text">
+<pre>[Parallel(n_jobs=4)]: Done   1 jobs       | elapsed:    0.0s
+[Parallel(n_jobs=4)]: Done  50 jobs       | elapsed:    0.3s
+[Parallel(n_jobs=4)]: Done 200 jobs       | elapsed:    1.2s
+[Parallel(n_jobs=4)]: Done 450 jobs       | elapsed:    2.7s
+[Parallel(n_jobs=4)]: Done 800 jobs       | elapsed:    4.8s
+[Parallel(n_jobs=4)]: Done 858 out of 864 | elapsed:    5.1s remaining:    0.0s
+[Parallel(n_jobs=4)]: Done 864 out of 864 | elapsed:    5.1s finished
+</pre>
+</div>
+</div>
+
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>[mean: 0.85470, std: 0.05107, params: {&apos;n_neighbors&apos;: 1, &apos;weights&apos;: &apos;uniform&apos;, &apos;leaf_size&apos;: 10, &apos;algorithm&apos;: &apos;auto&apos;, &apos;p&apos;: 1},
+ mean: 0.85470, std: 0.05107, params: {&apos;n_neighbors&apos;: 1, &apos;weights&apos;: &apos;distance&apos;, &apos;leaf_size&apos;: 10, &apos;algorithm&apos;: &apos;auto&apos;, &apos;p&apos;: 1},
+ mean: 0.85470, std: 0.06114, params: {&apos;n_neighbors&apos;: 1, &apos;weights&apos;: &apos;uniform&apos;, &apos;leaf_size&apos;: 10, &apos;algorithm&apos;: &apos;auto&apos;, &apos;p&apos;: 2},
+ mean: 0.85470, std: 0.06114, params: {&apos;n_neighbors&apos;: 1, &apos;weights&apos;: &apos;distance&apos;, &apos;leaf_size&apos;: 10, &apos;algorithm&apos;: &apos;auto&apos;, &apos;p&apos;: 2},
+ mean: 0.86325, std: 0.05035, params: {&apos;n_neighbors&apos;: 1, &apos;weights&apos;: &apos;uniform&apos;, &apos;leaf_size&apos;: 10, &apos;algorithm&apos;: &apos;auto&apos;, &apos;p&apos;: 3},
+ mean: 0.86325, std: 0.05035, params: {&apos;n_neighbors&apos;: 1, &apos;weights&apos;: &apos;distance&apos;, &apos;leaf_size&apos;: 10, &apos;algorithm&apos;: &apos;auto&apos;, &apos;p&apos;: 3},
+ mean: 0.86325, std: 0.01481, params: {&apos;n_neighbors&apos;: 5, &apos;weights&apos;: &apos;uniform&apos;, &apos;leaf_size&apos;: 10, &apos;algorithm&apos;: &apos;auto&apos;, &apos;p&apos;: 1},
+ mean: 0.86325, std: 0.02977, params: {&apos;n_neighbors&apos;: 5, &apos;weights&apos;: &apos;distance&apos;, &apos;leaf_size&apos;: 10, &apos;algorithm&apos;: &apos;auto&apos;, &apos;p&apos;: 1},
+ mean: 0.85470, std: 0.01256, params: {&apos;n_neighbors&apos;: 5, &apos;weights&apos;: &apos;uniform&apos;, &apos;leaf_size&apos;: 10, &apos;algorithm&apos;: &apos;auto&apos;, &apos;p&apos;: 2},
+ mean: 0.86325, std: 0.02977, params: {&apos;n_neighbors&apos;: 5, &apos;weights&apos;: &apos;distance&apos;, &apos;leaf_size&apos;: 10, &apos;algorithm&apos;: &apos;auto&apos;, &apos;p&apos;: 2},
+ mean: 0.85470, std: 0.01256, params: {&apos;n_neighbors&apos;: 5, &apos;weights&apos;: &apos;uniform&apos;, &apos;leaf_size&apos;: 10, &apos;algorithm&apos;: &apos;auto&apos;, &apos;p&apos;: 3},
+ mean: 0.86325, std: 0.02977, params: {&apos;n_neighbors&apos;: 5, &apos;weights&apos;: &apos;distance&apos;, &apos;leaf_size&apos;: 10, &apos;algorithm&apos;: &apos;auto&apos;, &apos;p&apos;: 3},
+ mean: 0.86325, std: 0.00958, params: {&apos;n_neighbors&apos;: 10, &apos;weights&apos;: &apos;uniform&apos;, &apos;leaf_size&apos;: 10, &apos;algorithm&apos;: &apos;auto&apos;, &apos;p&apos;: 1},
+ mean: 0.86325, std: 0.00958, params: {&apos;n_neighbors&apos;: 10, &apos;weights&apos;: &apos;distance&apos;, &apos;leaf_size&apos;: 10, &apos;algorithm&apos;: &apos;auto&apos;, &apos;p&apos;: 1},
+ mean: 0.86325, std: 0.00958, params: {&apos;n_neighbors&apos;: 10, &apos;weights&apos;: &apos;uniform&apos;, &apos;leaf_size&apos;: 10, &apos;algorithm&apos;: &apos;auto&apos;, &apos;p&apos;: 2},
+ mean: 0.86325, std: 0.00958, params: {&apos;n_neighbors&apos;: 10, &apos;weights&apos;: &apos;distance&apos;, &apos;leaf_size&apos;: 10, &apos;algorithm&apos;: &apos;auto&apos;, &apos;p&apos;: 2},
+ mean: 0.86325, std: 0.00958, params: {&apos;n_neighbors&apos;: 10, &apos;weights&apos;: &apos;uniform&apos;, &apos;leaf_size&apos;: 10, &apos;algorithm&apos;: &apos;auto&apos;, &apos;p&apos;: 3},
+ mean: 0.86325, std: 0.00958, params: {&apos;n_neighbors&apos;: 10, &apos;weights&apos;: &apos;distance&apos;, &apos;leaf_size&apos;: 10, &apos;algorithm&apos;: &apos;auto&apos;, &apos;p&apos;: 3},
+ mean: 0.85470, std: 0.05107, params: {&apos;n_neighbors&apos;: 1, &apos;weights&apos;: &apos;uniform&apos;, &apos;leaf_size&apos;: 20, &apos;algorithm&apos;: &apos;auto&apos;, &apos;p&apos;: 1},
+ mean: 0.85470, std: 0.05107, params: {&apos;n_neighbors&apos;: 1, &apos;weights&apos;: &apos;distance&apos;, &apos;leaf_size&apos;: 20, &apos;algorithm&apos;: &apos;auto&apos;, &apos;p&apos;: 1},
+ mean: 0.85470, std: 0.06114, params: {&apos;n_neighbors&apos;: 1, &apos;weights&apos;: &apos;uniform&apos;, &apos;leaf_size&apos;: 20, &apos;algorithm&apos;: &apos;auto&apos;, &apos;p&apos;: 2},
+ mean: 0.85470, std: 0.06114, params: {&apos;n_neighbors&apos;: 1, &apos;weights&apos;: &apos;distance&apos;, &apos;leaf_size&apos;: 20, &apos;algorithm&apos;: &apos;auto&apos;, &apos;p&apos;: 2},
+ mean: 0.86325, std: 0.05035, params: {&apos;n_neighbors&apos;: 1, &apos;weights&apos;: &apos;uniform&apos;, &apos;leaf_size&apos;: 20, &apos;algorithm&apos;: &apos;auto&apos;, &apos;p&apos;: 3},
+ mean: 0.86325, std: 0.05035, params: {&apos;n_neighbors&apos;: 1, &apos;weights&apos;: &apos;distance&apos;, &apos;leaf_size&apos;: 20, &apos;algorithm&apos;: &apos;auto&apos;, &apos;p&apos;: 3},
+ mean: 0.86325, std: 0.01481, params: {&apos;n_neighbors&apos;: 5, &apos;weights&apos;: &apos;uniform&apos;, &apos;leaf_size&apos;: 20, &apos;algorithm&apos;: &apos;auto&apos;, &apos;p&apos;: 1},
+ mean: 0.86325, std: 0.02977, params: {&apos;n_neighbors&apos;: 5, &apos;weights&apos;: &apos;distance&apos;, &apos;leaf_size&apos;: 20, &apos;algorithm&apos;: &apos;auto&apos;, &apos;p&apos;: 1},
+ mean: 0.85470, std: 0.01256, params: {&apos;n_neighbors&apos;: 5, &apos;weights&apos;: &apos;uniform&apos;, &apos;leaf_size&apos;: 20, &apos;algorithm&apos;: &apos;auto&apos;, &apos;p&apos;: 2},
+ mean: 0.86325, std: 0.02977, params: {&apos;n_neighbors&apos;: 5, &apos;weights&apos;: &apos;distance&apos;, &apos;leaf_size&apos;: 20, &apos;algorithm&apos;: &apos;auto&apos;, &apos;p&apos;: 2},
+ mean: 0.85470, std: 0.01256, params: {&apos;n_neighbors&apos;: 5, &apos;weights&apos;: &apos;uniform&apos;, &apos;leaf_size&apos;: 20, &apos;algorithm&apos;: &apos;auto&apos;, &apos;p&apos;: 3},
+ mean: 0.86325, std: 0.02977, params: {&apos;n_neighbors&apos;: 5, &apos;weights&apos;: &apos;distance&apos;, &apos;leaf_size&apos;: 20, &apos;algorithm&apos;: &apos;auto&apos;, &apos;p&apos;: 3},
+ mean: 0.86325, std: 0.00958, params: {&apos;n_neighbors&apos;: 10, &apos;weights&apos;: &apos;uniform&apos;, &apos;leaf_size&apos;: 20, &apos;algorithm&apos;: &apos;auto&apos;, &apos;p&apos;: 1},
+ mean: 0.86325, std: 0.00958, params: {&apos;n_neighbors&apos;: 10, &apos;weights&apos;: &apos;distance&apos;, &apos;leaf_size&apos;: 20, &apos;algorithm&apos;: &apos;auto&apos;, &apos;p&apos;: 1},
+ mean: 0.86325, std: 0.00958, params: {&apos;n_neighbors&apos;: 10, &apos;weights&apos;: &apos;uniform&apos;, &apos;leaf_size&apos;: 20, &apos;algorithm&apos;: &apos;auto&apos;, &apos;p&apos;: 2},
+ mean: 0.86325, std: 0.00958, params: {&apos;n_neighbors&apos;: 10, &apos;weights&apos;: &apos;distance&apos;, &apos;leaf_size&apos;: 20, &apos;algorithm&apos;: &apos;auto&apos;, &apos;p&apos;: 2},
+ mean: 0.86325, std: 0.00958, params: {&apos;n_neighbors&apos;: 10, &apos;weights&apos;: &apos;uniform&apos;, &apos;leaf_size&apos;: 20, &apos;algorithm&apos;: &apos;auto&apos;, &apos;p&apos;: 3},
+ mean: 0.86325, std: 0.00958, params: {&apos;n_neighbors&apos;: 10, &apos;weights&apos;: &apos;distance&apos;, &apos;leaf_size&apos;: 20, &apos;algorithm&apos;: &apos;auto&apos;, &apos;p&apos;: 3},
+ mean: 0.85470, std: 0.05107, params: {&apos;n_neighbors&apos;: 1, &apos;weights&apos;: &apos;uniform&apos;, &apos;leaf_size&apos;: 30, &apos;algorithm&apos;: &apos;auto&apos;, &apos;p&apos;: 1},
+ mean: 0.85470, std: 0.05107, params: {&apos;n_neighbors&apos;: 1, &apos;weights&apos;: &apos;distance&apos;, &apos;leaf_size&apos;: 30, &apos;algorithm&apos;: &apos;auto&apos;, &apos;p&apos;: 1},
+ mean: 0.85470, std: 0.06114, params: {&apos;n_neighbors&apos;: 1, &apos;weights&apos;: &apos;uniform&apos;, &apos;leaf_size&apos;: 30, &apos;algorithm&apos;: &apos;auto&apos;, &apos;p&apos;: 2},
+ mean: 0.85470, std: 0.06114, params: {&apos;n_neighbors&apos;: 1, &apos;weights&apos;: &apos;distance&apos;, &apos;leaf_size&apos;: 30, &apos;algorithm&apos;: &apos;auto&apos;, &apos;p&apos;: 2},
+ mean: 0.86325, std: 0.05035, params: {&apos;n_neighbors&apos;: 1, &apos;weights&apos;: &apos;uniform&apos;, &apos;leaf_size&apos;: 30, &apos;algorithm&apos;: &apos;auto&apos;, &apos;p&apos;: 3},
+ mean: 0.86325, std: 0.05035, params: {&apos;n_neighbors&apos;: 1, &apos;weights&apos;: &apos;distance&apos;, &apos;leaf_size&apos;: 30, &apos;algorithm&apos;: &apos;auto&apos;, &apos;p&apos;: 3},
+ mean: 0.86325, std: 0.01481, params: {&apos;n_neighbors&apos;: 5, &apos;weights&apos;: &apos;uniform&apos;, &apos;leaf_size&apos;: 30, &apos;algorithm&apos;: &apos;auto&apos;, &apos;p&apos;: 1},
+ mean: 0.86325, std: 0.02977, params: {&apos;n_neighbors&apos;: 5, &apos;weights&apos;: &apos;distance&apos;, &apos;leaf_size&apos;: 30, &apos;algorithm&apos;: &apos;auto&apos;, &apos;p&apos;: 1},
+ mean: 0.85470, std: 0.01256, params: {&apos;n_neighbors&apos;: 5, &apos;weights&apos;: &apos;uniform&apos;, &apos;leaf_size&apos;: 30, &apos;algorithm&apos;: &apos;auto&apos;, &apos;p&apos;: 2},
+ mean: 0.86325, std: 0.02977, params: {&apos;n_neighbors&apos;: 5, &apos;weights&apos;: &apos;distance&apos;, &apos;leaf_size&apos;: 30, &apos;algorithm&apos;: &apos;auto&apos;, &apos;p&apos;: 2},
+ mean: 0.85470, std: 0.01256, params: {&apos;n_neighbors&apos;: 5, &apos;weights&apos;: &apos;uniform&apos;, &apos;leaf_size&apos;: 30, &apos;algorithm&apos;: &apos;auto&apos;, &apos;p&apos;: 3},
+ mean: 0.86325, std: 0.02977, params: {&apos;n_neighbors&apos;: 5, &apos;weights&apos;: &apos;distance&apos;, &apos;leaf_size&apos;: 30, &apos;algorithm&apos;: &apos;auto&apos;, &apos;p&apos;: 3},
+ mean: 0.86325, std: 0.00958, params: {&apos;n_neighbors&apos;: 10, &apos;weights&apos;: &apos;uniform&apos;, &apos;leaf_size&apos;: 30, &apos;algorithm&apos;: &apos;auto&apos;, &apos;p&apos;: 1},
+ mean: 0.86325, std: 0.00958, params: {&apos;n_neighbors&apos;: 10, &apos;weights&apos;: &apos;distance&apos;, &apos;leaf_size&apos;: 30, &apos;algorithm&apos;: &apos;auto&apos;, &apos;p&apos;: 1},
+ mean: 0.86325, std: 0.00958, params: {&apos;n_neighbors&apos;: 10, &apos;weights&apos;: &apos;uniform&apos;, &apos;leaf_size&apos;: 30, &apos;algorithm&apos;: &apos;auto&apos;, &apos;p&apos;: 2},
+ mean: 0.86325, std: 0.00958, params: {&apos;n_neighbors&apos;: 10, &apos;weights&apos;: &apos;distance&apos;, &apos;leaf_size&apos;: 30, &apos;algorithm&apos;: &apos;auto&apos;, &apos;p&apos;: 2},
+ mean: 0.86325, std: 0.00958, params: {&apos;n_neighbors&apos;: 10, &apos;weights&apos;: &apos;uniform&apos;, &apos;leaf_size&apos;: 30, &apos;algorithm&apos;: &apos;auto&apos;, &apos;p&apos;: 3},
+ mean: 0.86325, std: 0.00958, params: {&apos;n_neighbors&apos;: 10, &apos;weights&apos;: &apos;distance&apos;, &apos;leaf_size&apos;: 30, &apos;algorithm&apos;: &apos;auto&apos;, &apos;p&apos;: 3},
+ mean: 0.85470, std: 0.05107, params: {&apos;n_neighbors&apos;: 1, &apos;weights&apos;: &apos;uniform&apos;, &apos;leaf_size&apos;: 40, &apos;algorithm&apos;: &apos;auto&apos;, &apos;p&apos;: 1},
+ mean: 0.85470, std: 0.05107, params: {&apos;n_neighbors&apos;: 1, &apos;weights&apos;: &apos;distance&apos;, &apos;leaf_size&apos;: 40, &apos;algorithm&apos;: &apos;auto&apos;, &apos;p&apos;: 1},
+ mean: 0.85470, std: 0.06114, params: {&apos;n_neighbors&apos;: 1, &apos;weights&apos;: &apos;uniform&apos;, &apos;leaf_size&apos;: 40, &apos;algorithm&apos;: &apos;auto&apos;, &apos;p&apos;: 2},
+ mean: 0.85470, std: 0.06114, params: {&apos;n_neighbors&apos;: 1, &apos;weights&apos;: &apos;distance&apos;, &apos;leaf_size&apos;: 40, &apos;algorithm&apos;: &apos;auto&apos;, &apos;p&apos;: 2},
+ mean: 0.86325, std: 0.05035, params: {&apos;n_neighbors&apos;: 1, &apos;weights&apos;: &apos;uniform&apos;, &apos;leaf_size&apos;: 40, &apos;algorithm&apos;: &apos;auto&apos;, &apos;p&apos;: 3},
+ mean: 0.86325, std: 0.05035, params: {&apos;n_neighbors&apos;: 1, &apos;weights&apos;: &apos;distance&apos;, &apos;leaf_size&apos;: 40, &apos;algorithm&apos;: &apos;auto&apos;, &apos;p&apos;: 3},
+ mean: 0.86325, std: 0.01481, params: {&apos;n_neighbors&apos;: 5, &apos;weights&apos;: &apos;uniform&apos;, &apos;leaf_size&apos;: 40, &apos;algorithm&apos;: &apos;auto&apos;, &apos;p&apos;: 1},
+ mean: 0.86325, std: 0.02977, params: {&apos;n_neighbors&apos;: 5, &apos;weights&apos;: &apos;distance&apos;, &apos;leaf_size&apos;: 40, &apos;algorithm&apos;: &apos;auto&apos;, &apos;p&apos;: 1},
+ mean: 0.85470, std: 0.01256, params: {&apos;n_neighbors&apos;: 5, &apos;weights&apos;: &apos;uniform&apos;, &apos;leaf_size&apos;: 40, &apos;algorithm&apos;: &apos;auto&apos;, &apos;p&apos;: 2},
+ mean: 0.86325, std: 0.02977, params: {&apos;n_neighbors&apos;: 5, &apos;weights&apos;: &apos;distance&apos;, &apos;leaf_size&apos;: 40, &apos;algorithm&apos;: &apos;auto&apos;, &apos;p&apos;: 2},
+ mean: 0.85470, std: 0.01256, params: {&apos;n_neighbors&apos;: 5, &apos;weights&apos;: &apos;uniform&apos;, &apos;leaf_size&apos;: 40, &apos;algorithm&apos;: &apos;auto&apos;, &apos;p&apos;: 3},
+ mean: 0.86325, std: 0.02977, params: {&apos;n_neighbors&apos;: 5, &apos;weights&apos;: &apos;distance&apos;, &apos;leaf_size&apos;: 40, &apos;algorithm&apos;: &apos;auto&apos;, &apos;p&apos;: 3},
+ mean: 0.86325, std: 0.00958, params: {&apos;n_neighbors&apos;: 10, &apos;weights&apos;: &apos;uniform&apos;, &apos;leaf_size&apos;: 40, &apos;algorithm&apos;: &apos;auto&apos;, &apos;p&apos;: 1},
+ mean: 0.86325, std: 0.00958, params: {&apos;n_neighbors&apos;: 10, &apos;weights&apos;: &apos;distance&apos;, &apos;leaf_size&apos;: 40, &apos;algorithm&apos;: &apos;auto&apos;, &apos;p&apos;: 1},
+ mean: 0.86325, std: 0.00958, params: {&apos;n_neighbors&apos;: 10, &apos;weights&apos;: &apos;uniform&apos;, &apos;leaf_size&apos;: 40, &apos;algorithm&apos;: &apos;auto&apos;, &apos;p&apos;: 2},
+ mean: 0.86325, std: 0.00958, params: {&apos;n_neighbors&apos;: 10, &apos;weights&apos;: &apos;distance&apos;, &apos;leaf_size&apos;: 40, &apos;algorithm&apos;: &apos;auto&apos;, &apos;p&apos;: 2},
+ mean: 0.86325, std: 0.00958, params: {&apos;n_neighbors&apos;: 10, &apos;weights&apos;: &apos;uniform&apos;, &apos;leaf_size&apos;: 40, &apos;algorithm&apos;: &apos;auto&apos;, &apos;p&apos;: 3},
+ mean: 0.86325, std: 0.00958, params: {&apos;n_neighbors&apos;: 10, &apos;weights&apos;: &apos;distance&apos;, &apos;leaf_size&apos;: 40, &apos;algorithm&apos;: &apos;auto&apos;, &apos;p&apos;: 3},
+ mean: 0.85470, std: 0.05107, params: {&apos;n_neighbors&apos;: 1, &apos;weights&apos;: &apos;uniform&apos;, &apos;leaf_size&apos;: 10, &apos;algorithm&apos;: &apos;ball_tree&apos;, &apos;p&apos;: 1},
+ mean: 0.85470, std: 0.05107, params: {&apos;n_neighbors&apos;: 1, &apos;weights&apos;: &apos;distance&apos;, &apos;leaf_size&apos;: 10, &apos;algorithm&apos;: &apos;ball_tree&apos;, &apos;p&apos;: 1},
+ mean: 0.85470, std: 0.06114, params: {&apos;n_neighbors&apos;: 1, &apos;weights&apos;: &apos;uniform&apos;, &apos;leaf_size&apos;: 10, &apos;algorithm&apos;: &apos;ball_tree&apos;, &apos;p&apos;: 2},
+ mean: 0.85470, std: 0.06114, params: {&apos;n_neighbors&apos;: 1, &apos;weights&apos;: &apos;distance&apos;, &apos;leaf_size&apos;: 10, &apos;algorithm&apos;: &apos;ball_tree&apos;, &apos;p&apos;: 2},
+ mean: 0.86325, std: 0.05035, params: {&apos;n_neighbors&apos;: 1, &apos;weights&apos;: &apos;uniform&apos;, &apos;leaf_size&apos;: 10, &apos;algorithm&apos;: &apos;ball_tree&apos;, &apos;p&apos;: 3},
+ mean: 0.86325, std: 0.05035, params: {&apos;n_neighbors&apos;: 1, &apos;weights&apos;: &apos;distance&apos;, &apos;leaf_size&apos;: 10, &apos;algorithm&apos;: &apos;ball_tree&apos;, &apos;p&apos;: 3},
+ mean: 0.86325, std: 0.01481, params: {&apos;n_neighbors&apos;: 5, &apos;weights&apos;: &apos;uniform&apos;, &apos;leaf_size&apos;: 10, &apos;algorithm&apos;: &apos;ball_tree&apos;, &apos;p&apos;: 1},
+ mean: 0.86325, std: 0.02977, params: {&apos;n_neighbors&apos;: 5, &apos;weights&apos;: &apos;distance&apos;, &apos;leaf_size&apos;: 10, &apos;algorithm&apos;: &apos;ball_tree&apos;, &apos;p&apos;: 1},
+ mean: 0.85470, std: 0.01256, params: {&apos;n_neighbors&apos;: 5, &apos;weights&apos;: &apos;uniform&apos;, &apos;leaf_size&apos;: 10, &apos;algorithm&apos;: &apos;ball_tree&apos;, &apos;p&apos;: 2},
+ mean: 0.86325, std: 0.02977, params: {&apos;n_neighbors&apos;: 5, &apos;weights&apos;: &apos;distance&apos;, &apos;leaf_size&apos;: 10, &apos;algorithm&apos;: &apos;ball_tree&apos;, &apos;p&apos;: 2},
+ mean: 0.85470, std: 0.01256, params: {&apos;n_neighbors&apos;: 5, &apos;weights&apos;: &apos;uniform&apos;, &apos;leaf_size&apos;: 10, &apos;algorithm&apos;: &apos;ball_tree&apos;, &apos;p&apos;: 3},
+ mean: 0.86325, std: 0.02977, params: {&apos;n_neighbors&apos;: 5, &apos;weights&apos;: &apos;distance&apos;, &apos;leaf_size&apos;: 10, &apos;algorithm&apos;: &apos;ball_tree&apos;, &apos;p&apos;: 3},
+ mean: 0.86325, std: 0.00958, params: {&apos;n_neighbors&apos;: 10, &apos;weights&apos;: &apos;uniform&apos;, &apos;leaf_size&apos;: 10, &apos;algorithm&apos;: &apos;ball_tree&apos;, &apos;p&apos;: 1},
+ mean: 0.86325, std: 0.00958, params: {&apos;n_neighbors&apos;: 10, &apos;weights&apos;: &apos;distance&apos;, &apos;leaf_size&apos;: 10, &apos;algorithm&apos;: &apos;ball_tree&apos;, &apos;p&apos;: 1},
+ mean: 0.86325, std: 0.00958, params: {&apos;n_neighbors&apos;: 10, &apos;weights&apos;: &apos;uniform&apos;, &apos;leaf_size&apos;: 10, &apos;algorithm&apos;: &apos;ball_tree&apos;, &apos;p&apos;: 2},
+ mean: 0.86325, std: 0.00958, params: {&apos;n_neighbors&apos;: 10, &apos;weights&apos;: &apos;distance&apos;, &apos;leaf_size&apos;: 10, &apos;algorithm&apos;: &apos;ball_tree&apos;, &apos;p&apos;: 2},
+ mean: 0.86325, std: 0.00958, params: {&apos;n_neighbors&apos;: 10, &apos;weights&apos;: &apos;uniform&apos;, &apos;leaf_size&apos;: 10, &apos;algorithm&apos;: &apos;ball_tree&apos;, &apos;p&apos;: 3},
+ mean: 0.86325, std: 0.00958, params: {&apos;n_neighbors&apos;: 10, &apos;weights&apos;: &apos;distance&apos;, &apos;leaf_size&apos;: 10, &apos;algorithm&apos;: &apos;ball_tree&apos;, &apos;p&apos;: 3},
+ mean: 0.85470, std: 0.05107, params: {&apos;n_neighbors&apos;: 1, &apos;weights&apos;: &apos;uniform&apos;, &apos;leaf_size&apos;: 20, &apos;algorithm&apos;: &apos;ball_tree&apos;, &apos;p&apos;: 1},
+ mean: 0.85470, std: 0.05107, params: {&apos;n_neighbors&apos;: 1, &apos;weights&apos;: &apos;distance&apos;, &apos;leaf_size&apos;: 20, &apos;algorithm&apos;: &apos;ball_tree&apos;, &apos;p&apos;: 1},
+ mean: 0.85470, std: 0.06114, params: {&apos;n_neighbors&apos;: 1, &apos;weights&apos;: &apos;uniform&apos;, &apos;leaf_size&apos;: 20, &apos;algorithm&apos;: &apos;ball_tree&apos;, &apos;p&apos;: 2},
+ mean: 0.85470, std: 0.06114, params: {&apos;n_neighbors&apos;: 1, &apos;weights&apos;: &apos;distance&apos;, &apos;leaf_size&apos;: 20, &apos;algorithm&apos;: &apos;ball_tree&apos;, &apos;p&apos;: 2},
+ mean: 0.86325, std: 0.05035, params: {&apos;n_neighbors&apos;: 1, &apos;weights&apos;: &apos;uniform&apos;, &apos;leaf_size&apos;: 20, &apos;algorithm&apos;: &apos;ball_tree&apos;, &apos;p&apos;: 3},
+ mean: 0.86325, std: 0.05035, params: {&apos;n_neighbors&apos;: 1, &apos;weights&apos;: &apos;distance&apos;, &apos;leaf_size&apos;: 20, &apos;algorithm&apos;: &apos;ball_tree&apos;, &apos;p&apos;: 3},
+ mean: 0.86325, std: 0.01481, params: {&apos;n_neighbors&apos;: 5, &apos;weights&apos;: &apos;uniform&apos;, &apos;leaf_size&apos;: 20, &apos;algorithm&apos;: &apos;ball_tree&apos;, &apos;p&apos;: 1},
+ mean: 0.86325, std: 0.02977, params: {&apos;n_neighbors&apos;: 5, &apos;weights&apos;: &apos;distance&apos;, &apos;leaf_size&apos;: 20, &apos;algorithm&apos;: &apos;ball_tree&apos;, &apos;p&apos;: 1},
+ mean: 0.85470, std: 0.01256, params: {&apos;n_neighbors&apos;: 5, &apos;weights&apos;: &apos;uniform&apos;, &apos;leaf_size&apos;: 20, &apos;algorithm&apos;: &apos;ball_tree&apos;, &apos;p&apos;: 2},
+ mean: 0.86325, std: 0.02977, params: {&apos;n_neighbors&apos;: 5, &apos;weights&apos;: &apos;distance&apos;, &apos;leaf_size&apos;: 20, &apos;algorithm&apos;: &apos;ball_tree&apos;, &apos;p&apos;: 2},
+ mean: 0.85470, std: 0.01256, params: {&apos;n_neighbors&apos;: 5, &apos;weights&apos;: &apos;uniform&apos;, &apos;leaf_size&apos;: 20, &apos;algorithm&apos;: &apos;ball_tree&apos;, &apos;p&apos;: 3},
+ mean: 0.86325, std: 0.02977, params: {&apos;n_neighbors&apos;: 5, &apos;weights&apos;: &apos;distance&apos;, &apos;leaf_size&apos;: 20, &apos;algorithm&apos;: &apos;ball_tree&apos;, &apos;p&apos;: 3},
+ mean: 0.86325, std: 0.00958, params: {&apos;n_neighbors&apos;: 10, &apos;weights&apos;: &apos;uniform&apos;, &apos;leaf_size&apos;: 20, &apos;algorithm&apos;: &apos;ball_tree&apos;, &apos;p&apos;: 1},
+ mean: 0.86325, std: 0.00958, params: {&apos;n_neighbors&apos;: 10, &apos;weights&apos;: &apos;distance&apos;, &apos;leaf_size&apos;: 20, &apos;algorithm&apos;: &apos;ball_tree&apos;, &apos;p&apos;: 1},
+ mean: 0.86325, std: 0.00958, params: {&apos;n_neighbors&apos;: 10, &apos;weights&apos;: &apos;uniform&apos;, &apos;leaf_size&apos;: 20, &apos;algorithm&apos;: &apos;ball_tree&apos;, &apos;p&apos;: 2},
+ mean: 0.86325, std: 0.00958, params: {&apos;n_neighbors&apos;: 10, &apos;weights&apos;: &apos;distance&apos;, &apos;leaf_size&apos;: 20, &apos;algorithm&apos;: &apos;ball_tree&apos;, &apos;p&apos;: 2},
+ mean: 0.86325, std: 0.00958, params: {&apos;n_neighbors&apos;: 10, &apos;weights&apos;: &apos;uniform&apos;, &apos;leaf_size&apos;: 20, &apos;algorithm&apos;: &apos;ball_tree&apos;, &apos;p&apos;: 3},
+ mean: 0.86325, std: 0.00958, params: {&apos;n_neighbors&apos;: 10, &apos;weights&apos;: &apos;distance&apos;, &apos;leaf_size&apos;: 20, &apos;algorithm&apos;: &apos;ball_tree&apos;, &apos;p&apos;: 3},
+ mean: 0.85470, std: 0.05107, params: {&apos;n_neighbors&apos;: 1, &apos;weights&apos;: &apos;uniform&apos;, &apos;leaf_size&apos;: 30, &apos;algorithm&apos;: &apos;ball_tree&apos;, &apos;p&apos;: 1},
+ mean: 0.85470, std: 0.05107, params: {&apos;n_neighbors&apos;: 1, &apos;weights&apos;: &apos;distance&apos;, &apos;leaf_size&apos;: 30, &apos;algorithm&apos;: &apos;ball_tree&apos;, &apos;p&apos;: 1},
+ mean: 0.85470, std: 0.06114, params: {&apos;n_neighbors&apos;: 1, &apos;weights&apos;: &apos;uniform&apos;, &apos;leaf_size&apos;: 30, &apos;algorithm&apos;: &apos;ball_tree&apos;, &apos;p&apos;: 2},
+ mean: 0.85470, std: 0.06114, params: {&apos;n_neighbors&apos;: 1, &apos;weights&apos;: &apos;distance&apos;, &apos;leaf_size&apos;: 30, &apos;algorithm&apos;: &apos;ball_tree&apos;, &apos;p&apos;: 2},
+ mean: 0.86325, std: 0.05035, params: {&apos;n_neighbors&apos;: 1, &apos;weights&apos;: &apos;uniform&apos;, &apos;leaf_size&apos;: 30, &apos;algorithm&apos;: &apos;ball_tree&apos;, &apos;p&apos;: 3},
+ mean: 0.86325, std: 0.05035, params: {&apos;n_neighbors&apos;: 1, &apos;weights&apos;: &apos;distance&apos;, &apos;leaf_size&apos;: 30, &apos;algorithm&apos;: &apos;ball_tree&apos;, &apos;p&apos;: 3},
+ mean: 0.86325, std: 0.01481, params: {&apos;n_neighbors&apos;: 5, &apos;weights&apos;: &apos;uniform&apos;, &apos;leaf_size&apos;: 30, &apos;algorithm&apos;: &apos;ball_tree&apos;, &apos;p&apos;: 1},
+ mean: 0.86325, std: 0.02977, params: {&apos;n_neighbors&apos;: 5, &apos;weights&apos;: &apos;distance&apos;, &apos;leaf_size&apos;: 30, &apos;algorithm&apos;: &apos;ball_tree&apos;, &apos;p&apos;: 1},
+ mean: 0.85470, std: 0.01256, params: {&apos;n_neighbors&apos;: 5, &apos;weights&apos;: &apos;uniform&apos;, &apos;leaf_size&apos;: 30, &apos;algorithm&apos;: &apos;ball_tree&apos;, &apos;p&apos;: 2},
+ mean: 0.86325, std: 0.02977, params: {&apos;n_neighbors&apos;: 5, &apos;weights&apos;: &apos;distance&apos;, &apos;leaf_size&apos;: 30, &apos;algorithm&apos;: &apos;ball_tree&apos;, &apos;p&apos;: 2},
+ mean: 0.85470, std: 0.01256, params: {&apos;n_neighbors&apos;: 5, &apos;weights&apos;: &apos;uniform&apos;, &apos;leaf_size&apos;: 30, &apos;algorithm&apos;: &apos;ball_tree&apos;, &apos;p&apos;: 3},
+ mean: 0.86325, std: 0.02977, params: {&apos;n_neighbors&apos;: 5, &apos;weights&apos;: &apos;distance&apos;, &apos;leaf_size&apos;: 30, &apos;algorithm&apos;: &apos;ball_tree&apos;, &apos;p&apos;: 3},
+ mean: 0.86325, std: 0.00958, params: {&apos;n_neighbors&apos;: 10, &apos;weights&apos;: &apos;uniform&apos;, &apos;leaf_size&apos;: 30, &apos;algorithm&apos;: &apos;ball_tree&apos;, &apos;p&apos;: 1},
+ mean: 0.86325, std: 0.00958, params: {&apos;n_neighbors&apos;: 10, &apos;weights&apos;: &apos;distance&apos;, &apos;leaf_size&apos;: 30, &apos;algorithm&apos;: &apos;ball_tree&apos;, &apos;p&apos;: 1},
+ mean: 0.86325, std: 0.00958, params: {&apos;n_neighbors&apos;: 10, &apos;weights&apos;: &apos;uniform&apos;, &apos;leaf_size&apos;: 30, &apos;algorithm&apos;: &apos;ball_tree&apos;, &apos;p&apos;: 2},
+ mean: 0.86325, std: 0.00958, params: {&apos;n_neighbors&apos;: 10, &apos;weights&apos;: &apos;distance&apos;, &apos;leaf_size&apos;: 30, &apos;algorithm&apos;: &apos;ball_tree&apos;, &apos;p&apos;: 2},
+ mean: 0.86325, std: 0.00958, params: {&apos;n_neighbors&apos;: 10, &apos;weights&apos;: &apos;uniform&apos;, &apos;leaf_size&apos;: 30, &apos;algorithm&apos;: &apos;ball_tree&apos;, &apos;p&apos;: 3},
+ mean: 0.86325, std: 0.00958, params: {&apos;n_neighbors&apos;: 10, &apos;weights&apos;: &apos;distance&apos;, &apos;leaf_size&apos;: 30, &apos;algorithm&apos;: &apos;ball_tree&apos;, &apos;p&apos;: 3},
+ mean: 0.85470, std: 0.05107, params: {&apos;n_neighbors&apos;: 1, &apos;weights&apos;: &apos;uniform&apos;, &apos;leaf_size&apos;: 40, &apos;algorithm&apos;: &apos;ball_tree&apos;, &apos;p&apos;: 1},
+ mean: 0.85470, std: 0.05107, params: {&apos;n_neighbors&apos;: 1, &apos;weights&apos;: &apos;distance&apos;, &apos;leaf_size&apos;: 40, &apos;algorithm&apos;: &apos;ball_tree&apos;, &apos;p&apos;: 1},
+ mean: 0.85470, std: 0.06114, params: {&apos;n_neighbors&apos;: 1, &apos;weights&apos;: &apos;uniform&apos;, &apos;leaf_size&apos;: 40, &apos;algorithm&apos;: &apos;ball_tree&apos;, &apos;p&apos;: 2},
+ mean: 0.85470, std: 0.06114, params: {&apos;n_neighbors&apos;: 1, &apos;weights&apos;: &apos;distance&apos;, &apos;leaf_size&apos;: 40, &apos;algorithm&apos;: &apos;ball_tree&apos;, &apos;p&apos;: 2},
+ mean: 0.86325, std: 0.05035, params: {&apos;n_neighbors&apos;: 1, &apos;weights&apos;: &apos;uniform&apos;, &apos;leaf_size&apos;: 40, &apos;algorithm&apos;: &apos;ball_tree&apos;, &apos;p&apos;: 3},
+ mean: 0.86325, std: 0.05035, params: {&apos;n_neighbors&apos;: 1, &apos;weights&apos;: &apos;distance&apos;, &apos;leaf_size&apos;: 40, &apos;algorithm&apos;: &apos;ball_tree&apos;, &apos;p&apos;: 3},
+ mean: 0.86325, std: 0.01481, params: {&apos;n_neighbors&apos;: 5, &apos;weights&apos;: &apos;uniform&apos;, &apos;leaf_size&apos;: 40, &apos;algorithm&apos;: &apos;ball_tree&apos;, &apos;p&apos;: 1},
+ mean: 0.86325, std: 0.02977, params: {&apos;n_neighbors&apos;: 5, &apos;weights&apos;: &apos;distance&apos;, &apos;leaf_size&apos;: 40, &apos;algorithm&apos;: &apos;ball_tree&apos;, &apos;p&apos;: 1},
+ mean: 0.85470, std: 0.01256, params: {&apos;n_neighbors&apos;: 5, &apos;weights&apos;: &apos;uniform&apos;, &apos;leaf_size&apos;: 40, &apos;algorithm&apos;: &apos;ball_tree&apos;, &apos;p&apos;: 2},
+ mean: 0.86325, std: 0.02977, params: {&apos;n_neighbors&apos;: 5, &apos;weights&apos;: &apos;distance&apos;, &apos;leaf_size&apos;: 40, &apos;algorithm&apos;: &apos;ball_tree&apos;, &apos;p&apos;: 2},
+ mean: 0.85470, std: 0.01256, params: {&apos;n_neighbors&apos;: 5, &apos;weights&apos;: &apos;uniform&apos;, &apos;leaf_size&apos;: 40, &apos;algorithm&apos;: &apos;ball_tree&apos;, &apos;p&apos;: 3},
+ mean: 0.86325, std: 0.02977, params: {&apos;n_neighbors&apos;: 5, &apos;weights&apos;: &apos;distance&apos;, &apos;leaf_size&apos;: 40, &apos;algorithm&apos;: &apos;ball_tree&apos;, &apos;p&apos;: 3},
+ mean: 0.86325, std: 0.00958, params: {&apos;n_neighbors&apos;: 10, &apos;weights&apos;: &apos;uniform&apos;, &apos;leaf_size&apos;: 40, &apos;algorithm&apos;: &apos;ball_tree&apos;, &apos;p&apos;: 1},
+ mean: 0.86325, std: 0.00958, params: {&apos;n_neighbors&apos;: 10, &apos;weights&apos;: &apos;distance&apos;, &apos;leaf_size&apos;: 40, &apos;algorithm&apos;: &apos;ball_tree&apos;, &apos;p&apos;: 1},
+ mean: 0.86325, std: 0.00958, params: {&apos;n_neighbors&apos;: 10, &apos;weights&apos;: &apos;uniform&apos;, &apos;leaf_size&apos;: 40, &apos;algorithm&apos;: &apos;ball_tree&apos;, &apos;p&apos;: 2},
+ mean: 0.86325, std: 0.00958, params: {&apos;n_neighbors&apos;: 10, &apos;weights&apos;: &apos;distance&apos;, &apos;leaf_size&apos;: 40, &apos;algorithm&apos;: &apos;ball_tree&apos;, &apos;p&apos;: 2},
+ mean: 0.86325, std: 0.00958, params: {&apos;n_neighbors&apos;: 10, &apos;weights&apos;: &apos;uniform&apos;, &apos;leaf_size&apos;: 40, &apos;algorithm&apos;: &apos;ball_tree&apos;, &apos;p&apos;: 3},
+ mean: 0.86325, std: 0.00958, params: {&apos;n_neighbors&apos;: 10, &apos;weights&apos;: &apos;distance&apos;, &apos;leaf_size&apos;: 40, &apos;algorithm&apos;: &apos;ball_tree&apos;, &apos;p&apos;: 3},
+ mean: 0.85470, std: 0.05107, params: {&apos;n_neighbors&apos;: 1, &apos;weights&apos;: &apos;uniform&apos;, &apos;leaf_size&apos;: 10, &apos;algorithm&apos;: &apos;kd_tree&apos;, &apos;p&apos;: 1},
+ mean: 0.85470, std: 0.05107, params: {&apos;n_neighbors&apos;: 1, &apos;weights&apos;: &apos;distance&apos;, &apos;leaf_size&apos;: 10, &apos;algorithm&apos;: &apos;kd_tree&apos;, &apos;p&apos;: 1},
+ mean: 0.85470, std: 0.06114, params: {&apos;n_neighbors&apos;: 1, &apos;weights&apos;: &apos;uniform&apos;, &apos;leaf_size&apos;: 10, &apos;algorithm&apos;: &apos;kd_tree&apos;, &apos;p&apos;: 2},
+ mean: 0.85470, std: 0.06114, params: {&apos;n_neighbors&apos;: 1, &apos;weights&apos;: &apos;distance&apos;, &apos;leaf_size&apos;: 10, &apos;algorithm&apos;: &apos;kd_tree&apos;, &apos;p&apos;: 2},
+ mean: 0.86325, std: 0.05035, params: {&apos;n_neighbors&apos;: 1, &apos;weights&apos;: &apos;uniform&apos;, &apos;leaf_size&apos;: 10, &apos;algorithm&apos;: &apos;kd_tree&apos;, &apos;p&apos;: 3},
+ mean: 0.86325, std: 0.05035, params: {&apos;n_neighbors&apos;: 1, &apos;weights&apos;: &apos;distance&apos;, &apos;leaf_size&apos;: 10, &apos;algorithm&apos;: &apos;kd_tree&apos;, &apos;p&apos;: 3},
+ mean: 0.86325, std: 0.01481, params: {&apos;n_neighbors&apos;: 5, &apos;weights&apos;: &apos;uniform&apos;, &apos;leaf_size&apos;: 10, &apos;algorithm&apos;: &apos;kd_tree&apos;, &apos;p&apos;: 1},
+ mean: 0.86325, std: 0.02977, params: {&apos;n_neighbors&apos;: 5, &apos;weights&apos;: &apos;distance&apos;, &apos;leaf_size&apos;: 10, &apos;algorithm&apos;: &apos;kd_tree&apos;, &apos;p&apos;: 1},
+ mean: 0.85470, std: 0.01256, params: {&apos;n_neighbors&apos;: 5, &apos;weights&apos;: &apos;uniform&apos;, &apos;leaf_size&apos;: 10, &apos;algorithm&apos;: &apos;kd_tree&apos;, &apos;p&apos;: 2},
+ mean: 0.86325, std: 0.02977, params: {&apos;n_neighbors&apos;: 5, &apos;weights&apos;: &apos;distance&apos;, &apos;leaf_size&apos;: 10, &apos;algorithm&apos;: &apos;kd_tree&apos;, &apos;p&apos;: 2},
+ mean: 0.85470, std: 0.01256, params: {&apos;n_neighbors&apos;: 5, &apos;weights&apos;: &apos;uniform&apos;, &apos;leaf_size&apos;: 10, &apos;algorithm&apos;: &apos;kd_tree&apos;, &apos;p&apos;: 3},
+ mean: 0.86325, std: 0.02977, params: {&apos;n_neighbors&apos;: 5, &apos;weights&apos;: &apos;distance&apos;, &apos;leaf_size&apos;: 10, &apos;algorithm&apos;: &apos;kd_tree&apos;, &apos;p&apos;: 3},
+ mean: 0.86325, std: 0.00958, params: {&apos;n_neighbors&apos;: 10, &apos;weights&apos;: &apos;uniform&apos;, &apos;leaf_size&apos;: 10, &apos;algorithm&apos;: &apos;kd_tree&apos;, &apos;p&apos;: 1},
+ mean: 0.86325, std: 0.00958, params: {&apos;n_neighbors&apos;: 10, &apos;weights&apos;: &apos;distance&apos;, &apos;leaf_size&apos;: 10, &apos;algorithm&apos;: &apos;kd_tree&apos;, &apos;p&apos;: 1},
+ mean: 0.86325, std: 0.00958, params: {&apos;n_neighbors&apos;: 10, &apos;weights&apos;: &apos;uniform&apos;, &apos;leaf_size&apos;: 10, &apos;algorithm&apos;: &apos;kd_tree&apos;, &apos;p&apos;: 2},
+ mean: 0.86325, std: 0.00958, params: {&apos;n_neighbors&apos;: 10, &apos;weights&apos;: &apos;distance&apos;, &apos;leaf_size&apos;: 10, &apos;algorithm&apos;: &apos;kd_tree&apos;, &apos;p&apos;: 2},
+ mean: 0.86325, std: 0.00958, params: {&apos;n_neighbors&apos;: 10, &apos;weights&apos;: &apos;uniform&apos;, &apos;leaf_size&apos;: 10, &apos;algorithm&apos;: &apos;kd_tree&apos;, &apos;p&apos;: 3},
+ mean: 0.86325, std: 0.00958, params: {&apos;n_neighbors&apos;: 10, &apos;weights&apos;: &apos;distance&apos;, &apos;leaf_size&apos;: 10, &apos;algorithm&apos;: &apos;kd_tree&apos;, &apos;p&apos;: 3},
+ mean: 0.85470, std: 0.05107, params: {&apos;n_neighbors&apos;: 1, &apos;weights&apos;: &apos;uniform&apos;, &apos;leaf_size&apos;: 20, &apos;algorithm&apos;: &apos;kd_tree&apos;, &apos;p&apos;: 1},
+ mean: 0.85470, std: 0.05107, params: {&apos;n_neighbors&apos;: 1, &apos;weights&apos;: &apos;distance&apos;, &apos;leaf_size&apos;: 20, &apos;algorithm&apos;: &apos;kd_tree&apos;, &apos;p&apos;: 1},
+ mean: 0.85470, std: 0.06114, params: {&apos;n_neighbors&apos;: 1, &apos;weights&apos;: &apos;uniform&apos;, &apos;leaf_size&apos;: 20, &apos;algorithm&apos;: &apos;kd_tree&apos;, &apos;p&apos;: 2},
+ mean: 0.85470, std: 0.06114, params: {&apos;n_neighbors&apos;: 1, &apos;weights&apos;: &apos;distance&apos;, &apos;leaf_size&apos;: 20, &apos;algorithm&apos;: &apos;kd_tree&apos;, &apos;p&apos;: 2},
+ mean: 0.86325, std: 0.05035, params: {&apos;n_neighbors&apos;: 1, &apos;weights&apos;: &apos;uniform&apos;, &apos;leaf_size&apos;: 20, &apos;algorithm&apos;: &apos;kd_tree&apos;, &apos;p&apos;: 3},
+ mean: 0.86325, std: 0.05035, params: {&apos;n_neighbors&apos;: 1, &apos;weights&apos;: &apos;distance&apos;, &apos;leaf_size&apos;: 20, &apos;algorithm&apos;: &apos;kd_tree&apos;, &apos;p&apos;: 3},
+ mean: 0.86325, std: 0.01481, params: {&apos;n_neighbors&apos;: 5, &apos;weights&apos;: &apos;uniform&apos;, &apos;leaf_size&apos;: 20, &apos;algorithm&apos;: &apos;kd_tree&apos;, &apos;p&apos;: 1},
+ mean: 0.86325, std: 0.02977, params: {&apos;n_neighbors&apos;: 5, &apos;weights&apos;: &apos;distance&apos;, &apos;leaf_size&apos;: 20, &apos;algorithm&apos;: &apos;kd_tree&apos;, &apos;p&apos;: 1},
+ mean: 0.85470, std: 0.01256, params: {&apos;n_neighbors&apos;: 5, &apos;weights&apos;: &apos;uniform&apos;, &apos;leaf_size&apos;: 20, &apos;algorithm&apos;: &apos;kd_tree&apos;, &apos;p&apos;: 2},
+ mean: 0.86325, std: 0.02977, params: {&apos;n_neighbors&apos;: 5, &apos;weights&apos;: &apos;distance&apos;, &apos;leaf_size&apos;: 20, &apos;algorithm&apos;: &apos;kd_tree&apos;, &apos;p&apos;: 2},
+ mean: 0.85470, std: 0.01256, params: {&apos;n_neighbors&apos;: 5, &apos;weights&apos;: &apos;uniform&apos;, &apos;leaf_size&apos;: 20, &apos;algorithm&apos;: &apos;kd_tree&apos;, &apos;p&apos;: 3},
+ mean: 0.86325, std: 0.02977, params: {&apos;n_neighbors&apos;: 5, &apos;weights&apos;: &apos;distance&apos;, &apos;leaf_size&apos;: 20, &apos;algorithm&apos;: &apos;kd_tree&apos;, &apos;p&apos;: 3},
+ mean: 0.86325, std: 0.00958, params: {&apos;n_neighbors&apos;: 10, &apos;weights&apos;: &apos;uniform&apos;, &apos;leaf_size&apos;: 20, &apos;algorithm&apos;: &apos;kd_tree&apos;, &apos;p&apos;: 1},
+ mean: 0.86325, std: 0.00958, params: {&apos;n_neighbors&apos;: 10, &apos;weights&apos;: &apos;distance&apos;, &apos;leaf_size&apos;: 20, &apos;algorithm&apos;: &apos;kd_tree&apos;, &apos;p&apos;: 1},
+ mean: 0.86325, std: 0.00958, params: {&apos;n_neighbors&apos;: 10, &apos;weights&apos;: &apos;uniform&apos;, &apos;leaf_size&apos;: 20, &apos;algorithm&apos;: &apos;kd_tree&apos;, &apos;p&apos;: 2},
+ mean: 0.86325, std: 0.00958, params: {&apos;n_neighbors&apos;: 10, &apos;weights&apos;: &apos;distance&apos;, &apos;leaf_size&apos;: 20, &apos;algorithm&apos;: &apos;kd_tree&apos;, &apos;p&apos;: 2},
+ mean: 0.86325, std: 0.00958, params: {&apos;n_neighbors&apos;: 10, &apos;weights&apos;: &apos;uniform&apos;, &apos;leaf_size&apos;: 20, &apos;algorithm&apos;: &apos;kd_tree&apos;, &apos;p&apos;: 3},
+ mean: 0.86325, std: 0.00958, params: {&apos;n_neighbors&apos;: 10, &apos;weights&apos;: &apos;distance&apos;, &apos;leaf_size&apos;: 20, &apos;algorithm&apos;: &apos;kd_tree&apos;, &apos;p&apos;: 3},
+ mean: 0.85470, std: 0.05107, params: {&apos;n_neighbors&apos;: 1, &apos;weights&apos;: &apos;uniform&apos;, &apos;leaf_size&apos;: 30, &apos;algorithm&apos;: &apos;kd_tree&apos;, &apos;p&apos;: 1},
+ mean: 0.85470, std: 0.05107, params: {&apos;n_neighbors&apos;: 1, &apos;weights&apos;: &apos;distance&apos;, &apos;leaf_size&apos;: 30, &apos;algorithm&apos;: &apos;kd_tree&apos;, &apos;p&apos;: 1},
+ mean: 0.85470, std: 0.06114, params: {&apos;n_neighbors&apos;: 1, &apos;weights&apos;: &apos;uniform&apos;, &apos;leaf_size&apos;: 30, &apos;algorithm&apos;: &apos;kd_tree&apos;, &apos;p&apos;: 2},
+ mean: 0.85470, std: 0.06114, params: {&apos;n_neighbors&apos;: 1, &apos;weights&apos;: &apos;distance&apos;, &apos;leaf_size&apos;: 30, &apos;algorithm&apos;: &apos;kd_tree&apos;, &apos;p&apos;: 2},
+ mean: 0.86325, std: 0.05035, params: {&apos;n_neighbors&apos;: 1, &apos;weights&apos;: &apos;uniform&apos;, &apos;leaf_size&apos;: 30, &apos;algorithm&apos;: &apos;kd_tree&apos;, &apos;p&apos;: 3},
+ mean: 0.86325, std: 0.05035, params: {&apos;n_neighbors&apos;: 1, &apos;weights&apos;: &apos;distance&apos;, &apos;leaf_size&apos;: 30, &apos;algorithm&apos;: &apos;kd_tree&apos;, &apos;p&apos;: 3},
+ mean: 0.86325, std: 0.01481, params: {&apos;n_neighbors&apos;: 5, &apos;weights&apos;: &apos;uniform&apos;, &apos;leaf_size&apos;: 30, &apos;algorithm&apos;: &apos;kd_tree&apos;, &apos;p&apos;: 1},
+ mean: 0.86325, std: 0.02977, params: {&apos;n_neighbors&apos;: 5, &apos;weights&apos;: &apos;distance&apos;, &apos;leaf_size&apos;: 30, &apos;algorithm&apos;: &apos;kd_tree&apos;, &apos;p&apos;: 1},
+ mean: 0.85470, std: 0.01256, params: {&apos;n_neighbors&apos;: 5, &apos;weights&apos;: &apos;uniform&apos;, &apos;leaf_size&apos;: 30, &apos;algorithm&apos;: &apos;kd_tree&apos;, &apos;p&apos;: 2},
+ mean: 0.86325, std: 0.02977, params: {&apos;n_neighbors&apos;: 5, &apos;weights&apos;: &apos;distance&apos;, &apos;leaf_size&apos;: 30, &apos;algorithm&apos;: &apos;kd_tree&apos;, &apos;p&apos;: 2},
+ mean: 0.85470, std: 0.01256, params: {&apos;n_neighbors&apos;: 5, &apos;weights&apos;: &apos;uniform&apos;, &apos;leaf_size&apos;: 30, &apos;algorithm&apos;: &apos;kd_tree&apos;, &apos;p&apos;: 3},
+ mean: 0.86325, std: 0.02977, params: {&apos;n_neighbors&apos;: 5, &apos;weights&apos;: &apos;distance&apos;, &apos;leaf_size&apos;: 30, &apos;algorithm&apos;: &apos;kd_tree&apos;, &apos;p&apos;: 3},
+ mean: 0.86325, std: 0.00958, params: {&apos;n_neighbors&apos;: 10, &apos;weights&apos;: &apos;uniform&apos;, &apos;leaf_size&apos;: 30, &apos;algorithm&apos;: &apos;kd_tree&apos;, &apos;p&apos;: 1},
+ mean: 0.86325, std: 0.00958, params: {&apos;n_neighbors&apos;: 10, &apos;weights&apos;: &apos;distance&apos;, &apos;leaf_size&apos;: 30, &apos;algorithm&apos;: &apos;kd_tree&apos;, &apos;p&apos;: 1},
+ mean: 0.86325, std: 0.00958, params: {&apos;n_neighbors&apos;: 10, &apos;weights&apos;: &apos;uniform&apos;, &apos;leaf_size&apos;: 30, &apos;algorithm&apos;: &apos;kd_tree&apos;, &apos;p&apos;: 2},
+ mean: 0.86325, std: 0.00958, params: {&apos;n_neighbors&apos;: 10, &apos;weights&apos;: &apos;distance&apos;, &apos;leaf_size&apos;: 30, &apos;algorithm&apos;: &apos;kd_tree&apos;, &apos;p&apos;: 2},
+ mean: 0.86325, std: 0.00958, params: {&apos;n_neighbors&apos;: 10, &apos;weights&apos;: &apos;uniform&apos;, &apos;leaf_size&apos;: 30, &apos;algorithm&apos;: &apos;kd_tree&apos;, &apos;p&apos;: 3},
+ mean: 0.86325, std: 0.00958, params: {&apos;n_neighbors&apos;: 10, &apos;weights&apos;: &apos;distance&apos;, &apos;leaf_size&apos;: 30, &apos;algorithm&apos;: &apos;kd_tree&apos;, &apos;p&apos;: 3},
+ mean: 0.85470, std: 0.05107, params: {&apos;n_neighbors&apos;: 1, &apos;weights&apos;: &apos;uniform&apos;, &apos;leaf_size&apos;: 40, &apos;algorithm&apos;: &apos;kd_tree&apos;, &apos;p&apos;: 1},
+ mean: 0.85470, std: 0.05107, params: {&apos;n_neighbors&apos;: 1, &apos;weights&apos;: &apos;distance&apos;, &apos;leaf_size&apos;: 40, &apos;algorithm&apos;: &apos;kd_tree&apos;, &apos;p&apos;: 1},
+ mean: 0.85470, std: 0.06114, params: {&apos;n_neighbors&apos;: 1, &apos;weights&apos;: &apos;uniform&apos;, &apos;leaf_size&apos;: 40, &apos;algorithm&apos;: &apos;kd_tree&apos;, &apos;p&apos;: 2},
+ mean: 0.85470, std: 0.06114, params: {&apos;n_neighbors&apos;: 1, &apos;weights&apos;: &apos;distance&apos;, &apos;leaf_size&apos;: 40, &apos;algorithm&apos;: &apos;kd_tree&apos;, &apos;p&apos;: 2},
+ mean: 0.86325, std: 0.05035, params: {&apos;n_neighbors&apos;: 1, &apos;weights&apos;: &apos;uniform&apos;, &apos;leaf_size&apos;: 40, &apos;algorithm&apos;: &apos;kd_tree&apos;, &apos;p&apos;: 3},
+ mean: 0.86325, std: 0.05035, params: {&apos;n_neighbors&apos;: 1, &apos;weights&apos;: &apos;distance&apos;, &apos;leaf_size&apos;: 40, &apos;algorithm&apos;: &apos;kd_tree&apos;, &apos;p&apos;: 3},
+ mean: 0.86325, std: 0.01481, params: {&apos;n_neighbors&apos;: 5, &apos;weights&apos;: &apos;uniform&apos;, &apos;leaf_size&apos;: 40, &apos;algorithm&apos;: &apos;kd_tree&apos;, &apos;p&apos;: 1},
+ mean: 0.86325, std: 0.02977, params: {&apos;n_neighbors&apos;: 5, &apos;weights&apos;: &apos;distance&apos;, &apos;leaf_size&apos;: 40, &apos;algorithm&apos;: &apos;kd_tree&apos;, &apos;p&apos;: 1},
+ mean: 0.85470, std: 0.01256, params: {&apos;n_neighbors&apos;: 5, &apos;weights&apos;: &apos;uniform&apos;, &apos;leaf_size&apos;: 40, &apos;algorithm&apos;: &apos;kd_tree&apos;, &apos;p&apos;: 2},
+ mean: 0.86325, std: 0.02977, params: {&apos;n_neighbors&apos;: 5, &apos;weights&apos;: &apos;distance&apos;, &apos;leaf_size&apos;: 40, &apos;algorithm&apos;: &apos;kd_tree&apos;, &apos;p&apos;: 2},
+ mean: 0.85470, std: 0.01256, params: {&apos;n_neighbors&apos;: 5, &apos;weights&apos;: &apos;uniform&apos;, &apos;leaf_size&apos;: 40, &apos;algorithm&apos;: &apos;kd_tree&apos;, &apos;p&apos;: 3},
+ mean: 0.86325, std: 0.02977, params: {&apos;n_neighbors&apos;: 5, &apos;weights&apos;: &apos;distance&apos;, &apos;leaf_size&apos;: 40, &apos;algorithm&apos;: &apos;kd_tree&apos;, &apos;p&apos;: 3},
+ mean: 0.86325, std: 0.00958, params: {&apos;n_neighbors&apos;: 10, &apos;weights&apos;: &apos;uniform&apos;, &apos;leaf_size&apos;: 40, &apos;algorithm&apos;: &apos;kd_tree&apos;, &apos;p&apos;: 1},
+ mean: 0.86325, std: 0.00958, params: {&apos;n_neighbors&apos;: 10, &apos;weights&apos;: &apos;distance&apos;, &apos;leaf_size&apos;: 40, &apos;algorithm&apos;: &apos;kd_tree&apos;, &apos;p&apos;: 1},
+ mean: 0.86325, std: 0.00958, params: {&apos;n_neighbors&apos;: 10, &apos;weights&apos;: &apos;uniform&apos;, &apos;leaf_size&apos;: 40, &apos;algorithm&apos;: &apos;kd_tree&apos;, &apos;p&apos;: 2},
+ mean: 0.86325, std: 0.00958, params: {&apos;n_neighbors&apos;: 10, &apos;weights&apos;: &apos;distance&apos;, &apos;leaf_size&apos;: 40, &apos;algorithm&apos;: &apos;kd_tree&apos;, &apos;p&apos;: 2},
+ mean: 0.86325, std: 0.00958, params: {&apos;n_neighbors&apos;: 10, &apos;weights&apos;: &apos;uniform&apos;, &apos;leaf_size&apos;: 40, &apos;algorithm&apos;: &apos;kd_tree&apos;, &apos;p&apos;: 3},
+ mean: 0.86325, std: 0.00958, params: {&apos;n_neighbors&apos;: 10, &apos;weights&apos;: &apos;distance&apos;, &apos;leaf_size&apos;: 40, &apos;algorithm&apos;: &apos;kd_tree&apos;, &apos;p&apos;: 3},
+ mean: 0.85470, std: 0.05107, params: {&apos;n_neighbors&apos;: 1, &apos;weights&apos;: &apos;uniform&apos;, &apos;leaf_size&apos;: 10, &apos;algorithm&apos;: &apos;brute&apos;, &apos;p&apos;: 1},
+ mean: 0.85470, std: 0.05107, params: {&apos;n_neighbors&apos;: 1, &apos;weights&apos;: &apos;distance&apos;, &apos;leaf_size&apos;: 10, &apos;algorithm&apos;: &apos;brute&apos;, &apos;p&apos;: 1},
+ mean: 0.85470, std: 0.06114, params: {&apos;n_neighbors&apos;: 1, &apos;weights&apos;: &apos;uniform&apos;, &apos;leaf_size&apos;: 10, &apos;algorithm&apos;: &apos;brute&apos;, &apos;p&apos;: 2},
+ mean: 0.85470, std: 0.06114, params: {&apos;n_neighbors&apos;: 1, &apos;weights&apos;: &apos;distance&apos;, &apos;leaf_size&apos;: 10, &apos;algorithm&apos;: &apos;brute&apos;, &apos;p&apos;: 2},
+ mean: 0.86325, std: 0.05035, params: {&apos;n_neighbors&apos;: 1, &apos;weights&apos;: &apos;uniform&apos;, &apos;leaf_size&apos;: 10, &apos;algorithm&apos;: &apos;brute&apos;, &apos;p&apos;: 3},
+ mean: 0.86325, std: 0.05035, params: {&apos;n_neighbors&apos;: 1, &apos;weights&apos;: &apos;distance&apos;, &apos;leaf_size&apos;: 10, &apos;algorithm&apos;: &apos;brute&apos;, &apos;p&apos;: 3},
+ mean: 0.86325, std: 0.01481, params: {&apos;n_neighbors&apos;: 5, &apos;weights&apos;: &apos;uniform&apos;, &apos;leaf_size&apos;: 10, &apos;algorithm&apos;: &apos;brute&apos;, &apos;p&apos;: 1},
+ mean: 0.86325, std: 0.02977, params: {&apos;n_neighbors&apos;: 5, &apos;weights&apos;: &apos;distance&apos;, &apos;leaf_size&apos;: 10, &apos;algorithm&apos;: &apos;brute&apos;, &apos;p&apos;: 1},
+ mean: 0.85470, std: 0.01256, params: {&apos;n_neighbors&apos;: 5, &apos;weights&apos;: &apos;uniform&apos;, &apos;leaf_size&apos;: 10, &apos;algorithm&apos;: &apos;brute&apos;, &apos;p&apos;: 2},
+ mean: 0.86325, std: 0.02977, params: {&apos;n_neighbors&apos;: 5, &apos;weights&apos;: &apos;distance&apos;, &apos;leaf_size&apos;: 10, &apos;algorithm&apos;: &apos;brute&apos;, &apos;p&apos;: 2},
+ mean: 0.85470, std: 0.01256, params: {&apos;n_neighbors&apos;: 5, &apos;weights&apos;: &apos;uniform&apos;, &apos;leaf_size&apos;: 10, &apos;algorithm&apos;: &apos;brute&apos;, &apos;p&apos;: 3},
+ mean: 0.86325, std: 0.02977, params: {&apos;n_neighbors&apos;: 5, &apos;weights&apos;: &apos;distance&apos;, &apos;leaf_size&apos;: 10, &apos;algorithm&apos;: &apos;brute&apos;, &apos;p&apos;: 3},
+ mean: 0.86325, std: 0.00958, params: {&apos;n_neighbors&apos;: 10, &apos;weights&apos;: &apos;uniform&apos;, &apos;leaf_size&apos;: 10, &apos;algorithm&apos;: &apos;brute&apos;, &apos;p&apos;: 1},
+ mean: 0.86325, std: 0.00958, params: {&apos;n_neighbors&apos;: 10, &apos;weights&apos;: &apos;distance&apos;, &apos;leaf_size&apos;: 10, &apos;algorithm&apos;: &apos;brute&apos;, &apos;p&apos;: 1},
+ mean: 0.86325, std: 0.00958, params: {&apos;n_neighbors&apos;: 10, &apos;weights&apos;: &apos;uniform&apos;, &apos;leaf_size&apos;: 10, &apos;algorithm&apos;: &apos;brute&apos;, &apos;p&apos;: 2},
+ mean: 0.86325, std: 0.00958, params: {&apos;n_neighbors&apos;: 10, &apos;weights&apos;: &apos;distance&apos;, &apos;leaf_size&apos;: 10, &apos;algorithm&apos;: &apos;brute&apos;, &apos;p&apos;: 2},
+ mean: 0.86325, std: 0.00958, params: {&apos;n_neighbors&apos;: 10, &apos;weights&apos;: &apos;uniform&apos;, &apos;leaf_size&apos;: 10, &apos;algorithm&apos;: &apos;brute&apos;, &apos;p&apos;: 3},
+ mean: 0.86325, std: 0.00958, params: {&apos;n_neighbors&apos;: 10, &apos;weights&apos;: &apos;distance&apos;, &apos;leaf_size&apos;: 10, &apos;algorithm&apos;: &apos;brute&apos;, &apos;p&apos;: 3},
+ mean: 0.85470, std: 0.05107, params: {&apos;n_neighbors&apos;: 1, &apos;weights&apos;: &apos;uniform&apos;, &apos;leaf_size&apos;: 20, &apos;algorithm&apos;: &apos;brute&apos;, &apos;p&apos;: 1},
+ mean: 0.85470, std: 0.05107, params: {&apos;n_neighbors&apos;: 1, &apos;weights&apos;: &apos;distance&apos;, &apos;leaf_size&apos;: 20, &apos;algorithm&apos;: &apos;brute&apos;, &apos;p&apos;: 1},
+ mean: 0.85470, std: 0.06114, params: {&apos;n_neighbors&apos;: 1, &apos;weights&apos;: &apos;uniform&apos;, &apos;leaf_size&apos;: 20, &apos;algorithm&apos;: &apos;brute&apos;, &apos;p&apos;: 2},
+ mean: 0.85470, std: 0.06114, params: {&apos;n_neighbors&apos;: 1, &apos;weights&apos;: &apos;distance&apos;, &apos;leaf_size&apos;: 20, &apos;algorithm&apos;: &apos;brute&apos;, &apos;p&apos;: 2},
+ mean: 0.86325, std: 0.05035, params: {&apos;n_neighbors&apos;: 1, &apos;weights&apos;: &apos;uniform&apos;, &apos;leaf_size&apos;: 20, &apos;algorithm&apos;: &apos;brute&apos;, &apos;p&apos;: 3},
+ mean: 0.86325, std: 0.05035, params: {&apos;n_neighbors&apos;: 1, &apos;weights&apos;: &apos;distance&apos;, &apos;leaf_size&apos;: 20, &apos;algorithm&apos;: &apos;brute&apos;, &apos;p&apos;: 3},
+ mean: 0.86325, std: 0.01481, params: {&apos;n_neighbors&apos;: 5, &apos;weights&apos;: &apos;uniform&apos;, &apos;leaf_size&apos;: 20, &apos;algorithm&apos;: &apos;brute&apos;, &apos;p&apos;: 1},
+ mean: 0.86325, std: 0.02977, params: {&apos;n_neighbors&apos;: 5, &apos;weights&apos;: &apos;distance&apos;, &apos;leaf_size&apos;: 20, &apos;algorithm&apos;: &apos;brute&apos;, &apos;p&apos;: 1},
+ mean: 0.85470, std: 0.01256, params: {&apos;n_neighbors&apos;: 5, &apos;weights&apos;: &apos;uniform&apos;, &apos;leaf_size&apos;: 20, &apos;algorithm&apos;: &apos;brute&apos;, &apos;p&apos;: 2},
+ mean: 0.86325, std: 0.02977, params: {&apos;n_neighbors&apos;: 5, &apos;weights&apos;: &apos;distance&apos;, &apos;leaf_size&apos;: 20, &apos;algorithm&apos;: &apos;brute&apos;, &apos;p&apos;: 2},
+ mean: 0.85470, std: 0.01256, params: {&apos;n_neighbors&apos;: 5, &apos;weights&apos;: &apos;uniform&apos;, &apos;leaf_size&apos;: 20, &apos;algorithm&apos;: &apos;brute&apos;, &apos;p&apos;: 3},
+ mean: 0.86325, std: 0.02977, params: {&apos;n_neighbors&apos;: 5, &apos;weights&apos;: &apos;distance&apos;, &apos;leaf_size&apos;: 20, &apos;algorithm&apos;: &apos;brute&apos;, &apos;p&apos;: 3},
+ mean: 0.86325, std: 0.00958, params: {&apos;n_neighbors&apos;: 10, &apos;weights&apos;: &apos;uniform&apos;, &apos;leaf_size&apos;: 20, &apos;algorithm&apos;: &apos;brute&apos;, &apos;p&apos;: 1},
+ mean: 0.86325, std: 0.00958, params: {&apos;n_neighbors&apos;: 10, &apos;weights&apos;: &apos;distance&apos;, &apos;leaf_size&apos;: 20, &apos;algorithm&apos;: &apos;brute&apos;, &apos;p&apos;: 1},
+ mean: 0.86325, std: 0.00958, params: {&apos;n_neighbors&apos;: 10, &apos;weights&apos;: &apos;uniform&apos;, &apos;leaf_size&apos;: 20, &apos;algorithm&apos;: &apos;brute&apos;, &apos;p&apos;: 2},
+ mean: 0.86325, std: 0.00958, params: {&apos;n_neighbors&apos;: 10, &apos;weights&apos;: &apos;distance&apos;, &apos;leaf_size&apos;: 20, &apos;algorithm&apos;: &apos;brute&apos;, &apos;p&apos;: 2},
+ mean: 0.86325, std: 0.00958, params: {&apos;n_neighbors&apos;: 10, &apos;weights&apos;: &apos;uniform&apos;, &apos;leaf_size&apos;: 20, &apos;algorithm&apos;: &apos;brute&apos;, &apos;p&apos;: 3},
+ mean: 0.86325, std: 0.00958, params: {&apos;n_neighbors&apos;: 10, &apos;weights&apos;: &apos;distance&apos;, &apos;leaf_size&apos;: 20, &apos;algorithm&apos;: &apos;brute&apos;, &apos;p&apos;: 3},
+ mean: 0.85470, std: 0.05107, params: {&apos;n_neighbors&apos;: 1, &apos;weights&apos;: &apos;uniform&apos;, &apos;leaf_size&apos;: 30, &apos;algorithm&apos;: &apos;brute&apos;, &apos;p&apos;: 1},
+ mean: 0.85470, std: 0.05107, params: {&apos;n_neighbors&apos;: 1, &apos;weights&apos;: &apos;distance&apos;, &apos;leaf_size&apos;: 30, &apos;algorithm&apos;: &apos;brute&apos;, &apos;p&apos;: 1},
+ mean: 0.85470, std: 0.06114, params: {&apos;n_neighbors&apos;: 1, &apos;weights&apos;: &apos;uniform&apos;, &apos;leaf_size&apos;: 30, &apos;algorithm&apos;: &apos;brute&apos;, &apos;p&apos;: 2},
+ mean: 0.85470, std: 0.06114, params: {&apos;n_neighbors&apos;: 1, &apos;weights&apos;: &apos;distance&apos;, &apos;leaf_size&apos;: 30, &apos;algorithm&apos;: &apos;brute&apos;, &apos;p&apos;: 2},
+ mean: 0.86325, std: 0.05035, params: {&apos;n_neighbors&apos;: 1, &apos;weights&apos;: &apos;uniform&apos;, &apos;leaf_size&apos;: 30, &apos;algorithm&apos;: &apos;brute&apos;, &apos;p&apos;: 3},
+ mean: 0.86325, std: 0.05035, params: {&apos;n_neighbors&apos;: 1, &apos;weights&apos;: &apos;distance&apos;, &apos;leaf_size&apos;: 30, &apos;algorithm&apos;: &apos;brute&apos;, &apos;p&apos;: 3},
+ mean: 0.86325, std: 0.01481, params: {&apos;n_neighbors&apos;: 5, &apos;weights&apos;: &apos;uniform&apos;, &apos;leaf_size&apos;: 30, &apos;algorithm&apos;: &apos;brute&apos;, &apos;p&apos;: 1},
+ mean: 0.86325, std: 0.02977, params: {&apos;n_neighbors&apos;: 5, &apos;weights&apos;: &apos;distance&apos;, &apos;leaf_size&apos;: 30, &apos;algorithm&apos;: &apos;brute&apos;, &apos;p&apos;: 1},
+ mean: 0.85470, std: 0.01256, params: {&apos;n_neighbors&apos;: 5, &apos;weights&apos;: &apos;uniform&apos;, &apos;leaf_size&apos;: 30, &apos;algorithm&apos;: &apos;brute&apos;, &apos;p&apos;: 2},
+ mean: 0.86325, std: 0.02977, params: {&apos;n_neighbors&apos;: 5, &apos;weights&apos;: &apos;distance&apos;, &apos;leaf_size&apos;: 30, &apos;algorithm&apos;: &apos;brute&apos;, &apos;p&apos;: 2},
+ mean: 0.85470, std: 0.01256, params: {&apos;n_neighbors&apos;: 5, &apos;weights&apos;: &apos;uniform&apos;, &apos;leaf_size&apos;: 30, &apos;algorithm&apos;: &apos;brute&apos;, &apos;p&apos;: 3},
+ mean: 0.86325, std: 0.02977, params: {&apos;n_neighbors&apos;: 5, &apos;weights&apos;: &apos;distance&apos;, &apos;leaf_size&apos;: 30, &apos;algorithm&apos;: &apos;brute&apos;, &apos;p&apos;: 3},
+ mean: 0.86325, std: 0.00958, params: {&apos;n_neighbors&apos;: 10, &apos;weights&apos;: &apos;uniform&apos;, &apos;leaf_size&apos;: 30, &apos;algorithm&apos;: &apos;brute&apos;, &apos;p&apos;: 1},
+ mean: 0.86325, std: 0.00958, params: {&apos;n_neighbors&apos;: 10, &apos;weights&apos;: &apos;distance&apos;, &apos;leaf_size&apos;: 30, &apos;algorithm&apos;: &apos;brute&apos;, &apos;p&apos;: 1},
+ mean: 0.86325, std: 0.00958, params: {&apos;n_neighbors&apos;: 10, &apos;weights&apos;: &apos;uniform&apos;, &apos;leaf_size&apos;: 30, &apos;algorithm&apos;: &apos;brute&apos;, &apos;p&apos;: 2},
+ mean: 0.86325, std: 0.00958, params: {&apos;n_neighbors&apos;: 10, &apos;weights&apos;: &apos;distance&apos;, &apos;leaf_size&apos;: 30, &apos;algorithm&apos;: &apos;brute&apos;, &apos;p&apos;: 2},
+ mean: 0.86325, std: 0.00958, params: {&apos;n_neighbors&apos;: 10, &apos;weights&apos;: &apos;uniform&apos;, &apos;leaf_size&apos;: 30, &apos;algorithm&apos;: &apos;brute&apos;, &apos;p&apos;: 3},
+ mean: 0.86325, std: 0.00958, params: {&apos;n_neighbors&apos;: 10, &apos;weights&apos;: &apos;distance&apos;, &apos;leaf_size&apos;: 30, &apos;algorithm&apos;: &apos;brute&apos;, &apos;p&apos;: 3},
+ mean: 0.85470, std: 0.05107, params: {&apos;n_neighbors&apos;: 1, &apos;weights&apos;: &apos;uniform&apos;, &apos;leaf_size&apos;: 40, &apos;algorithm&apos;: &apos;brute&apos;, &apos;p&apos;: 1},
+ mean: 0.85470, std: 0.05107, params: {&apos;n_neighbors&apos;: 1, &apos;weights&apos;: &apos;distance&apos;, &apos;leaf_size&apos;: 40, &apos;algorithm&apos;: &apos;brute&apos;, &apos;p&apos;: 1},
+ mean: 0.85470, std: 0.06114, params: {&apos;n_neighbors&apos;: 1, &apos;weights&apos;: &apos;uniform&apos;, &apos;leaf_size&apos;: 40, &apos;algorithm&apos;: &apos;brute&apos;, &apos;p&apos;: 2},
+ mean: 0.85470, std: 0.06114, params: {&apos;n_neighbors&apos;: 1, &apos;weights&apos;: &apos;distance&apos;, &apos;leaf_size&apos;: 40, &apos;algorithm&apos;: &apos;brute&apos;, &apos;p&apos;: 2},
+ mean: 0.86325, std: 0.05035, params: {&apos;n_neighbors&apos;: 1, &apos;weights&apos;: &apos;uniform&apos;, &apos;leaf_size&apos;: 40, &apos;algorithm&apos;: &apos;brute&apos;, &apos;p&apos;: 3},
+ mean: 0.86325, std: 0.05035, params: {&apos;n_neighbors&apos;: 1, &apos;weights&apos;: &apos;distance&apos;, &apos;leaf_size&apos;: 40, &apos;algorithm&apos;: &apos;brute&apos;, &apos;p&apos;: 3},
+ mean: 0.86325, std: 0.01481, params: {&apos;n_neighbors&apos;: 5, &apos;weights&apos;: &apos;uniform&apos;, &apos;leaf_size&apos;: 40, &apos;algorithm&apos;: &apos;brute&apos;, &apos;p&apos;: 1},
+ mean: 0.86325, std: 0.02977, params: {&apos;n_neighbors&apos;: 5, &apos;weights&apos;: &apos;distance&apos;, &apos;leaf_size&apos;: 40, &apos;algorithm&apos;: &apos;brute&apos;, &apos;p&apos;: 1},
+ mean: 0.85470, std: 0.01256, params: {&apos;n_neighbors&apos;: 5, &apos;weights&apos;: &apos;uniform&apos;, &apos;leaf_size&apos;: 40, &apos;algorithm&apos;: &apos;brute&apos;, &apos;p&apos;: 2},
+ mean: 0.86325, std: 0.02977, params: {&apos;n_neighbors&apos;: 5, &apos;weights&apos;: &apos;distance&apos;, &apos;leaf_size&apos;: 40, &apos;algorithm&apos;: &apos;brute&apos;, &apos;p&apos;: 2},
+ mean: 0.85470, std: 0.01256, params: {&apos;n_neighbors&apos;: 5, &apos;weights&apos;: &apos;uniform&apos;, &apos;leaf_size&apos;: 40, &apos;algorithm&apos;: &apos;brute&apos;, &apos;p&apos;: 3},
+ mean: 0.86325, std: 0.02977, params: {&apos;n_neighbors&apos;: 5, &apos;weights&apos;: &apos;distance&apos;, &apos;leaf_size&apos;: 40, &apos;algorithm&apos;: &apos;brute&apos;, &apos;p&apos;: 3},
+ mean: 0.86325, std: 0.00958, params: {&apos;n_neighbors&apos;: 10, &apos;weights&apos;: &apos;uniform&apos;, &apos;leaf_size&apos;: 40, &apos;algorithm&apos;: &apos;brute&apos;, &apos;p&apos;: 1},
+ mean: 0.86325, std: 0.00958, params: {&apos;n_neighbors&apos;: 10, &apos;weights&apos;: &apos;distance&apos;, &apos;leaf_size&apos;: 40, &apos;algorithm&apos;: &apos;brute&apos;, &apos;p&apos;: 1},
+ mean: 0.86325, std: 0.00958, params: {&apos;n_neighbors&apos;: 10, &apos;weights&apos;: &apos;uniform&apos;, &apos;leaf_size&apos;: 40, &apos;algorithm&apos;: &apos;brute&apos;, &apos;p&apos;: 2},
+ mean: 0.86325, std: 0.00958, params: {&apos;n_neighbors&apos;: 10, &apos;weights&apos;: &apos;distance&apos;, &apos;leaf_size&apos;: 40, &apos;algorithm&apos;: &apos;brute&apos;, &apos;p&apos;: 2},
+ mean: 0.86325, std: 0.00958, params: {&apos;n_neighbors&apos;: 10, &apos;weights&apos;: &apos;uniform&apos;, &apos;leaf_size&apos;: 40, &apos;algorithm&apos;: &apos;brute&apos;, &apos;p&apos;: 3},
+ mean: 0.86325, std: 0.00958, params: {&apos;n_neighbors&apos;: 10, &apos;weights&apos;: &apos;distance&apos;, &apos;leaf_size&apos;: 40, &apos;algorithm&apos;: &apos;brute&apos;, &apos;p&apos;: 3}]
+algorithm=&apos;auto&apos;, 
+leaf_size=10, 
+n_neighbors=1, 
+p=3, 
+weights=&apos;uniform&apos;, 
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>I have now instantiated the classifier with the parameters given by the GridSearchCV, that is I use the KNeighborsClassifier(algorithm='auto', leaf_size=10, metric='minkowski', metric_params=None, n_neighbors=5, p=1, weights='uniform') classifier. After stratifiying the data, the classifier yields better precision, but there is a decrease in recall. I would consider to use the other params instead of these ones becasue recall is arguably more important than precision.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[22]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span class="n">clf</span> <span class="o">=</span> <span class="n">KNeighborsClassifier</span><span class="p">(</span><span class="n">algorithm</span><span class="o">=</span><span class="s">&#39;auto&#39;</span><span class="p">,</span> <span class="n">leaf_size</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">metric</span><span class="o">=</span><span class="s">&#39;minkowski&#39;</span><span class="p">,</span> 
+                           <span class="n">metric_params</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">n_neighbors</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">p</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">weights</span><span class="o">=</span><span class="s">&#39;uniform&#39;</span><span class="p">)</span>
+
+<span class="kn">from</span> <span class="nn">sklearn.cross_validation</span> <span class="kn">import</span> <span class="n">train_test_split</span>
+
+<span class="n">features_train</span><span class="p">,</span> <span class="n">features_test</span><span class="p">,</span> <span class="n">labels_train</span><span class="p">,</span> <span class="n">labels_test</span> <span class="o">=</span> \
+    <span class="n">train_test_split</span><span class="p">(</span><span class="n">features</span><span class="p">,</span> <span class="n">labels</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span>
+    
+<span class="kn">from</span> <span class="nn">sklearn.cross_validation</span> <span class="kn">import</span> <span class="n">StratifiedShuffleSplit</span>
+<span class="n">cv</span> <span class="o">=</span> <span class="n">StratifiedShuffleSplit</span><span class="p">(</span><span class="n">labels</span><span class="p">,</span> <span class="mi">1000</span><span class="p">,</span> <span class="n">random_state</span> <span class="o">=</span> <span class="mi">42</span><span class="p">)</span>
+
+
+<span class="k">for</span> <span class="n">train_idx</span><span class="p">,</span> <span class="n">test_idx</span> <span class="ow">in</span> <span class="n">cv</span><span class="p">:</span>
+    <span class="n">features_train</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">features_test</span>  <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">labels_train</span>   <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">labels_test</span>    <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">ii</span> <span class="ow">in</span> <span class="n">train_idx</span><span class="p">:</span>
+        <span class="n">features_train</span><span class="o">.</span><span class="n">append</span><span class="p">(</span> <span class="n">features</span><span class="p">[</span><span class="n">ii</span><span class="p">]</span> <span class="p">)</span>
+        <span class="n">labels_train</span><span class="o">.</span><span class="n">append</span><span class="p">(</span> <span class="n">labels</span><span class="p">[</span><span class="n">ii</span><span class="p">]</span> <span class="p">)</span>
+    <span class="k">for</span> <span class="n">jj</span> <span class="ow">in</span> <span class="n">test_idx</span><span class="p">:</span>
+        <span class="n">features_test</span><span class="o">.</span><span class="n">append</span><span class="p">(</span> <span class="n">features</span><span class="p">[</span><span class="n">jj</span><span class="p">]</span> <span class="p">)</span>
+        <span class="n">labels_test</span><span class="o">.</span><span class="n">append</span><span class="p">(</span> <span class="n">labels</span><span class="p">[</span><span class="n">jj</span><span class="p">]</span> <span class="p">)</span>
+
+    <span class="c">### fit the classifier using training set, and test on test set</span>
+    <span class="n">clf</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">features_train</span><span class="p">,</span> <span class="n">labels_train</span><span class="p">)</span>
+
+<span class="n">dump_classifier_and_data</span><span class="p">(</span><span class="n">clf</span><span class="p">,</span> <span class="n">my_dataset</span><span class="p">,</span> <span class="n">features_list</span><span class="p">)</span>
+
+<span class="kn">import</span> <span class="nn">tester</span>
+<span class="n">tester</span><span class="o">.</span><span class="n">main</span><span class="p">()</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>KNeighborsClassifier(algorithm=&apos;auto&apos;, leaf_size=10, metric=&apos;minkowski&apos;,
+           metric_params=None, n_neighbors=5, p=1, weights=&apos;uniform&apos;)
+	Accuracy: 0.87392	Precision: 0.70078	Recall: 0.31500	F1: 0.43463	F2: 0.35397
+	Total predictions: 13000	True positives:  630	False positives:  269	False negatives: 1370	True negatives: 10731
+
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Validation-and-Evaluation">Validation and Evaluation<a class="anchor-link" href="#Validation-and-Evaluation">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Evaluation allows to evaluate the performance of a algorithm. Validation allows to get a better idea of how our algorithm will perform when faced with unseen data. It gives us more evidence to draw conclusions wrt.  generalization beyond the dataset used to train it (overfitting). One of the biggest mistakes one can make is to use the same data fro training and testing.</p>
+<p>To cross validate, I used skilearn train_test_split, which splits the data into into random train and test subsets. I ran 1000 randomized trials and evaluated the mean evaluation metrics. Given the imbalance in the dataset betweet POIs and non-POIs, accuracy would not have been an appropriate evaluation metric. I used precision and recall instead:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[24]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span class="n">precision</span><span class="p">,</span> <span class="n">recall</span> <span class="o">=</span> <span class="p">[],</span> <span class="p">[]</span>
 <span class="n">progress</span> <span class="o">=</span> <span class="n">progressbar</span><span class="o">.</span><span class="n">ProgressBar</span><span class="p">(</span><span class="n">widgets</span><span class="o">=</span><span class="p">[</span><span class="n">progressbar</span><span class="o">.</span><span class="n">Bar</span><span class="p">(</span><span class="s">&#39;=&#39;</span><span class="p">,</span> <span class="s">&#39;[&#39;</span><span class="p">,</span> <span class="s">&#39;]&#39;</span><span class="p">),</span> <span class="s">&#39; &#39;</span><span class="p">,</span>
                                             <span class="n">progressbar</span><span class="o">.</span><span class="n">Percentage</span><span class="p">(),</span> <span class="s">&#39; &#39;</span><span class="p">,</span>
                                             <span class="n">progressbar</span><span class="o">.</span><span class="n">ETA</span><span class="p">()])</span>
@@ -1611,8 +2168,8 @@ Number of employees: 142
 <div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>
-Precision: 0.583985714286
-Recall: 0.30011468254
+Precision: 0.596983333333
+Recall: 0.250828174603
 </pre>
 </div>
 </div>
@@ -1642,7 +2199,7 @@ Recall: 0.30011468254
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>I wasn't able to find other features that would improve the classifier. I think the next steps in searching for a better performing classifier would be to use MinMaxScaler to have all variables within the same range and GridSearchCV parameter optimization. The latter can however be specific for the current data, and may not generalize.</p>
+<p>I wasn't able to find other features that would improve the classifier. KNeighborsClassifier(algorithm='auto', leaf_size=10, metric='minkowski', metric_params=None, n_neighbors=5, p=1, weights='uniform') gave best results after feature scaling with MinMaxScaler and tuning with GridSearchCV.</p>
 
 </div>
 </div>
