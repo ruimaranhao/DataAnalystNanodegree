@@ -7,7 +7,7 @@ The data comes originally from [RITA](http://www.transtats.bts.gov/OT_Delay/OT_D
 ### Variable descriptions
 
 | Name	| Description |
-| ----- |-_-----------|
+| ----- |-------------|
 |	Year	| 1987-2008   |
 |	Month	| 1-12        |
 |	DayofMonth |	1-31  |
