@@ -270,7 +270,7 @@ plt.show()
 
 
 
-![png](output_10_1.png)
+![png](P5 - Identify Fraud in Enron Emails_files/output_10_1.png)
 
 
 
