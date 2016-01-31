@@ -4,10 +4,10 @@ In this project I have studied the intermediate dataset [Flights](https://www.go
 
 The data comes originally from [RITA](http://www.transtats.bts.gov/OT_Delay/OT_DelayCause1.asp). Detailed information about the dataset can be found on the RITA website. The website hosts flight performance between 1987 and 2008. The data can be downloaded in the website.
 
-## Variable descriptions
+### Variable descriptions
 
 | Name	| Description |
-| ----- |:-----------:|
+| ----- |-_-----------|
 |	Year	| 1987-2008   |
 |	Month	| 1-12        |
 |	DayofMonth |	1-31  |
