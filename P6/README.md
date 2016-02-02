@@ -40,7 +40,32 @@ The data comes originally from [RITA](http://www.transtats.bts.gov/OT_Delay/OT_D
 
 # Design
 
+After exploring the data, I decided to visualize the average delays per airport
+(v1) as a bar plot. Not being quite happy with the visualization, I have decided
+to plot two things: route average delays (chord diagram) and average delays per
+carrier (barplot). This visualization are in v2.
+
+After internal feedback, I decided to upgrade the chord diagram to include the
+routes between the top 10 busiest airports. This drastically simplified the
+visualization.
+
+Finally, after all feedback, I have included a legend to people understand the
+different elements in the chord diagram and I have changed the bar plot to a
+stack chart diagram.
+
 # Feedback
+
+I have shared my visualization on Facebook, Google plus and the Nanodegree
+class discussion. I have got feedback such as:
+
+
+>Uirá: Nice start. I wonder what are all these colors in your first chart. Perhaps you could use a legend here or tooltips to clarify the information encoded. In your second chart, if it is your desire to show the most common reasons for delays, maybe would be more appropriate using another kind of visualization ( a stacked chart, perhaps).
+Another suggestion: Remember that one of the key goals of this project is to "communicate a story ." So, for example, you could include some text or animation highlighting some interesting findings that the users can observe in your visualization.
+
+>Matthew Klenk: They are pretty but I'm not sure what I'm suppose to take away from the graph on the left.
+>Matthew Klenk: Cool, I'm still not sure the question. I feel the like the question you want an answer to is, what is the most likely delayed routes. And part of this would then be what is the distribution of delayed likelihoods. Are they all about the same or are there some that are just awful? I'd prefer a histogram for this, but perhaps that is what the colors are for. I guess in this plot you get two controls, the width of the connections and the color. So I guess the width is how many flights there are, and the color is how delayed they are?
+
+>Peter Bunus: Cool! I like both graphs. It is clear to me what you are trying to show. Are you using the data from the US Department of Transportation?
 
 # Resources
 

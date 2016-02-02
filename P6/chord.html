@@ -20,6 +20,14 @@
   #circle:hover path.fade {
     display: none;
   }
+
+  .chart {
+  float: left;
+  font: 10px sans-serif;
+  padding: 20px;
+  text-align: center;
+  width: 340px;
+}
 </style>
 
 <body>
@@ -28,7 +36,6 @@
 
   <aside>Mouseover to focus on a particular a airport.</aside>
 
-  <p>Built with <a href="http://d3js.org/">d3.js</a>.
     <script src="http://d3js.org/d3.v2.min.js?2.8.1"></script>
 
     <script>
@@ -135,5 +142,49 @@
           }
         });
       });
+
+      coloring = 'bigger'
+
+      var comp = {
+        bigger:  function(a, b) { return a.value > b.value ? a : b },
+        smaller: function(a, b) { return a.value < b.value ? a : b }
+      }
+
+      flipColors = function() {
+        console.log("teste")
+        coloring = coloring == 'bigger' ? 'smaller' : 'bigger';
+        console.log(coloring)
+        svg.selectAll(".chord")
+          .data(layout.chords)
+          .enter().append("path")
+          .attr("class", "chord")
+          .style("fill", function(d) { return self.fill(comp[coloring](d.source, d.target).index); })
+          .attr("d", path);
+
+
+      };
+
+      d3.select("#color1").on("click", function() {
+          flipColors();
+      });
+
+      function updateData() {
+
+      }
+
     </script>
+
+    <h3>Interpreting the diagram</h3>
+    <p>
+      Chord diagrams present information using two sets elements: (1)
+      a set of arcs around the outside of the diagram and (2) a set of chords
+      or ribbons on the inside.
+    </p>
+
+    <p>
+      The arc length shows the aggreated averaged delay. The chords show
+      relations between arcs (airports).  Their width on either end is
+      determined by the average delay between airpots. The color represent
+      the direction in which delay is higher.
+    </p>
 </body>
