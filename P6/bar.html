@@ -115,10 +115,13 @@
           top: 20,
           right: 20,
           bottom: 30,
-          left: 40
+          left: 60
         },
-        width = 960 - margin.left - margin.right,
+        ww = document.documentElement.clientHeight,
+        width = ww - margin.left - margin.right,
         height = 500 - margin.top - margin.bottom;
+
+        console.log(ww)
 
       var x = d3.scale.ordinal()
         .rangeRoundBands([0, width], .1);

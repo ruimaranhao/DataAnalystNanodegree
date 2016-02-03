@@ -32,15 +32,17 @@
 
 <body>
   <h2>2008 Delays between Busiest Airports</h2>
-  <p>Built with <a href="http://d3js.org/">d3.js</a>.</aside>
+  <p>Built with <a href="http://d3js.org/">d3.js</a>.
 
-  <aside>Mouseover to focus on a particular a airport.</aside>
+  <p>Mouseover to focus on a particular a airport.</p>
 
     <script src="http://d3js.org/d3.v2.min.js?2.8.1"></script>
 
     <script>
-      var width = 720,
-        height = 720,
+      var margin = {top: 20, right: 20, bottom: 30, left: 60},
+        ww = document.body.clientWidth,
+        width = ww - margin.left - margin.right,
+        height = 500 - margin.top - margin.bottom;
         outerRadius = Math.min(width, height) / 2 - 10,
         innerRadius = outerRadius - 24;
 
@@ -59,8 +61,8 @@
         .radius(innerRadius);
 
       var svg = d3.select("body").append("svg")
-        .attr("width", width)
-        .attr("height", height)
+        .attr("width", width + margin.left + margin.right)
+        .attr("height", height + margin.top + margin.bottom)
         .append("g")
         .attr("id", "circle")
         .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");

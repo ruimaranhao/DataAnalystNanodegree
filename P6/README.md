@@ -69,8 +69,14 @@ Another suggestion: Remember that one of the key goals of this project is to "co
 
 >Peter Bunus (facebook): Cool! I like both graphs. It is clear to me what you are trying to show. Are you using the data from the US Department of Transportation?
 
+>John Enyeart (Google plus):  That's really cool. I especially like the visualization on the left.
+Some things I noticed that might be improved:
+The visualizations don't fit in my browser window unless I maximize it, so an auto-resize to make them smaller for smaller browser windows might be nice.
+The graph on the right feels a little cluttered. Also, horizontal grid lines might make it easier to read the histogram values more to the right.﻿
 The common concern was how to read the chord diagram. I have addressed that by
 adding a short explanation to tell the story.
+
+>Shi Shu (Google plus): Both figures are very cool! I am not sure what the animation of the bar chart (the right one) tells me. ﻿
 
 I have had multiple discussions regarding the diagrams with other people that
 helped me clarify the visualizations/sketches.
