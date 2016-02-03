@@ -1,32 +1,34 @@
 <!DOCTYPE html>
 <meta charset="utf-8">
 <style>
-  body {
-    font: 10px sans-serif;
-  }
-
-  .axis path,
+  @import url(style.css);
+  ​ .axis path,
   .axis line {
     fill: none;
     stroke: #000;
     shape-rendering: crispEdges;
   }
 
-  .bar {
+  ​ .bar {
     fill: steelblue;
   }
 
-  .x.axis path {
+  ​ .x.axis path {
     display: none;
   }
 </style>
+​
 
 <body>
-
+  ​
   <h2>Delays per Airliner (average over all airports)</h2>
   <p>Built with <a href="http://d3js.org/">d3.js</a>.</aside>
-
-    <script src="//d3js.org/d3.v3.min.js"></script>
+    ​
+    <div id="option">
+      <input name="updateButton" type="button" value="Update" onclick="updateData()" />
+    </div>
+    ​
+    <script src="http://d3js.org/d3.v3.min.js"></script>
     <script>
       var margin = {
           top: 20,
@@ -70,13 +72,15 @@
           return key !== "UniqueCarrier";
         }));
 
-        data.forEach(function(d) {
+        data.forEach(function(d, i) {
           var y0 = 0;
-          d.ages = color.domain().map(function(name) {
+          d.ages = color.domain().map(function(name, j) {
             return {
               name: name,
               y0: y0,
-              y1: y0 += +d[name]
+              y1: y0 += +d[name],
+              i: i,
+              j: j
             };
           });
           d.total = d.ages[d.ages.length - 1].y1;
@@ -113,6 +117,7 @@
           .data(data)
           .enter().append("g")
           .attr("class", "g")
+          .attr("class", "bars")
           .attr("transform", function(d) {
             return "translate(" + x(d.UniqueCarrier) + ",0)";
           });
@@ -132,6 +137,7 @@
           .style("fill", function(d) {
             return color(d.name);
           });
+
 
         var legend = svg.selectAll(".legend")
           .data(color.domain().slice().reverse())
@@ -157,9 +163,76 @@
           });
 
       });
+
+
+      var dat;
+      var discard = []
+      var delays = ['DepDelay', 'ArrDelay', 'LateAircraftDelay',
+                    'SecurityDelay', 'NASDelay', 'WeatherDelay',
+                    'CarrierDelay']
+
+      function updateData() {
+        // Get the data again
+        d3.csv("data/2008delays.csv", function(error, data) {
+          if (error) throw error;
+          dat = data;
+
+          if(delays.length == 0){
+            delays = discard;
+            discard = []
+          } else {
+            discard.push(delays.shift());
+          }
+
+          color.domain(d3.keys(data[0]).filter(function(key) {
+            return (key !== "UniqueCarrier");
+          }));
+
+          // Scale the range of the data again
+          x.domain(d3.extent(data, function(d) {
+            return d.date;
+          }));
+
+          data.forEach(function(d) {
+            var y0 = 0;
+            d.ages = color.domain().map(function(name) {
+              return {
+                name: name,
+                y0: y0,
+                y1: y0 += discard.indexOf(name) >= 0 ? 0 : +d[name]
+              };
+            });
+
+            d.total = d.ages[d.ages.length - 1].y1;
+          });
+
+          y.domain([0, d3.max(data, function(d) {
+            return d.total;
+          })]);
+
+          // Select the section we want to apply our changes to
+          var svg = d3.select("svg").transition();
+
+
+          svg.selectAll(".bars rect")
+            .duration(750)
+            .attr("y", function(d) {
+              return y(data[d.i].ages[d.j].y1);
+            })
+            .attr("height", function(d) {
+              return y(data[d.i].ages[d.j].y0) - y(data[d.i].ages[d.j].y1);
+            })
+            .style("fill", function(d) {
+              return color(data[d.i].ages[d.j].name);
+            });
+
+          svg.select(".y.axis").duration(750).call(yAxis);
+
+        });
+      }
     </script>
 
-<h2> This chart shows the most common reasons for delays, average over all 303 US airports.</h2>
+    <p>This chart shows the most common reasons for delays, average over all 303 US airports.</p>
 
 </body>
 

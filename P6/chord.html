@@ -142,36 +142,6 @@
           }
         });
       });
-
-      coloring = 'bigger'
-
-      var comp = {
-        bigger:  function(a, b) { return a.value > b.value ? a : b },
-        smaller: function(a, b) { return a.value < b.value ? a : b }
-      }
-
-      flipColors = function() {
-        console.log("teste")
-        coloring = coloring == 'bigger' ? 'smaller' : 'bigger';
-        console.log(coloring)
-        svg.selectAll(".chord")
-          .data(layout.chords)
-          .enter().append("path")
-          .attr("class", "chord")
-          .style("fill", function(d) { return self.fill(comp[coloring](d.source, d.target).index); })
-          .attr("d", path);
-
-
-      };
-
-      d3.select("#color1").on("click", function() {
-          flipColors();
-      });
-
-      function updateData() {
-
-      }
-
     </script>
 
     <h3>Interpreting the diagram</h3>
