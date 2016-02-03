@@ -4,6 +4,8 @@ In this project I have studied the intermediate dataset [Flights](https://www.go
 
 The data comes originally from [RITA](http://www.transtats.bts.gov/OT_Delay/OT_DelayCause1.asp). Detailed information about the dataset can be found on the RITA website. The website hosts flight performance between 1987 and 2008. The data can be downloaded in the website.
 
+My visualization can be seen at http://rawgit.com/ruimaranhao/DataAnalystNanodegree/master/P6/index.html.
+
 ### Variable descriptions
 
 | Name	| Description |
@@ -87,4 +89,4 @@ You will need to run local server to render the visualizations. You can start a 
 
 - http://stackoverflow.com/
 
-- Many other websites found through Google. 
+- Many other websites found through Google.
