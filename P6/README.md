@@ -73,6 +73,18 @@ adding a short explanation to tell the story.
 I have had multiple discussions regarding the diagrams with other people that
 helped me clarify the visualizations/sketches.
 
+After the feedback I thought about implementing something similar to
+http://datamaps.github.io/. I've started that implementation in v3, but have
+not concluded it yet.
+
 # Resources
 
 You will need to run local server to render the visualizations. You can start a local server using Python. Navigate to the directory that contains all of the files and then type `python -m SimpleHTTPServer` in the command line. If you type `http://localhost:8000` into the address bar of your browser, then you should see the files that you can display in the web page.
+
+- http://d3js.org/
+
+- http://dimplejs.org/
+
+- http://stackoverflow.com/
+
+- Many other websites found through Google. 
