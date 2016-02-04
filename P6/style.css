@@ -2,17 +2,10 @@
 
 @import url(http://fonts.googleapis.com/css?family=PT+Serif|PT+Serif:b|PT+Serif:i|PT+Sans|PT+Sans:b);
 
-html {
-min-width: 1040px;
-}
-
 body {
 background: #fcfcfa;
 color: #333;
 font-family: "PT Serif", serif;
-margin: 1em auto 4em auto;
-position: relative;
-width: 960px;
 }
 
 header,
@@ -45,7 +38,6 @@ h2 a {
 color: #ccc;
 left: -20px;
 position: absolute;
-width: 740px;
 }
 
 footer {

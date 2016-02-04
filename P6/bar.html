@@ -109,6 +109,11 @@
       </label>
     </div>
 
+    <div class="circle">
+      <svg id="graph" viewBox="0 0 440 940" preserveAspectRatio="xMinYMin meet">
+      </svg>
+    </div>
+
     <script src="http://d3js.org/d3.v3.min.js"></script>
     <script>
       var margin = {
@@ -146,7 +151,7 @@
         .orient("left")
         .tickFormat(d3.format(".2s"));
 
-      var svg = d3.select("body").append("svg")
+      var svg = d3.select("#graph")
         .attr("width", width + margin.left + margin.right)
         .attr("height", height + margin.top + margin.bottom)
         .append("g")
