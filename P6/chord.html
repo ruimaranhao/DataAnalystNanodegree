@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <meta charset="utf-8">
 <title>Busiest Airports' 2008 Delays</title>
@@ -29,20 +30,6 @@
     width: 340px;
   }
   
-  .circle {
-    display: inline-block;
-    position: relative;
-    width: 100%;
-    padding-bottom: 100%;
-    vertical-align: middle;
-    svg {
-      display: inline-block;
-      position: absolute;
-      top: 0;
-      left: 0;
-    }
-  }
-
 
 </style>
 
@@ -54,38 +41,18 @@
 
 
     <div class="circle">
-      <svg id="graph" viewBox="0 0 500 500" preserveAspectRatio="xMinYMin meet">
+      <svg id="graph" viewBox="0 0 440 440" preserveAspectRatio="xMinYMin meet">
       </svg>
     </div>
 
     <script src="http://d3js.org/d3.v2.min.js?2.8.1"></script>
 
     <script>
-      var margin = {
-          top: 20,
-          right: 20,
-          bottom: 30,
-          left: 60
-        },
-        ww = window.innerWidth ||
-        document.documentElement.clientWidth ||
-        document.body.clientWidth,
-        wh = window.innerHeight ||
-        document.documentElement.clientHeight ||
-        document.body.clientHeight,
-        width = ww - margin.left - margin.right,
-        height = wh - margin.top - margin.bottom,
-        outerRadius = Math.min(width, height) / 2 - 10,
-        innerRadius = outerRadius - 24;
-
-      console.log(ww)
-      console.log(width)
-
       var formatPercent = d3.format(".1%");
 
       var arc = d3.svg.arc()
-        .innerRadius(innerRadius)
-        .outerRadius(outerRadius);
+        .innerRadius(200)
+        .outerRadius(220);
 
       var layout = d3.layout.chord()
         .padding(.04)
@@ -93,17 +60,16 @@
         .sortChords(d3.ascending);
 
       var path = d3.svg.chord()
-        .radius(innerRadius);
+        .radius(200);
 
       var svg = d3.select("#graph")
-        .attr("width", width + margin.left + margin.right)
-        .attr("height", height + margin.top + margin.bottom)
+   //     .attr("width", width + margin.left + margin.right)
+   //     .attr("height", height + margin.top + margin.bottom)
         .append("g")
         .attr("id", "circle")
-        .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
+        .attr("transform", "translate(220, 220)");
 
-      svg.append("circle")
-        .attr("r", outerRadius);
+      svg.append("circle").attr("r", 220);
 
       d3.csv("data/airliners.csv", function(cities) {
         d3.json("data/matrix.json", function(matrix) {
@@ -164,10 +130,10 @@
 
           // Add an elaborate mouseover title for each chord.
           chord.append("title").text(function(d) {
-            return cities[d.source.index].name + " → " +
+            return cities[d.source.index].name + " ? " +
               cities[d.target.index].name + ": " +
               d.source.value + " min" + "\n" +
-              cities[d.target.index].name + " → " +
+              cities[d.target.index].name + " ? " +
               cities[d.source.index].name + ": " +
               d.target.value + " min";
           });
@@ -190,3 +156,4 @@
       The arc length shows the aggreated averaged delay. The chords show relations between arcs (airports). Their width on either end is determined by the average delay between airpots. The color represent the direction in which delay is higher.
     </p>
 </body>
+
