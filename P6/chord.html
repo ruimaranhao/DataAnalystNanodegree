@@ -22,29 +22,64 @@
   }
 
   .chart {
-  float: left;
-  font: 10px sans-serif;
-  padding: 20px;
-  text-align: center;
-  width: 340px;
-}
+    float: left;
+    font: 10px sans-serif;
+    padding: 20px;
+    text-align: center;
+    width: 340px;
+  }
+  
+  .circle {
+    display: inline-block;
+    position: relative;
+    width: 100%;
+    padding-bottom: 100%;
+    vertical-align: middle;
+    svg {
+      display: inline-block;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+  }
+
+
 </style>
 
 <body>
   <h2>2008 Delays between Busiest Airports</h2>
   <p>Built with <a href="http://d3js.org/">d3.js</a>.
 
-  <p>Mouseover to focus on a particular a airport.</p>
+    <p>Mouseover to focus on a particular a airport.</p>
+
+
+    <div class="circle">
+      <svg id="graph" viewBox="0 0 500 500" preserveAspectRatio="xMinYMin meet">
+      </svg>
+    </div>
 
     <script src="http://d3js.org/d3.v2.min.js?2.8.1"></script>
 
     <script>
-      var margin = {top: 20, right: 20, bottom: 30, left: 60},
-        ww = document.body.clientWidth,
+      var margin = {
+          top: 20,
+          right: 20,
+          bottom: 30,
+          left: 60
+        },
+        ww = window.innerWidth ||
+        document.documentElement.clientWidth ||
+        document.body.clientWidth,
+        wh = window.innerHeight ||
+        document.documentElement.clientHeight ||
+        document.body.clientHeight,
         width = ww - margin.left - margin.right,
-        height = 500 - margin.top - margin.bottom;
+        height = wh - margin.top - margin.bottom,
         outerRadius = Math.min(width, height) / 2 - 10,
         innerRadius = outerRadius - 24;
+
+      console.log(ww)
+      console.log(width)
 
       var formatPercent = d3.format(".1%");
 
@@ -60,7 +95,7 @@
       var path = d3.svg.chord()
         .radius(innerRadius);
 
-      var svg = d3.select("body").append("svg")
+      var svg = d3.select("#graph")
         .attr("width", width + margin.left + margin.right)
         .attr("height", height + margin.top + margin.bottom)
         .append("g")
@@ -130,11 +165,11 @@
           // Add an elaborate mouseover title for each chord.
           chord.append("title").text(function(d) {
             return cities[d.source.index].name + " → " +
-                   cities[d.target.index].name + ": " +
-                   d.source.value + " min" + "\n" +
-                   cities[d.target.index].name + " → " +
-                   cities[d.source.index].name + ": " +
-                   d.target.value + " min";
+              cities[d.target.index].name + ": " +
+              d.source.value + " min" + "\n" +
+              cities[d.target.index].name + " → " +
+              cities[d.source.index].name + ": " +
+              d.target.value + " min";
           });
 
           function mouseover(d, i) {
@@ -148,15 +183,10 @@
 
     <h3>Interpreting the diagram</h3>
     <p>
-      Chord diagrams present information using two sets elements: (1)
-      a set of arcs around the outside of the diagram and (2) a set of chords
-      or ribbons on the inside.
+      Chord diagrams present information using two sets elements: (1) a set of arcs around the outside of the diagram and (2) a set of chords or ribbons on the inside.
     </p>
 
     <p>
-      The arc length shows the aggreated averaged delay. The chords show
-      relations between arcs (airports).  Their width on either end is
-      determined by the average delay between airpots. The color represent
-      the direction in which delay is higher.
+      The arc length shows the aggreated averaged delay. The chords show relations between arcs (airports). Their width on either end is determined by the average delay between airpots. The color represent the direction in which delay is higher.
     </p>
 </body>
