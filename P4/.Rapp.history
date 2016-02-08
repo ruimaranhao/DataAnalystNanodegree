@@ -1,0 +1,196 @@
+dfas
+fx <- cxxfunction(signature( x = "numeric" ),#
+#
+  'NumericVector xx(x);#
+#
+  return wrap( std::accumulate( xx.begin(), xx.end(), 0.0));',#
+#
+  plugin = "Rcpp",verbose=TRUE)
+x <- 4
+class()
+x.class()
+class(x)
+x <- c(4,TRUE)
+class(x)
+x <- c(4,TRUE)
+class(x)
+x <- c(1,3, 5)
+y <- c(3, 2, 10)
+cbind(x,y)
+z <- cbind(x,y)
+class(z)
+x <- list(2, "a", "b", TRUE)
+x[2]
+x[[2]]
+x[]
+x[1:2]
+x[2]
+x[[2]]
+y <- x[[2]]
+class(y)
+x <- 1:4
+y <- 2:3
+x+y
+x <- c(17, 14, 4, 5, 13, 12, 10)
+x[x < 10] <- 4
+x
+mydata <- read.csv("/Users/maranhao/Downloads/hw1_data.csv")
+mydate
+mydata
+mydata[1:2]
+mydata[1,2]
+mydata[1ls]
+mydata[1]
+mydata[1] == NA
+count(mydata[1] == NA)
+sum(mydata[1] == NA)
+length(mydata[1] == NA)
+length(mydata[1])
+(mydata[1])
+size(mydata[1])
+mydata[1:2,]
+mydata[1:2]
+mydata[1:2,]
+tail(mydata,n=2)
+mdata["Ozone"]
+mydata["Ozone"]
+mydata["Ozone"] == NA
+mydata["Ozone"]
+ozone <- mydata["Ozone"]
+ozone[ozone == NA]
+sum(ozone[ozone == NA])
+length(ozone[ozone == NA])
+length(ozone[ozone = NA])
+(ozone[ozone = NA])
+ozone[ozone == NA]
+subset(ozone, NA)
+ozone
+sum(x == NA)
+sum(ozone == NA)
+sum(ozone == 36)
+ozone
+sum(ozone > 20)
+class(ozone)
+as.vector(ozone)
+oo <- as.vector(ozone)
+class(oo)
+colSums(ozone)
+rowSums(ozone)
+rowSums(ozone == NA)
+mydata <- read.csv("/Users/maranhao/Downloads/hw1_data.csv")
+mydata
+class(mydata)
+mydata(1)
+mydata[1]
+mydata[1] > 20
+mydata[1] = NA
+mydata[1]
+mydata <- read.csv("/Users/maranhao/Downloads/hw1_data.csv")
+mydata[1] == NA
+mydata <- read.csv("/Users/maranhao/Downloads/hw1_data.csv")
+mydata[1]
+isnumb
+mydata[1] > 20
+countif
+ls
+mydata[1] > NA
+mydata[1]
+ozone <- mydata[1]
+class ozone
+class(ozone)
+ozone[1]
+length(ozone)
+size(ozone)
+ozone
+is.data.frame(ozone)
+mydata[1] > 20
+class(mydata[1] > 20)
+(mydata[1] > 20)[1]
+(mydata[1] > 20)[2]
+(mydata[1] > 20)[3]
+length(mydata[1] > 20)
+median(mydata[1])
+methos("Math")
+methods("Math")
+mydata <- read.csv("/Users/maranhao/Downloads/hw1_data.csv")
+mydata[1] == "NA"
+data.matrix(mydata)
+class(data.matrix(mydata))
+class(data.matrix(mydata)[1])
+ozone = data.matrix(mydata)[1]
+class(ozone)
+ozone > 20
+ozone[ozone > 20]
+ozone[ozone > 0]
+ozone[ozone > -1]
+ozone[ozone > 100]
+oo <- ozone > 0
+oo
+ozone
+ozone = data.matrix(mydata)[1]
+ozone
+ozone = data.matrix(mydata)
+ozone
+ozone = data.matrix(mydata[1])
+ozone
+ozone[ozone == "NA"]
+length(ozone[ozone == "NA"])
+length(ozone[ozone != "NA"])
+length(ozone[is.an])
+install.packages("swirl")
+library(swirl)
+swirl()
+library(swirl)
+swirl()
+5+7
+x <- 5+7
+x
+y <- x - 3
+y
+z <- c(1.1,9,3.14)
+?c
+z
+c(z, 555, z)
+z*2 + 100
+my_sqrt <- sqrt(z - 1)
+my_sqrt
+my_div <- z / my_sqrt
+my_div
+c(1,2,3,4) + c(0,10)
+c(1,2,3,4) + c(0,10,100)
+z*2 + 1000
+my_div
+swirl()
+install.packages("astsa")
+require(astsa)
+data(jj)
+jj
+ls()
+options(digits=2)
+?options
+(zardoz = ts(rnorm(48), start=c(2293,6), frequency=12))
+(oz = window(zardoz, start=2293, end=c(2295,12)))
+time(jj)
+cycle(jj)
+plot(jj, ylab="Earnings per Share", main="J & J")
+jjm=as.matrix(jj)
+jjm
+jj
+pwd
+library(astsa)
+install.packages("astsa")
+library(astsa)
+install.packages("astsa")
+library(astsa)
+library(astsa-package)
+install.packages("astsa-package")
+install.packages("astsa")
+install.packages("ggplot2", dependencies = T) #
+install.packages("knitr", dependencies = T)#
+install.packages("dplyr", dependencies = T)
+install.packages("knitr", dependencies = T)
+install.packages("dplyr", dependencies = T)
+pwd('/Users/maranhao/Desktop/Nanodegree DS/projects/P4')
+cwd('/Users/maranhao/Desktop/Nanodegree DS/projects/P4')
+cd('/Users/maranhao/Desktop/Nanodegree DS/projects/P4')
+setwd('/Users/maranhao/Desktop/Nanodegree DS/projects/P4')
