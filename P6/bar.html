@@ -99,7 +99,7 @@
 </style>
 
 <body>
-  <h2>Delays per Airliner (average over all airports)</h2>
+  <h2>Delays per Month (average over all airports)</h2>
   <p>Built with <a href="http://d3js.org/">d3.js</a>.</aside>
 
     <div class="onoffswitch">
@@ -149,7 +149,7 @@
         if (error) throw error;
 
         color.domain(d3.keys(data[0]).filter(function(key) {
-          return key !== "UniqueCarrier";
+          return key !== "Month";
         }));
 
         data.forEach(function(d, i) {
@@ -171,7 +171,7 @@
         });
 
         x.domain(data.map(function(d) {
-          return d.UniqueCarrier;
+          return d.Month;
         }));
 
         y.domain([0, d3.max(data, function(d) {
@@ -199,7 +199,7 @@
           .attr("class", "g")
           .attr("class", "bars")
           .attr("transform", function(d) {
-            return "translate(" + x(d.UniqueCarrier) + ",0)";
+            return "translate(" + x(d.Month) + ",0)";
           });
 
         state.selectAll("rect")
@@ -282,7 +282,7 @@
           }
 
           color.domain(d3.keys(data[0]).filter(function(key) {
-            return (key !== "UniqueCarrier");
+            return (key !== "Month");
           }));
 
           // Scale the range of the data again
@@ -330,6 +330,8 @@
     </script>
 
     <p>This chart shows the most common reasons for delays, average over all 303 US airports.</p>
+    <p>The following <a href="http://aspmhelp.faa.gov/index.php/Types_of_Delay">link</a> explains
+      the different delays recorded by the ASPM.</pm>
 
 </body>
 
