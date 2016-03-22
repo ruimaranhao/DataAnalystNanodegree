@@ -4,7 +4,7 @@
   <script src="http://dimplejs.org/dist/dimple.v2.1.6.min.js"></script>
   <script type="text/javascript">
 
-      var svg = dimple.newSvg("#chartContainer", 590, 400);
+      var svg = dimple.newSvg("#chartContainer", 590, 480);
 
       //d3.tsv("http://dimplejs.org/data/example_data.tsv", function (data) {
       d3.csv("../data/2008cancelled.csv", function (data) {
@@ -82,10 +82,10 @@
 
           // Draw the main chart
           var bubbles = new dimple.chart(svg, data);
-          bubbles.setBounds(60, 50, 355, 310)
+          bubbles.setBounds(60, 80, 355, 310)
           bubbles.addMeasureAxis("x", "Distance");
-          bubbles.addMeasureAxis("y", "Cancelled");
-          bubbles.addSeries(["Cancelled", "Distance", "UniqueCarrier", "CancellationCode"], dimple.plot.bubble)
+          bubbles.addMeasureAxis("y", "Percentage Cancelled");
+          bubbles.addSeries(["Cancelled", "Distance", "CancellationCode", "UniqueCarrier"], dimple.plot.bubble)
           bubbles.addLegend(60, 10, 410, 60);
 
           // Add a storyboard to the main chart and set the tick event
