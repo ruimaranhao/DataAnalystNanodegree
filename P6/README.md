@@ -94,7 +94,12 @@ indicated that the plot need a significant change:
 >Both of these charts are aesthetically pleasing and technically complex. Great job coding them.
 I can't find a clear, specific finding in either visualization. The charts come across as exploratory rather than explanatory. An explanatory chart has a clear, interesting finding that would only be found through doing some data analysis. An exploratory visualization generally plots the data as is and leaves the reader to figure out a story and analyze the data for him or herself.
 
-Given this feedback, I decided analyze the data and find something interesting to say about the data set. I decided to tell the story about the most common reasons for flight cancellations. The current x-axis is `Total Flights`, and this was the outcome of discussions with colleagues (the other option I had in mind was `Distance`, but it did not convey a clear message)
+Given this feedback, I decided analyze the data and find something interesting to say about the data set. I decided to tell the story about the most common reasons for flight cancellations. The current x-axis is `Total Flights`, and this was the outcome of discussions with colleagues (the other option I had in mind was `Distance`, but it did not convey a clear message).
+
+After another round of feedback, the I have updated the plot as follows:
+
+1. I converted the legend into percentage values so we will be able to see what month has more delays percentage
+2. I (partially) avoided X scaling, by making x-axis log scale
 
 # Summary of Findings
 

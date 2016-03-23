@@ -29,7 +29,7 @@ website.
 
       var svg = dimple.newSvg("#chartContainer", 590, 480);
 
-      d3.csv("data/2008cancelled.csv", function (data) {
+      d3.csv("http://raw.githubusercontent.com/ruimaranhao/DataAnalystNanodegree/master/P6/data/2008cancelled.csv", function (data) {
 
           // Filter for 1 year
           data = dimple.filterData(data, "Month", [
