@@ -51,9 +51,14 @@ After internal feedback, I decided to upgrade the chord diagram to include the
 routes between the top 10 busiest airports. This drastically simplified the
 visualization.
 
-Finally, after all feedback, I have included a legend to people understand the
-different elements in the chord diagram and I have changed the bar plot to a
-stack chart diagram.
+For the first submission, after all feedback, I have included a legend to people
+understand the different elements in the chord diagram and I have changed the bar
+plot to a stack chart diagram.
+
+As the the evaluation feedback, pointed out at the there was not a clear, specific
+finding in either visualization, I decided to study the dataset further to be able
+to produce an explanatory chart with a clear, interesting finding. In particular,
+I studied reasons for flight cancellations in 2008.
 
 # Feedback
 
