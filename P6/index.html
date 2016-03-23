@@ -1,7 +1,16 @@
 <html>
-<h3>
+<style>
+body {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  width: 960px;
+  height: 500px;
+  position: relative;
+}
+</style>
+
+<h2>
 Flight Cancellations: Likely, weather and Carriers are the ones to blame.
-</h3>
+</h2>
 <p>
 Severe flight cancellations are usually because of extreme weather conditions
 and/or the carriers themselves. National Airspace System Delays are also prevalent,
@@ -95,7 +104,7 @@ but in many cases these delays are also related to (non-extreme) weather conditi
           // Draw the main chart
           var bubbles = new dimple.chart(svg, data);
           bubbles.setBounds(60, 80, 355, 310)
-          bubbles.addMeasureAxis("x", "Distance");
+          bubbles.addMeasureAxis("x", "Total Flights");
           bubbles.addMeasureAxis("y", "Percentage Cancelled");
           bubbles.addSeries(["Cancelled", "Total Flights", "Distance",
                              "UniqueCarrier", "CancellationCode"],

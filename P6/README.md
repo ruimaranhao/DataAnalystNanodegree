@@ -1,10 +1,10 @@
 # Summary
 
-In this project I have studied the intermediate dataset [Flights](https://www.google.com/url?q=http://stat-computing.org/dataexpo/2009/the-data.html&sa=D&ust=1454271917244000&usg=AFQjCNEo7P1zBM-dtkX-MwsZiev7-J1MRw). In particular, I have investigated the performance of US carriers in the year of [2008](http://stat-computing.org/dataexpo/2009/2008.csv.bz).
+In this project I have studied the intermediate dataset [Flights](https://www.google.com/url?q=http://stat-computing.org/dataexpo/2009/the-data.html&sa=D&ust=1454271917244000&usg=AFQjCNEo7P1zBM-dtkX-MwsZiev7-J1MRw). In particular, I have investigated the the reasons for flight cancellations per month in  [2008](http://stat-computing.org/dataexpo/2009/2008.csv.bz).
 
 The data comes originally from [RITA](http://www.transtats.bts.gov/OT_Delay/OT_DelayCause1.asp). Detailed information about the dataset can be found on the RITA website. The website hosts flight performance between 1987 and 2008. The data can be downloaded in the website.
 
-My visualization can be seen at http://rawgit.com/ruimaranhao/DataAnalystNanodegree/master/P6/index.html.
+The visualization can be seen at http://bl.ocks.org/ruimaranhao/3155b6bf1f832835cb31. The visualization shows that the winter months (December, January, February) have much more flight cancellations than other months. Severe flight cancellations are usually because of extreme weather conditions and/or the carriers themselves. National Airspace System Delays are also prevalent, but in many cases these delays are also related to (non-extreme) weather conditions. (it also incude: airport operations, heavy traffic volume, air traffic control).
 
 ### Variable descriptions
 
@@ -60,7 +60,6 @@ stack chart diagram.
 I have shared my visualization on Facebook, Google plus and the Nanodegree
 class discussion. I have got feedback such as:
 
-
 >Uirá (udacity mentor): Nice start. I wonder what are all these colors in your first chart. Perhaps you could use a legend here or tooltips to clarify the information encoded. In your second chart, if it is your desire to show the most common reasons for delays, maybe would be more appropriate using another kind of visualization ( a stacked chart, perhaps).
 Another suggestion: Remember that one of the key goals of this project is to "communicate a story ." So, for example, you could include some text or animation highlighting some interesting findings that the users can observe in your visualization.
 
@@ -79,11 +78,20 @@ adding a short explanation to tell the story.
 >Shi Shu (Google plus): Both figures are very cool! I am not sure what the animation of the bar chart (the right one) tells me. ﻿
 
 I have had multiple discussions regarding the diagrams with other people that
-helped me clarify the visualizations/sketches.
+helped me clarify the visualizations/sketches. Despite the encouraging feedback
+from peer students, colleagues, and friends, the review from the Udacity's teacher
+indicated that the plot need a significant change:
 
-After the feedback I thought about implementing something similar to
-http://datamaps.github.io/. I've started that implementation in v3, but have
-not concluded it yet.
+>Both of these charts are aesthetically pleasing and technically complex. Great job coding them.
+I can't find a clear, specific finding in either visualization. The charts come across as exploratory rather than explanatory. An explanatory chart has a clear, interesting finding that would only be found through doing some data analysis. An exploratory visualization generally plots the data as is and leaves the reader to figure out a story and analyze the data for him or herself.
+
+Given this feedback, I decided analyze the data and find something interesting to say about the data set. I decided to tell the story about the most common reasons for flight cancellations. The current x-axis is `Total Flights`, and this was the outcome of discussions with colleagues (the other option I had in mind was `Distance`, but it did not convey a clear message)
+
+Summary of the findings:
+
+>Severe flight cancellations are usually because of extreme weather conditions and/or the carriers themselves. National Airspace System Delays are also prevalent, but in many cases these delays are also related to (non-extreme) weather conditions. (it also incude: airport operations, heavy traffic volume, air traffic control). Security Delays seldom occur.
+
+I further investigated the fact that American Airlines had a 90% Carrier Delay in April 2008 (I decided to look into this because many flights where cancelled and American Airlines is one of biggest airliners in the world). I found that American Airlines has canceled thousands of flights for safety checks on its passenger planes. The FAA says the jetliners hadn't been properly inspected, and several other U.S. carriers have had to cancel flights as well. To get through the logistical chaos, the airlines are shuffling passengers, empty planes, mechanics, inspectors — and a lot of paperwork. ([source](http://www.cnn.com/2008/TRAVEL/04/10/american.cancellations/))
 
 # Resources
 
