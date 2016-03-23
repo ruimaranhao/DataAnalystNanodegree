@@ -17,6 +17,11 @@ and/or the carriers themselves. National Airspace System Delays are also prevale
 but in many cases these delays are also related to (non-extreme) weather conditions.
 (it also incude: airport operations, heavy traffic volume, air traffic control).
 </p>
+<p>
+For details on delay categories, refer to
+<a href="http://aspmhelp.faa.gov/index.php/Types_of_Delay">FAA's Type of Delays</a>
+website.
+</p>
 <div id="chartContainer">
   <script src="http://dimplejs.org/lib/d3.v3.4.8.js"></script>
   <script src="http://dimplejs.org/dist/dimple.v2.1.6.min.js"></script>
@@ -52,7 +57,7 @@ but in many cases these delays are also related to (non-extreme) weather conditi
           y.addOrderRule("Month", "Desc");
 
           // Use sales for bar size and hide the axis
-          var x = indicator.addMeasureAxis("x", "Cancelled");
+          var x = indicator.addMeasureAxis("x", "Percentage Cancelled");
           x.hidden = true;
 
           // Add the bars to the indicator and add event handlers
@@ -103,8 +108,13 @@ but in many cases these delays are also related to (non-extreme) weather conditi
 
           // Draw the main chart
           var bubbles = new dimple.chart(svg, data);
-          bubbles.setBounds(60, 80, 355, 310)
-          bubbles.addMeasureAxis("x", "Total Flights");
+
+          //make x-axis log scale
+          var x = bubbles.addLogAxis("x", "Total Flights");
+          x.showGridlines = false;
+          //bubbles.addMeasureAxis("x", "Total Flights");
+
+          bubbles.setBounds(60, 50, 355, 310)
           bubbles.addMeasureAxis("y", "Percentage Cancelled");
           bubbles.addSeries(["Cancelled", "Total Flights", "Distance",
                              "UniqueCarrier", "CancellationCode"],
