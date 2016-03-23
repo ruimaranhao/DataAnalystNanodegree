@@ -5,89 +5,38 @@
 3,Apr-08,American Airlines,900.115530303,3696.0,Carrier Delay,3918,0.943338437979
 4,Apr-08,American Airlines,781.06870229,131.0,Weather Delay,3918,0.0334354262379
 5,Apr-08,American Airlines,948.626373626,91.0,National Airspace System Delay,3918,0.0232261357836
-6,Apr-08,Alaska Airlines,748.318518519,135.0,Carrier Delay,158,0.854430379747
-7,Apr-08,Alaska Airlines,419.260869565,23.0,Weather Delay,158,0.145569620253
-8,Apr-08,JetBlue Airways,728.372093023,43.0,Carrier Delay,127,0.338582677165
-9,Apr-08,JetBlue Airways,668.981818182,55.0,Weather Delay,127,0.433070866142
-10,Apr-08,JetBlue Airways,1132.72413793,29.0,National Airspace System Delay,127,0.228346456693
-11,Apr-08,Continental Express,985.88,50.0,Carrier Delay,87,0.574712643678
-12,Apr-08,Continental Express,719.909090909,33.0,Weather Delay,87,0.379310344828
-13,Apr-08,Continental Express,1209.75,4.0,National Airspace System Delay,87,0.0459770114943
-14,Apr-08,Delta Air Lines,628.853982301,226.0,Carrier Delay,319,0.708463949843
-15,Apr-08,Delta Air Lines,460.935483871,31.0,Weather Delay,319,0.0971786833856
-16,Apr-08,Delta Air Lines,298.435483871,62.0,National Airspace System Delay,319,0.194357366771
-17,Apr-08,Atlantic Southeast Airlines,449.517241379,29.0,Carrier Delay,120,0.241666666667
-18,Apr-08,Atlantic Southeast Airlines,283.588235294,17.0,Weather Delay,120,0.141666666667
-19,Apr-08,Atlantic Southeast Airlines,374.27027027,74.0,National Airspace System Delay,120,0.616666666667
-20,Apr-08,Frontier Airlines,882.857142857,7.0,Carrier Delay,7,1.0
-21,Apr-08,AirTran Airways,609.234567901,81.0,Carrier Delay,129,0.627906976744
-22,Apr-08,AirTran Airways,538.375,8.0,Weather Delay,129,0.062015503876
-23,Apr-08,AirTran Airways,698.025,40.0,National Airspace System Delay,129,0.31007751938
-24,Apr-08,Hawaiian Airlines,189.137931034,29.0,Carrier Delay,29,1.0
 25,Apr-08,American Eagle Airlines,451.360424028,283.0,Carrier Delay,1007,0.281032770606
 26,Apr-08,American Eagle Airlines,361.471428571,350.0,Weather Delay,1007,0.347567030785
 27,Apr-08,American Eagle Airlines,357.812834225,374.0,National Airspace System Delay,1007,0.37140019861
-28,Apr-08,Northwest Airlines,499.098360656,122.0,Carrier Delay,209,0.583732057416
-29,Apr-08,Northwest Airlines,468.416666667,36.0,Weather Delay,209,0.172248803828
-30,Apr-08,Northwest Airlines,593.431372549,51.0,National Airspace System Delay,209,0.244019138756
-31,Apr-08,Comair,558.631578947,76.0,Carrier Delay,268,0.283582089552
-32,Apr-08,Comair,457.732954545,176.0,Weather Delay,268,0.65671641791
-33,Apr-08,Comair,571.5625,16.0,National Airspace System Delay,268,0.0597014925373
 34,Apr-08,SkyWest,346.697986577,298.0,Carrier Delay,707,0.421499292786
 35,Apr-08,SkyWest,315.384279476,229.0,Weather Delay,707,0.323903818953
 36,Apr-08,SkyWest,338.005555556,180.0,National Airspace System Delay,707,0.25459688826
 37,Apr-08,United Airlines,929.631578947,494.0,Carrier Delay,682,0.724340175953
 38,Apr-08,United Airlines,710.797101449,138.0,Weather Delay,682,0.202346041056
 39,Apr-08,United Airlines,668.48,50.0,National Airspace System Delay,682,0.0733137829912
-40,Apr-08,US Airways,589.817910448,335.0,Carrier Delay,415,0.807228915663
-41,Apr-08,US Airways,274.0,26.0,Weather Delay,415,0.0626506024096
-42,Apr-08,US Airways,418.87037037,54.0,National Airspace System Delay,415,0.130120481928
 43,Apr-08,Southwest Airlines,433.159474672,533.0,Carrier Delay,554,0.962093862816
 44,Apr-08,Southwest Airlines,489.380952381,21.0,National Airspace System Delay,554,0.0379061371841
-45,Apr-08,ExpressJet,545.966666667,30.0,Carrier Delay,304,0.0986842105263
-46,Apr-08,ExpressJet,416.213114754,61.0,Weather Delay,304,0.200657894737
-47,Apr-08,ExpressJet,512.361502347,213.0,National Airspace System Delay,304,0.700657894737
 48,Apr-08,Mesa Airlines,335.788546256,454.0,Carrier Delay,801,0.566791510612
 49,Apr-08,Mesa Airlines,290.216981132,106.0,Weather Delay,801,0.132334581773
 50,Apr-08,Mesa Airlines,321.796680498,241.0,National Airspace System Delay,801,0.300873907615
-51,Aug-08,Pinnacle Airlines,505.991150442,113.0,Carrier Delay,176,0.642045454545
-52,Aug-08,Pinnacle Airlines,509.772727273,44.0,Weather Delay,176,0.25
-53,Aug-08,Pinnacle Airlines,502.684210526,19.0,National Airspace System Delay,176,0.107954545455
 54,Aug-08,American Airlines,889.59688826,707.0,Carrier Delay,1208,0.585264900662
 55,Aug-08,American Airlines,893.877245509,334.0,Weather Delay,1208,0.276490066225
 56,Aug-08,American Airlines,942.958083832,167.0,National Airspace System Delay,1208,0.138245033113
-57,Aug-08,Alaska Airlines,1037.92857143,112.0,Carrier Delay,154,0.727272727273
-58,Aug-08,Alaska Airlines,757.0,42.0,Weather Delay,154,0.272727272727
 59,Aug-08,JetBlue Airways,1134.11320755,53.0,Carrier Delay,557,0.0951526032316
 60,Aug-08,JetBlue Airways,998.304780876,502.0,Weather Delay,557,0.901256732496
 61,Aug-08,JetBlue Airways,187.0,2.0,National Airspace System Delay,557,0.00359066427289
-62,Aug-08,Continental Express,1070.85964912,57.0,Carrier Delay,193,0.295336787565
-63,Aug-08,Continental Express,623.684615385,130.0,Weather Delay,193,0.673575129534
-64,Aug-08,Continental Express,320.0,6.0,National Airspace System Delay,193,0.0310880829016
 65,Aug-08,Delta Air Lines,654.694656489,262.0,Carrier Delay,597,0.438860971524
 66,Aug-08,Delta Air Lines,502.75,120.0,Weather Delay,597,0.201005025126
 67,Aug-08,Delta Air Lines,491.158139535,215.0,National Airspace System Delay,597,0.36013400335
 68,Aug-08,Atlantic Southeast Airlines,398.261780105,191.0,Carrier Delay,527,0.362428842505
 69,Aug-08,Atlantic Southeast Airlines,347.25,132.0,Weather Delay,527,0.250474383302
 70,Aug-08,Atlantic Southeast Airlines,409.916666667,204.0,National Airspace System Delay,527,0.387096774194
-71,Aug-08,Frontier Airlines,1287.4,5.0,Carrier Delay,24,0.208333333333
-72,Aug-08,Frontier Airlines,876.315789474,19.0,Weather Delay,24,0.791666666667
-73,Aug-08,AirTran Airways,595.880597015,67.0,Carrier Delay,174,0.385057471264
-74,Aug-08,AirTran Airways,542.892307692,65.0,Weather Delay,174,0.373563218391
-75,Aug-08,AirTran Airways,561.214285714,42.0,National Airspace System Delay,174,0.241379310345
-76,Aug-08,Hawaiian Airlines,149.446808511,47.0,Carrier Delay,47,1.0
 77,Aug-08,American Eagle Airlines,441.200757576,264.0,Carrier Delay,1167,0.226221079692
 78,Aug-08,American Eagle Airlines,372.240469208,341.0,Weather Delay,1167,0.292202227935
 79,Aug-08,American Eagle Airlines,367.891459075,562.0,National Airspace System Delay,1167,0.481576692374
-80,Aug-08,Northwest Airlines,560.262295082,61.0,Carrier Delay,139,0.438848920863
-81,Aug-08,Northwest Airlines,710.227272727,22.0,Weather Delay,139,0.158273381295
-82,Aug-08,Northwest Airlines,685.803571429,56.0,National Airspace System Delay,139,0.402877697842
 83,Aug-08,Comair,389.014705882,136.0,Carrier Delay,800,0.17
 84,Aug-08,Comair,450.606707317,656.0,Weather Delay,800,0.82
 85,Aug-08,Comair,342.375,8.0,National Airspace System Delay,800,0.01
-86,Aug-08,SkyWest,341.75974026,154.0,Carrier Delay,381,0.404199475066
-87,Aug-08,SkyWest,383.442028986,138.0,Weather Delay,381,0.362204724409
-88,Aug-08,SkyWest,398.95505618,89.0,National Airspace System Delay,381,0.233595800525
 89,Aug-08,United Airlines,865.066213922,589.0,Carrier Delay,844,0.697867298578
 90,Aug-08,United Airlines,906.862433862,189.0,Weather Delay,844,0.223933649289
 91,Aug-08,United Airlines,806.212121212,66.0,National Airspace System Delay,844,0.0781990521327
@@ -100,9 +49,6 @@
 98,Aug-08,ExpressJet,593.542857143,105.0,Carrier Delay,1151,0.0912250217202
 99,Aug-08,ExpressJet,559.755244755,429.0,Weather Delay,1151,0.372719374457
 100,Aug-08,ExpressJet,574.110210697,617.0,National Airspace System Delay,1151,0.536055603823
-101,Aug-08,Mesa Airlines,376.519031142,289.0,Carrier Delay,439,0.658314350797
-102,Aug-08,Mesa Airlines,430.681818182,22.0,Weather Delay,439,0.0501138952164
-103,Aug-08,Mesa Airlines,378.7421875,128.0,National Airspace System Delay,439,0.291571753986
 104,Dec-08,Pinnacle Airlines,441.991084695,673.0,Carrier Delay,1308,0.514525993884
 105,Dec-08,Pinnacle Airlines,404.838966203,503.0,Weather Delay,1308,0.384556574924
 106,Dec-08,Pinnacle Airlines,446.477272727,132.0,National Airspace System Delay,1308,0.100917431193
@@ -112,32 +58,15 @@
 110,Dec-08,Alaska Airlines,776.775510204,98.0,Carrier Delay,627,0.15629984051
 111,Dec-08,Alaska Airlines,918.10056926,527.0,Weather Delay,627,0.840510366826
 112,Dec-08,Alaska Airlines,679.0,2.0,National Airspace System Delay,627,0.00318979266348
-113,Dec-08,JetBlue Airways,985.631578947,57.0,Carrier Delay,485,0.117525773196
-114,Dec-08,JetBlue Airways,950.244075829,422.0,Weather Delay,485,0.870103092784
-115,Dec-08,JetBlue Airways,1004.83333333,6.0,National Airspace System Delay,485,0.0123711340206
-116,Dec-08,Continental Express,1127.75294118,85.0,Carrier Delay,436,0.19495412844
-117,Dec-08,Continental Express,1182.96511628,344.0,Weather Delay,436,0.788990825688
-118,Dec-08,Continental Express,1188.57142857,7.0,National Airspace System Delay,436,0.0160550458716
 119,Dec-08,Delta Air Lines,685.718146718,259.0,Carrier Delay,680,0.380882352941
 120,Dec-08,Delta Air Lines,995.107883817,241.0,Weather Delay,680,0.354411764706
 121,Dec-08,Delta Air Lines,470.177777778,180.0,National Airspace System Delay,680,0.264705882353
 122,Dec-08,Atlantic Southeast Airlines,396.945544554,202.0,Carrier Delay,788,0.256345177665
 123,Dec-08,Atlantic Southeast Airlines,516.807121662,337.0,Weather Delay,788,0.427664974619
 124,Dec-08,Atlantic Southeast Airlines,396.767068273,249.0,National Airspace System Delay,788,0.315989847716
-125,Dec-08,Frontier Airlines,716.666666667,15.0,Carrier Delay,71,0.211267605634
-126,Dec-08,Frontier Airlines,840.166666667,54.0,Weather Delay,71,0.760563380282
-127,Dec-08,Frontier Airlines,846.0,2.0,National Airspace System Delay,71,0.0281690140845
-128,Dec-08,AirTran Airways,608.30952381,42.0,Carrier Delay,292,0.143835616438
-129,Dec-08,AirTran Airways,772.741626794,209.0,Weather Delay,292,0.715753424658
-130,Dec-08,AirTran Airways,596.87804878,41.0,National Airspace System Delay,292,0.140410958904
-131,Dec-08,Hawaiian Airlines,295.338709677,124.0,Carrier Delay,130,0.953846153846
-132,Dec-08,Hawaiian Airlines,2664.66666667,6.0,Weather Delay,130,0.0461538461538
 133,Dec-08,American Eagle Airlines,388.882736156,307.0,Carrier Delay,2362,0.129974597798
 134,Dec-08,American Eagle Airlines,376.936350778,1414.0,Weather Delay,2362,0.598645215919
 135,Dec-08,American Eagle Airlines,352.469578783,641.0,National Airspace System Delay,2362,0.271380186283
-136,Dec-08,Northwest Airlines,713.310810811,74.0,Carrier Delay,403,0.183622828784
-137,Dec-08,Northwest Airlines,581.646341463,246.0,Weather Delay,403,0.610421836228
-138,Dec-08,Northwest Airlines,1036.20481928,83.0,National Airspace System Delay,403,0.205955334988
 139,Dec-08,Comair,499.751243781,201.0,Carrier Delay,863,0.232908458864
 140,Dec-08,Comair,479.595673877,601.0,Weather Delay,863,0.69640787949
 141,Dec-08,Comair,428.737704918,61.0,National Airspace System Delay,863,0.0706836616454
@@ -165,15 +94,6 @@
 163,Feb-08,American Airlines,1088.55646259,735.0,Carrier Delay,2301,0.319426336375
 164,Feb-08,American Airlines,913.826594789,1113.0,Weather Delay,2301,0.48370273794
 165,Feb-08,American Airlines,877.253863135,453.0,National Airspace System Delay,2301,0.196870925684
-166,Feb-08,Aloha Airlines,721.411764706,17.0,Carrier Delay,17,1.0
-167,Feb-08,Alaska Airlines,788.435114504,131.0,Carrier Delay,206,0.635922330097
-168,Feb-08,Alaska Airlines,506.222222222,63.0,Weather Delay,206,0.305825242718
-169,Feb-08,Alaska Airlines,1362.91666667,12.0,National Airspace System Delay,206,0.0582524271845
-170,Feb-08,JetBlue Airways,1188.0,29.0,Carrier Delay,365,0.0794520547945
-171,Feb-08,JetBlue Airways,901.160714286,336.0,Weather Delay,365,0.920547945205
-172,Feb-08,Continental Express,819.648148148,54.0,Carrier Delay,411,0.131386861314
-173,Feb-08,Continental Express,920.393258427,356.0,Weather Delay,411,0.866180048662
-174,Feb-08,Continental Express,938.0,1.0,National Airspace System Delay,411,0.00243309002433
 175,Feb-08,Delta Air Lines,853.668449198,187.0,Carrier Delay,678,0.27581120944
 176,Feb-08,Delta Air Lines,765.46130031,323.0,Weather Delay,678,0.476401179941
 177,Feb-08,Delta Air Lines,582.69047619,168.0,National Airspace System Delay,678,0.247787610619
@@ -181,12 +101,6 @@
 179,Feb-08,Atlantic Southeast Airlines,584.659090909,352.0,Weather Delay,611,0.576104746318
 180,Feb-08,Atlantic Southeast Airlines,434.551724138,58.0,National Airspace System Delay,611,0.0949263502455
 181,Feb-08,Atlantic Southeast Airlines,171.0,2.0,Security Delay,611,0.00327332242226
-182,Feb-08,Frontier Airlines,967.0,3.0,Carrier Delay,41,0.0731707317073
-183,Feb-08,Frontier Airlines,934.263157895,38.0,Weather Delay,41,0.926829268293
-184,Feb-08,AirTran Airways,606.222222222,72.0,Carrier Delay,295,0.24406779661
-185,Feb-08,AirTran Airways,707.848958333,192.0,Weather Delay,295,0.650847457627
-186,Feb-08,AirTran Airways,711.870967742,31.0,National Airspace System Delay,295,0.105084745763
-187,Feb-08,Hawaiian Airlines,100.545454545,11.0,Carrier Delay,11,1.0
 188,Feb-08,American Eagle Airlines,396.782978723,470.0,Carrier Delay,3025,0.155371900826
 189,Feb-08,American Eagle Airlines,386.969934641,1530.0,Weather Delay,3025,0.505785123967
 190,Feb-08,American Eagle Airlines,370.210731707,1025.0,National Airspace System Delay,3025,0.338842975207
@@ -220,32 +134,15 @@
 218,Jan-08,American Airlines,1056.8034398,814.0,Carrier Delay,1657,0.491249245625
 219,Jan-08,American Airlines,929.476608187,342.0,Weather Delay,1657,0.206397103199
 220,Jan-08,American Airlines,863.846307385,501.0,National Airspace System Delay,1657,0.302353651177
-221,Jan-08,Aloha Airlines,686.84,25.0,Carrier Delay,25,1.0
-222,Jan-08,Alaska Airlines,706.464435146,239.0,Carrier Delay,355,0.67323943662
-223,Jan-08,Alaska Airlines,528.822916667,96.0,Weather Delay,355,0.270422535211
-224,Jan-08,Alaska Airlines,976.9,20.0,National Airspace System Delay,355,0.056338028169
-225,Jan-08,JetBlue Airways,832.876777251,211.0,Carrier Delay,211,1.0
-226,Jan-08,Continental Express,917.483870968,31.0,Carrier Delay,193,0.160621761658
-227,Jan-08,Continental Express,985.905063291,158.0,Weather Delay,193,0.818652849741
-228,Jan-08,Continental Express,472.5,4.0,National Airspace System Delay,193,0.020725388601
 229,Jan-08,Delta Air Lines,890.530405405,296.0,Carrier Delay,1199,0.246872393661
 230,Jan-08,Delta Air Lines,718.475294118,850.0,Weather Delay,1199,0.70892410342
 231,Jan-08,Delta Air Lines,456.226415094,53.0,National Airspace System Delay,1199,0.0442035029191
 232,Jan-08,Atlantic Southeast Airlines,454.440298507,134.0,Carrier Delay,1128,0.118794326241
 233,Jan-08,Atlantic Southeast Airlines,472.851365015,989.0,Weather Delay,1128,0.876773049645
 234,Jan-08,Atlantic Southeast Airlines,482.8,5.0,National Airspace System Delay,1128,0.00443262411348
-235,Jan-08,Frontier Airlines,843.666666667,3.0,Carrier Delay,14,0.214285714286
-236,Jan-08,Frontier Airlines,1014.09090909,11.0,Weather Delay,14,0.785714285714
-237,Jan-08,AirTran Airways,558.865384615,52.0,Carrier Delay,238,0.218487394958
-238,Jan-08,AirTran Airways,633.739393939,165.0,Weather Delay,238,0.693277310924
-239,Jan-08,AirTran Airways,670.952380952,21.0,National Airspace System Delay,238,0.0882352941176
-240,Jan-08,Hawaiian Airlines,258.694444444,36.0,Carrier Delay,36,1.0
 241,Jan-08,American Eagle Airlines,399.633986928,459.0,Carrier Delay,2447,0.187576624438
 242,Jan-08,American Eagle Airlines,343.910821643,998.0,Weather Delay,2447,0.40784634246
 243,Jan-08,American Eagle Airlines,349.702020202,990.0,National Airspace System Delay,2447,0.404577033102
-244,Jan-08,Northwest Airlines,642.453333333,75.0,Carrier Delay,279,0.268817204301
-245,Jan-08,Northwest Airlines,438.094488189,127.0,Weather Delay,279,0.455197132616
-246,Jan-08,Northwest Airlines,400.844155844,77.0,National Airspace System Delay,279,0.275985663082
 247,Jan-08,Comair,470.409836066,183.0,Carrier Delay,501,0.365269461078
 248,Jan-08,Comair,473.726415094,318.0,Weather Delay,501,0.634730538922
 249,Jan-08,SkyWest,409.407572383,449.0,Carrier Delay,2564,0.17511700468
@@ -266,39 +163,21 @@
 264,Jan-08,Mesa Airlines,407.231257942,787.0,Carrier Delay,1440,0.546527777778
 265,Jan-08,Mesa Airlines,351.668478261,368.0,Weather Delay,1440,0.255555555556
 266,Jan-08,Mesa Airlines,385.438596491,285.0,National Airspace System Delay,1440,0.197916666667
-267,Jul-08,Pinnacle Airlines,445.239263804,163.0,Carrier Delay,287,0.567944250871
-268,Jul-08,Pinnacle Airlines,339.8,25.0,Weather Delay,287,0.0871080139373
-269,Jul-08,Pinnacle Airlines,506.929292929,99.0,National Airspace System Delay,287,0.344947735192
 270,Jul-08,American Airlines,1042.97357724,492.0,Carrier Delay,819,0.600732600733
 271,Jul-08,American Airlines,880.795454545,176.0,Weather Delay,819,0.214896214896
 272,Jul-08,American Airlines,1001.2781457,151.0,National Airspace System Delay,819,0.184371184371
-273,Jul-08,Alaska Airlines,934.410958904,73.0,Carrier Delay,98,0.744897959184
-274,Jul-08,Alaska Airlines,320.235294118,17.0,Weather Delay,98,0.173469387755
-275,Jul-08,Alaska Airlines,679.0,8.0,National Airspace System Delay,98,0.0816326530612
 276,Jul-08,JetBlue Airways,1046.06796117,103.0,Carrier Delay,553,0.186256781193
 277,Jul-08,JetBlue Airways,1134.6462585,441.0,Weather Delay,553,0.79746835443
 278,Jul-08,JetBlue Airways,518.222222222,9.0,National Airspace System Delay,553,0.0162748643761
-279,Jul-08,Continental Express,796.28057554,139.0,Carrier Delay,297,0.468013468013
-280,Jul-08,Continental Express,912.145985401,137.0,Weather Delay,297,0.461279461279
-281,Jul-08,Continental Express,935.285714286,21.0,National Airspace System Delay,297,0.0707070707071
 282,Jul-08,Delta Air Lines,616.538126362,459.0,Carrier Delay,905,0.507182320442
 283,Jul-08,Delta Air Lines,502.693950178,281.0,Weather Delay,905,0.310497237569
 284,Jul-08,Delta Air Lines,513.090909091,165.0,National Airspace System Delay,905,0.182320441989
 285,Jul-08,Atlantic Southeast Airlines,381.255319149,141.0,Carrier Delay,704,0.200284090909
 286,Jul-08,Atlantic Southeast Airlines,570.389830508,59.0,Weather Delay,704,0.0838068181818
 287,Jul-08,Atlantic Southeast Airlines,395.277777778,504.0,National Airspace System Delay,704,0.715909090909
-288,Jul-08,Frontier Airlines,530.923076923,13.0,Carrier Delay,17,0.764705882353
-289,Jul-08,Frontier Airlines,1619.0,4.0,Weather Delay,17,0.235294117647
-290,Jul-08,AirTran Airways,641.225433526,173.0,Carrier Delay,285,0.60701754386
-291,Jul-08,AirTran Airways,563.289473684,76.0,Weather Delay,285,0.266666666667
-292,Jul-08,AirTran Airways,574.305555556,36.0,National Airspace System Delay,285,0.126315789474
-293,Jul-08,Hawaiian Airlines,101.304635762,151.0,Carrier Delay,151,1.0
 294,Jul-08,American Eagle Airlines,409.21529745,353.0,Carrier Delay,1127,0.31322094055
 295,Jul-08,American Eagle Airlines,317.88317757,214.0,Weather Delay,1127,0.189884649512
 296,Jul-08,American Eagle Airlines,374.446428571,560.0,National Airspace System Delay,1127,0.496894409938
-297,Jul-08,Northwest Airlines,596.0625,80.0,Carrier Delay,202,0.39603960396
-298,Jul-08,Northwest Airlines,611.027027027,37.0,Weather Delay,202,0.183168316832
-299,Jul-08,Northwest Airlines,573.811764706,85.0,National Airspace System Delay,202,0.420792079208
 300,Jul-08,Comair,422.9408867,203.0,Carrier Delay,814,0.249385749386
 301,Jul-08,Comair,443.753719008,605.0,Weather Delay,814,0.743243243243
 302,Jul-08,Comair,553.333333333,6.0,National Airspace System Delay,814,0.00737100737101
@@ -314,44 +193,15 @@
 312,Jul-08,Southwest Airlines,412.759753593,487.0,Carrier Delay,663,0.734539969834
 313,Jul-08,Southwest Airlines,314.346153846,104.0,Weather Delay,663,0.156862745098
 314,Jul-08,Southwest Airlines,445.0,72.0,National Airspace System Delay,663,0.108597285068
-315,Jul-08,ExpressJet,596.625,40.0,Carrier Delay,492,0.0813008130081
-316,Jul-08,ExpressJet,441.282352941,85.0,Weather Delay,492,0.172764227642
-317,Jul-08,ExpressJet,591.716621253,367.0,National Airspace System Delay,492,0.74593495935
 318,Jul-08,Mesa Airlines,365.88410596,302.0,Carrier Delay,521,0.579654510557
 319,Jul-08,Mesa Airlines,366.24,25.0,Weather Delay,521,0.0479846449136
 320,Jul-08,Mesa Airlines,354.195876289,194.0,National Airspace System Delay,521,0.37236084453
-321,Jun-08,Pinnacle Airlines,526.374358974,195.0,Carrier Delay,347,0.561959654179
-322,Jun-08,Pinnacle Airlines,402.723076923,65.0,Weather Delay,347,0.187319884726
-323,Jun-08,Pinnacle Airlines,421.402298851,87.0,National Airspace System Delay,347,0.250720461095
 324,Jun-08,American Airlines,967.624293785,354.0,Carrier Delay,1023,0.346041055718
 325,Jun-08,American Airlines,809.749464668,467.0,Weather Delay,1023,0.456500488759
 326,Jun-08,American Airlines,919.207920792,202.0,National Airspace System Delay,1023,0.197458455523
-327,Jun-08,Alaska Airlines,801.674698795,83.0,Carrier Delay,104,0.798076923077
-328,Jun-08,Alaska Airlines,426.333333333,21.0,Weather Delay,104,0.201923076923
-329,Jun-08,JetBlue Airways,1101.76,50.0,Carrier Delay,363,0.137741046832
-330,Jun-08,JetBlue Airways,1032.92123288,292.0,Weather Delay,363,0.804407713499
-331,Jun-08,JetBlue Airways,876.857142857,21.0,National Airspace System Delay,363,0.0578512396694
-332,Jun-08,Continental Express,863.194444444,108.0,Carrier Delay,220,0.490909090909
-333,Jun-08,Continental Express,748.444444444,108.0,Weather Delay,220,0.490909090909
-334,Jun-08,Continental Express,633.5,4.0,National Airspace System Delay,220,0.0181818181818
-335,Jun-08,Delta Air Lines,663.768976898,303.0,Carrier Delay,479,0.632567849687
-336,Jun-08,Delta Air Lines,294.0,51.0,Weather Delay,479,0.106471816284
-337,Jun-08,Delta Air Lines,428.928,125.0,National Airspace System Delay,479,0.260960334029
-338,Jun-08,Atlantic Southeast Airlines,439.641509434,106.0,Carrier Delay,148,0.716216216216
-339,Jun-08,Atlantic Southeast Airlines,589.4,5.0,Weather Delay,148,0.0337837837838
-340,Jun-08,Atlantic Southeast Airlines,481.216216216,37.0,National Airspace System Delay,148,0.25
-341,Jun-08,Frontier Airlines,861.4,15.0,Carrier Delay,20,0.75
-342,Jun-08,Frontier Airlines,793.4,5.0,Weather Delay,20,0.25
-343,Jun-08,AirTran Airways,634.443037975,79.0,Carrier Delay,156,0.50641025641
-344,Jun-08,AirTran Airways,812.666666667,18.0,Weather Delay,156,0.115384615385
-345,Jun-08,AirTran Airways,657.0,59.0,National Airspace System Delay,156,0.378205128205
-346,Jun-08,Hawaiian Airlines,247.235294118,17.0,Carrier Delay,17,1.0
 347,Jun-08,American Eagle Airlines,421.954154728,349.0,Carrier Delay,1865,0.187131367292
 348,Jun-08,American Eagle Airlines,363.816159251,854.0,Weather Delay,1865,0.457908847185
 349,Jun-08,American Eagle Airlines,381.003021148,662.0,National Airspace System Delay,1865,0.354959785523
-350,Jun-08,Northwest Airlines,479.946666667,225.0,Carrier Delay,417,0.539568345324
-351,Jun-08,Northwest Airlines,424.553191489,47.0,Weather Delay,417,0.112709832134
-352,Jun-08,Northwest Airlines,612.993103448,145.0,National Airspace System Delay,417,0.347721822542
 353,Jun-08,Comair,467.700854701,117.0,Carrier Delay,633,0.184834123223
 354,Jun-08,Comair,487.861328125,512.0,Weather Delay,633,0.808846761453
 355,Jun-08,Comair,931.0,4.0,National Airspace System Delay,633,0.00631911532385
@@ -364,9 +214,6 @@
 362,Jun-08,US Airways,678.048543689,412.0,Carrier Delay,720,0.572222222222
 363,Jun-08,US Airways,430.113636364,44.0,Weather Delay,720,0.0611111111111
 364,Jun-08,US Airways,386.636363636,264.0,National Airspace System Delay,720,0.366666666667
-365,Jun-08,Southwest Airlines,429.78700361,277.0,Carrier Delay,326,0.849693251534
-366,Jun-08,Southwest Airlines,348.833333333,12.0,Weather Delay,326,0.0368098159509
-367,Jun-08,Southwest Airlines,407.891891892,37.0,National Airspace System Delay,326,0.113496932515
 368,Jun-08,ExpressJet,581.666666667,63.0,Carrier Delay,976,0.0645491803279
 369,Jun-08,ExpressJet,491.818181818,330.0,Weather Delay,976,0.338114754098
 370,Jun-08,ExpressJet,542.072041166,583.0,National Airspace System Delay,976,0.597336065574
@@ -379,34 +226,13 @@
 377,Mar-08,American Airlines,966.430738119,989.0,Carrier Delay,2908,0.340096286107
 378,Mar-08,American Airlines,875.48992891,1688.0,Weather Delay,2908,0.580467675378
 379,Mar-08,American Airlines,824.471861472,231.0,National Airspace System Delay,2908,0.0794360385144
-380,Mar-08,Alaska Airlines,662.742857143,70.0,Carrier Delay,85,0.823529411765
-381,Mar-08,Alaska Airlines,612.818181818,11.0,Weather Delay,85,0.129411764706
-382,Mar-08,Alaska Airlines,1456.5,4.0,National Airspace System Delay,85,0.0470588235294
-383,Mar-08,JetBlue Airways,1125.671875,64.0,Carrier Delay,199,0.321608040201
-384,Mar-08,JetBlue Airways,854.972477064,109.0,Weather Delay,199,0.547738693467
-385,Mar-08,JetBlue Airways,618.423076923,26.0,National Airspace System Delay,199,0.130653266332
-386,Mar-08,Continental Express,813.117021277,94.0,Carrier Delay,393,0.239185750636
-387,Mar-08,Continental Express,934.768421053,285.0,Weather Delay,393,0.725190839695
-388,Mar-08,Continental Express,779.428571429,14.0,National Airspace System Delay,393,0.0356234096692
 389,Mar-08,Delta Air Lines,654.870155039,516.0,Carrier Delay,855,0.60350877193
 390,Mar-08,Delta Air Lines,623.475247525,202.0,Weather Delay,855,0.236257309942
 391,Mar-08,Delta Air Lines,465.335766423,137.0,National Airspace System Delay,855,0.160233918129
-392,Mar-08,Atlantic Southeast Airlines,383.752525253,198.0,Carrier Delay,487,0.406570841889
-393,Mar-08,Atlantic Southeast Airlines,491.301204819,166.0,Weather Delay,487,0.340862422998
-394,Mar-08,Atlantic Southeast Airlines,441.536585366,123.0,National Airspace System Delay,487,0.252566735113
-395,Mar-08,Frontier Airlines,957.833333333,6.0,Carrier Delay,36,0.166666666667
-396,Mar-08,Frontier Airlines,918.233333333,30.0,Weather Delay,36,0.833333333333
-397,Mar-08,AirTran Airways,658.108108108,74.0,Carrier Delay,241,0.307053941909
-398,Mar-08,AirTran Airways,778.433333333,120.0,Weather Delay,241,0.497925311203
-399,Mar-08,AirTran Airways,723.595744681,47.0,National Airspace System Delay,241,0.195020746888
-400,Mar-08,Hawaiian Airlines,103.222222222,36.0,Carrier Delay,36,1.0
 401,Mar-08,American Eagle Airlines,433.750642674,389.0,Carrier Delay,2481,0.156791616284
 402,Mar-08,American Eagle Airlines,388.877791563,1612.0,Weather Delay,2481,0.649738008867
 403,Mar-08,American Eagle Airlines,357.957983193,476.0,National Airspace System Delay,2481,0.191858121725
 404,Mar-08,American Eagle Airlines,506.5,4.0,Security Delay,2481,0.00161225312374
-405,Mar-08,Northwest Airlines,544.277456647,173.0,Carrier Delay,368,0.470108695652
-406,Mar-08,Northwest Airlines,487.06122449,98.0,Weather Delay,368,0.266304347826
-407,Mar-08,Northwest Airlines,457.979381443,97.0,National Airspace System Delay,368,0.263586956522
 408,Mar-08,Comair,469.978835979,189.0,Carrier Delay,778,0.24293059126
 409,Mar-08,Comair,483.989761092,586.0,Weather Delay,778,0.753213367609
 410,Mar-08,Comair,524.0,3.0,National Airspace System Delay,778,0.00385604113111
@@ -428,214 +254,35 @@
 426,Mar-08,Mesa Airlines,382.430594901,353.0,Carrier Delay,722,0.48891966759
 427,Mar-08,Mesa Airlines,269.348484848,132.0,Weather Delay,722,0.182825484765
 428,Mar-08,Mesa Airlines,372.324894515,237.0,National Airspace System Delay,722,0.328254847645
-429,May-08,Pinnacle Airlines,539.801470588,136.0,Carrier Delay,197,0.690355329949
-430,May-08,Pinnacle Airlines,441.913043478,46.0,Weather Delay,197,0.233502538071
-431,May-08,Pinnacle Airlines,427.142857143,14.0,National Airspace System Delay,197,0.0710659898477
-432,May-08,Pinnacle Airlines,696.0,1.0,Security Delay,197,0.00507614213198
 433,May-08,American Airlines,1087.01686341,593.0,Carrier Delay,1119,0.529937444147
 434,May-08,American Airlines,802.061576355,406.0,Weather Delay,1119,0.362823949955
 435,May-08,American Airlines,894.06779661,118.0,National Airspace System Delay,1119,0.1054512958
 436,May-08,American Airlines,2342.0,2.0,Security Delay,1119,0.0017873100983
-437,May-08,Alaska Airlines,813.157024793,121.0,Carrier Delay,127,0.952755905512
-438,May-08,Alaska Airlines,439.5,6.0,Weather Delay,127,0.0472440944882
-439,May-08,JetBlue Airways,939.666666667,12.0,Carrier Delay,27,0.444444444444
-440,May-08,JetBlue Airways,493.230769231,13.0,Weather Delay,27,0.481481481481
-441,May-08,JetBlue Airways,264.0,2.0,National Airspace System Delay,27,0.0740740740741
-442,May-08,Continental Express,987.1,40.0,Carrier Delay,80,0.5
-443,May-08,Continental Express,541.647058824,34.0,Weather Delay,80,0.425
-444,May-08,Continental Express,709.5,6.0,National Airspace System Delay,80,0.075
-445,May-08,Delta Air Lines,730.842105263,76.0,Carrier Delay,156,0.487179487179
-446,May-08,Delta Air Lines,209.857142857,7.0,Weather Delay,156,0.0448717948718
-447,May-08,Delta Air Lines,356.328767123,73.0,National Airspace System Delay,156,0.467948717949
-448,May-08,Atlantic Southeast Airlines,393.403846154,52.0,Carrier Delay,57,0.912280701754
-449,May-08,Atlantic Southeast Airlines,539.4,5.0,National Airspace System Delay,57,0.0877192982456
-450,May-08,Frontier Airlines,530.0,7.0,Carrier Delay,9,0.777777777778
-451,May-08,Frontier Airlines,533.0,2.0,Weather Delay,9,0.222222222222
-452,May-08,AirTran Airways,585.3,70.0,Carrier Delay,110,0.636363636364
-453,May-08,AirTran Airways,629.25,12.0,Weather Delay,110,0.109090909091
-454,May-08,AirTran Airways,769.857142857,28.0,National Airspace System Delay,110,0.254545454545
-455,May-08,Hawaiian Airlines,115.6,15.0,Carrier Delay,15,1.0
 456,May-08,American Eagle Airlines,400.963636364,330.0,Carrier Delay,1201,0.274771024147
 457,May-08,American Eagle Airlines,374.887201735,461.0,Weather Delay,1201,0.383846794338
 458,May-08,American Eagle Airlines,334.192682927,410.0,National Airspace System Delay,1201,0.341382181515
-459,May-08,Northwest Airlines,500.175,80.0,Carrier Delay,124,0.645161290323
-460,May-08,Northwest Airlines,454.615384615,13.0,Weather Delay,124,0.104838709677
-461,May-08,Northwest Airlines,502.709677419,31.0,National Airspace System Delay,124,0.25
-462,May-08,Comair,603.323529412,34.0,Carrier Delay,190,0.178947368421
-463,May-08,Comair,512.756410256,156.0,Weather Delay,190,0.821052631579
-464,May-08,SkyWest,429.882352941,153.0,Carrier Delay,445,0.343820224719
-465,May-08,SkyWest,350.203883495,103.0,Weather Delay,445,0.231460674157
-466,May-08,SkyWest,324.497354497,189.0,National Airspace System Delay,445,0.424719101124
 467,May-08,United Airlines,785.803339518,539.0,Carrier Delay,718,0.75069637883
 468,May-08,United Airlines,764.807017544,57.0,Weather Delay,718,0.0793871866295
 469,May-08,United Airlines,642.598360656,122.0,National Airspace System Delay,718,0.16991643454
-470,May-08,US Airways,676.066666667,240.0,Carrier Delay,355,0.676056338028
-471,May-08,US Airways,278.375,8.0,Weather Delay,355,0.0225352112676
-472,May-08,US Airways,467.317757009,107.0,National Airspace System Delay,355,0.301408450704
-473,May-08,Southwest Airlines,413.561933535,331.0,Carrier Delay,375,0.882666666667
-474,May-08,Southwest Airlines,298.9375,16.0,Weather Delay,375,0.0426666666667
-475,May-08,Southwest Airlines,472.428571429,28.0,National Airspace System Delay,375,0.0746666666667
-476,May-08,ExpressJet,581.033333333,30.0,Carrier Delay,425,0.0705882352941
-477,May-08,ExpressJet,505.04109589,73.0,Weather Delay,425,0.171764705882
-478,May-08,ExpressJet,573.102484472,322.0,National Airspace System Delay,425,0.757647058824
-479,May-08,Mesa Airlines,383.906040268,298.0,Carrier Delay,499,0.597194388778
-480,May-08,Mesa Airlines,149.0625,48.0,Weather Delay,499,0.0961923847695
-481,May-08,Mesa Airlines,350.516339869,153.0,National Airspace System Delay,499,0.306613226453
-482,Nov-08,Pinnacle Airlines,404.209090909,220.0,Carrier Delay,282,0.780141843972
-483,Nov-08,Pinnacle Airlines,347.2,50.0,Weather Delay,282,0.177304964539
-484,Nov-08,Pinnacle Airlines,364.916666667,12.0,National Airspace System Delay,282,0.0425531914894
-485,Nov-08,American Airlines,1038.58396947,262.0,Carrier Delay,404,0.648514851485
-486,Nov-08,American Airlines,767.217391304,92.0,Weather Delay,404,0.227722772277
-487,Nov-08,American Airlines,1025.8,50.0,National Airspace System Delay,404,0.123762376238
-488,Nov-08,Alaska Airlines,574.12244898,49.0,Carrier Delay,65,0.753846153846
-489,Nov-08,Alaska Airlines,386.0,12.0,Weather Delay,65,0.184615384615
-490,Nov-08,Alaska Airlines,679.0,4.0,National Airspace System Delay,65,0.0615384615385
-491,Nov-08,JetBlue Airways,881.85,20.0,Carrier Delay,110,0.181818181818
-492,Nov-08,JetBlue Airways,784.222222222,90.0,Weather Delay,110,0.818181818182
-493,Nov-08,Continental Express,1110.25,16.0,Carrier Delay,28,0.571428571429
-494,Nov-08,Continental Express,509.75,8.0,Weather Delay,28,0.285714285714
-495,Nov-08,Continental Express,1597.0,4.0,National Airspace System Delay,28,0.142857142857
-496,Nov-08,Delta Air Lines,745.683673469,196.0,Carrier Delay,300,0.653333333333
-497,Nov-08,Delta Air Lines,430.7,10.0,Weather Delay,300,0.0333333333333
-498,Nov-08,Delta Air Lines,405.925531915,94.0,National Airspace System Delay,300,0.313333333333
-499,Nov-08,Atlantic Southeast Airlines,372.8125,64.0,Carrier Delay,157,0.407643312102
-500,Nov-08,Atlantic Southeast Airlines,412.0,33.0,Weather Delay,157,0.210191082803
-501,Nov-08,Atlantic Southeast Airlines,425.333333333,60.0,National Airspace System Delay,157,0.382165605096
-502,Nov-08,Frontier Airlines,728.0,12.0,Carrier Delay,17,0.705882352941
-503,Nov-08,Frontier Airlines,789.0,5.0,Weather Delay,17,0.294117647059
-504,Nov-08,AirTran Airways,639.216216216,37.0,Carrier Delay,84,0.440476190476
-505,Nov-08,AirTran Airways,689.375,16.0,Weather Delay,84,0.190476190476
-506,Nov-08,AirTran Airways,652.483870968,31.0,National Airspace System Delay,84,0.369047619048
-507,Nov-08,Hawaiian Airlines,309.05,60.0,Carrier Delay,60,1.0
-508,Nov-08,American Eagle Airlines,401.539215686,102.0,Carrier Delay,370,0.275675675676
-509,Nov-08,American Eagle Airlines,285.96875,96.0,Weather Delay,370,0.259459459459
-510,Nov-08,American Eagle Airlines,350.622093023,172.0,National Airspace System Delay,370,0.464864864865
-511,Nov-08,Northwest Airlines,734.484848485,33.0,Carrier Delay,51,0.647058823529
-512,Nov-08,Northwest Airlines,459.714285714,7.0,Weather Delay,51,0.137254901961
-513,Nov-08,Northwest Airlines,579.272727273,11.0,National Airspace System Delay,51,0.21568627451
-514,Nov-08,Comair,535.409090909,22.0,Carrier Delay,158,0.139240506329
-515,Nov-08,Comair,487.634328358,134.0,Weather Delay,158,0.848101265823
-516,Nov-08,Comair,590.0,2.0,National Airspace System Delay,158,0.0126582278481
-517,Nov-08,SkyWest,419.603448276,116.0,Carrier Delay,460,0.252173913043
-518,Nov-08,SkyWest,270.633027523,218.0,Weather Delay,460,0.473913043478
-519,Nov-08,SkyWest,257.611111111,126.0,National Airspace System Delay,460,0.273913043478
-520,Nov-08,United Airlines,879.442211055,199.0,Carrier Delay,254,0.783464566929
-521,Nov-08,United Airlines,744.814814815,27.0,Weather Delay,254,0.106299212598
-522,Nov-08,United Airlines,924.821428571,28.0,National Airspace System Delay,254,0.110236220472
-523,Nov-08,US Airways,499.991525424,236.0,Carrier Delay,319,0.739811912226
-524,Nov-08,US Airways,265.636363636,11.0,Weather Delay,319,0.0344827586207
-525,Nov-08,US Airways,333.916666667,72.0,National Airspace System Delay,319,0.225705329154
 526,Nov-08,Southwest Airlines,504.891396333,709.0,Carrier Delay,861,0.823461091754
 527,Nov-08,Southwest Airlines,382.48,50.0,Weather Delay,861,0.0580720092915
 528,Nov-08,Southwest Airlines,496.26,100.0,National Airspace System Delay,861,0.116144018583
 529,Nov-08,Southwest Airlines,325.0,2.0,Security Delay,861,0.00232288037166
-530,Nov-08,ExpressJet,509.5,6.0,Carrier Delay,222,0.027027027027
-531,Nov-08,ExpressJet,299.375,8.0,Weather Delay,222,0.036036036036
-532,Nov-08,ExpressJet,575.432692308,208.0,National Airspace System Delay,222,0.936936936937
-533,Nov-08,Mesa Airlines,305.98013245,151.0,Carrier Delay,256,0.58984375
-534,Nov-08,Mesa Airlines,268.442857143,70.0,Weather Delay,256,0.2734375
-535,Nov-08,Mesa Airlines,244.514285714,35.0,National Airspace System Delay,256,0.13671875
-536,Oct-08,Pinnacle Airlines,454.9609375,128.0,Carrier Delay,143,0.895104895105
-537,Oct-08,Pinnacle Airlines,227.75,8.0,Weather Delay,143,0.0559440559441
-538,Oct-08,Pinnacle Airlines,419.571428571,7.0,National Airspace System Delay,143,0.048951048951
-539,Oct-08,American Airlines,1014.43933054,239.0,Carrier Delay,321,0.744548286604
-540,Oct-08,American Airlines,684.6,10.0,Weather Delay,321,0.0311526479751
-541,Oct-08,American Airlines,1037.33333333,72.0,National Airspace System Delay,321,0.224299065421
-542,Oct-08,Alaska Airlines,737.476923077,65.0,Carrier Delay,93,0.698924731183
-543,Oct-08,Alaska Airlines,508.884615385,26.0,Weather Delay,93,0.279569892473
-544,Oct-08,Alaska Airlines,679.0,2.0,National Airspace System Delay,93,0.0215053763441
-545,Oct-08,JetBlue Airways,689.076923077,13.0,Carrier Delay,52,0.25
-546,Oct-08,JetBlue Airways,665.282051282,39.0,Weather Delay,52,0.75
-547,Oct-08,Continental Express,754.678571429,28.0,Carrier Delay,60,0.466666666667
-548,Oct-08,Continental Express,592.0,26.0,Weather Delay,60,0.433333333333
-549,Oct-08,Continental Express,1013.0,6.0,National Airspace System Delay,60,0.1
-550,Oct-08,Delta Air Lines,552.204545455,176.0,Carrier Delay,227,0.775330396476
-551,Oct-08,Delta Air Lines,600.285714286,14.0,Weather Delay,227,0.0616740088106
-552,Oct-08,Delta Air Lines,358.351351351,37.0,National Airspace System Delay,227,0.162995594714
-553,Oct-08,Atlantic Southeast Airlines,498.575,40.0,Carrier Delay,80,0.5
-554,Oct-08,Atlantic Southeast Airlines,341.578947368,19.0,Weather Delay,80,0.2375
-555,Oct-08,Atlantic Southeast Airlines,354.904761905,21.0,National Airspace System Delay,80,0.2625
-556,Oct-08,Frontier Airlines,632.642857143,14.0,Carrier Delay,14,1.0
-557,Oct-08,AirTran Airways,556.727272727,22.0,Carrier Delay,65,0.338461538462
-558,Oct-08,AirTran Airways,694.5,4.0,Weather Delay,65,0.0615384615385
-559,Oct-08,AirTran Airways,616.051282051,39.0,National Airspace System Delay,65,0.6
-560,Oct-08,Hawaiian Airlines,217.192307692,26.0,Carrier Delay,27,0.962962962963
-561,Oct-08,Hawaiian Airlines,102.0,1.0,Weather Delay,27,0.037037037037
-562,Oct-08,American Eagle Airlines,423.686956522,115.0,Carrier Delay,295,0.389830508475
-563,Oct-08,American Eagle Airlines,270.95890411,73.0,Weather Delay,295,0.247457627119
-564,Oct-08,American Eagle Airlines,319.906542056,107.0,National Airspace System Delay,295,0.362711864407
-565,Oct-08,Northwest Airlines,509.75862069,29.0,Carrier Delay,41,0.707317073171
-566,Oct-08,Northwest Airlines,729.833333333,12.0,National Airspace System Delay,41,0.292682926829
-567,Oct-08,Comair,562.5,6.0,Carrier Delay,53,0.11320754717
-568,Oct-08,Comair,487.468085106,47.0,Weather Delay,53,0.88679245283
-569,Oct-08,SkyWest,397.75,112.0,Carrier Delay,294,0.380952380952
-570,Oct-08,SkyWest,237.482014388,139.0,Weather Delay,294,0.472789115646
-571,Oct-08,SkyWest,282.23255814,43.0,National Airspace System Delay,294,0.146258503401
-572,Oct-08,United Airlines,864.352040816,196.0,Carrier Delay,238,0.823529411765
-573,Oct-08,United Airlines,622.631578947,19.0,Weather Delay,238,0.0798319327731
-574,Oct-08,United Airlines,506.695652174,23.0,National Airspace System Delay,238,0.0966386554622
-575,Oct-08,US Airways,623.248730964,197.0,Carrier Delay,257,0.766536964981
-576,Oct-08,US Airways,395.8,10.0,Weather Delay,257,0.0389105058366
-577,Oct-08,US Airways,364.04,50.0,National Airspace System Delay,257,0.194552529183
 578,Oct-08,Southwest Airlines,436.947265625,512.0,Carrier Delay,620,0.825806451613
 579,Oct-08,Southwest Airlines,370.288461538,52.0,Weather Delay,620,0.0838709677419
 580,Oct-08,Southwest Airlines,498.285714286,56.0,National Airspace System Delay,620,0.0903225806452
-581,Oct-08,ExpressJet,702.0,2.0,Carrier Delay,139,0.0143884892086
-582,Oct-08,ExpressJet,530.547945205,73.0,Weather Delay,139,0.525179856115
-583,Oct-08,ExpressJet,533.4375,64.0,National Airspace System Delay,139,0.460431654676
-584,Oct-08,Mesa Airlines,341.299435028,177.0,Carrier Delay,230,0.769565217391
-585,Oct-08,Mesa Airlines,238.75,40.0,Weather Delay,230,0.173913043478
-586,Oct-08,Mesa Airlines,206.307692308,13.0,National Airspace System Delay,230,0.0565217391304
-587,Sep-08,Pinnacle Airlines,501.245454545,110.0,Carrier Delay,263,0.41825095057
-588,Sep-08,Pinnacle Airlines,470.090909091,110.0,Weather Delay,263,0.41825095057
-589,Sep-08,Pinnacle Airlines,515.023255814,43.0,National Airspace System Delay,263,0.163498098859
 590,Sep-08,American Airlines,970.105740181,331.0,Carrier Delay,704,0.470170454545
 591,Sep-08,American Airlines,650.965156794,287.0,Weather Delay,704,0.407670454545
 592,Sep-08,American Airlines,889.441860465,86.0,National Airspace System Delay,704,0.122159090909
-593,Sep-08,Alaska Airlines,815.52173913,46.0,Carrier Delay,67,0.686567164179
-594,Sep-08,Alaska Airlines,484.333333333,21.0,Weather Delay,67,0.313432835821
-595,Sep-08,JetBlue Airways,753.3,10.0,Carrier Delay,156,0.0641025641026
-596,Sep-08,JetBlue Airways,807.493150685,146.0,Weather Delay,156,0.935897435897
 597,Sep-08,Continental Express,851.727272727,44.0,Carrier Delay,1304,0.0337423312883
 598,Sep-08,Continental Express,1001.83002383,1259.0,Weather Delay,1304,0.965490797546
 599,Sep-08,Continental Express,1024.0,1.0,National Airspace System Delay,1304,0.000766871165644
-600,Sep-08,Delta Air Lines,649.917197452,157.0,Carrier Delay,418,0.375598086124
-601,Sep-08,Delta Air Lines,624.307189542,153.0,Weather Delay,418,0.366028708134
-602,Sep-08,Delta Air Lines,579.203703704,108.0,National Airspace System Delay,418,0.258373205742
-603,Sep-08,Atlantic Southeast Airlines,357.107142857,28.0,Carrier Delay,219,0.127853881279
-604,Sep-08,Atlantic Southeast Airlines,438.816091954,174.0,Weather Delay,219,0.794520547945
-605,Sep-08,Atlantic Southeast Airlines,311.823529412,17.0,National Airspace System Delay,219,0.0776255707763
-606,Sep-08,Frontier Airlines,739.222222222,9.0,Carrier Delay,33,0.272727272727
-607,Sep-08,Frontier Airlines,824.333333333,24.0,Weather Delay,33,0.727272727273
-608,Sep-08,AirTran Airways,578.543478261,46.0,Carrier Delay,167,0.275449101796
-609,Sep-08,AirTran Airways,504.450549451,91.0,Weather Delay,167,0.544910179641
-610,Sep-08,AirTran Airways,612.666666667,30.0,National Airspace System Delay,167,0.179640718563
-611,Sep-08,Hawaiian Airlines,100.0,11.0,Carrier Delay,11,1.0
 612,Sep-08,American Eagle Airlines,387.484304933,223.0,Carrier Delay,984,0.22662601626
 613,Sep-08,American Eagle Airlines,371.260215054,465.0,Weather Delay,984,0.47256097561
 614,Sep-08,American Eagle Airlines,357.131756757,296.0,National Airspace System Delay,984,0.30081300813
-615,Sep-08,Northwest Airlines,586.029411765,34.0,Carrier Delay,122,0.27868852459
-616,Sep-08,Northwest Airlines,352.65625,32.0,Weather Delay,122,0.262295081967
-617,Sep-08,Northwest Airlines,687.267857143,56.0,National Airspace System Delay,122,0.459016393443
-618,Sep-08,Comair,525.864864865,37.0,Carrier Delay,333,0.111111111111
-619,Sep-08,Comair,534.133333333,285.0,Weather Delay,333,0.855855855856
-620,Sep-08,Comair,1232.63636364,11.0,National Airspace System Delay,333,0.033033033033
-621,Sep-08,SkyWest,379.25,136.0,Carrier Delay,404,0.336633663366
-622,Sep-08,SkyWest,607.042253521,142.0,Weather Delay,404,0.351485148515
-623,Sep-08,SkyWest,250.936,125.0,National Airspace System Delay,404,0.309405940594
-624,Sep-08,SkyWest,237.0,1.0,Security Delay,404,0.00247524752475
-625,Sep-08,United Airlines,959.167567568,185.0,Carrier Delay,339,0.545722713864
-626,Sep-08,United Airlines,1011.88695652,115.0,Weather Delay,339,0.339233038348
-627,Sep-08,United Airlines,604.076923077,39.0,National Airspace System Delay,339,0.115044247788
-628,Sep-08,US Airways,487.102941176,204.0,Carrier Delay,424,0.481132075472
-629,Sep-08,US Airways,713.375,120.0,Weather Delay,424,0.283018867925
-630,Sep-08,US Airways,444.6,100.0,National Airspace System Delay,424,0.235849056604
 631,Sep-08,Southwest Airlines,522.47826087,460.0,Carrier Delay,2286,0.201224846894
 632,Sep-08,Southwest Airlines,543.97247191,1780.0,Weather Delay,2286,0.778652668416
 633,Sep-08,Southwest Airlines,480.173913043,46.0,National Airspace System Delay,2286,0.0201224846894
 634,Sep-08,ExpressJet,583.944444444,18.0,Carrier Delay,1369,0.0131482834186
 635,Sep-08,ExpressJet,583.918852459,1220.0,Weather Delay,1369,0.891161431702
 636,Sep-08,ExpressJet,573.13740458,131.0,National Airspace System Delay,1369,0.0956902848795
-637,Sep-08,Mesa Airlines,383.242038217,157.0,Carrier Delay,310,0.506451612903
-638,Sep-08,Mesa Airlines,399.611111111,54.0,Weather Delay,310,0.174193548387
-639,Sep-08,Mesa Airlines,407.484848485,99.0,National Airspace System Delay,310,0.31935483871
