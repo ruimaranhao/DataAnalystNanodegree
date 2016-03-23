@@ -92,7 +92,7 @@ I can't find a clear, specific finding in either visualization. The charts come 
 
 Given this feedback, I decided analyze the data and find something interesting to say about the data set. I decided to tell the story about the most common reasons for flight cancellations. The current x-axis is `Total Flights`, and this was the outcome of discussions with colleagues (the other option I had in mind was `Distance`, but it did not convey a clear message)
 
-Summary of the findings:
+# Summary of Findings
 
 >Severe flight cancellations are usually because of extreme weather conditions and/or the carriers themselves. National Airspace System Delays are also prevalent, but in many cases these delays are also related to (non-extreme) weather conditions. (it also incude: airport operations, heavy traffic volume, air traffic control). Security Delays seldom occur.
 
