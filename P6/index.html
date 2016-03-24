@@ -43,6 +43,7 @@ website.
           // Pick blue as the default and orange for the selected month
           var defaultColor = indicator.defaultColors[0];
           var indicatorColor = indicator.defaultColors[2];
+          var selectedColor = indicator.defaultColors[9];
 
           // The frame duration for the animation in milliseconds
           var frame = 3000;
@@ -150,6 +151,7 @@ website.
                   story.goToFrame(e.yValue);
                   story.pauseAnimation();
               }
+              onTickSelect(story.getFrameValue());
           }
 
           // On tick of the main charts storyboard
@@ -162,6 +164,23 @@ website.
                           .style("fill", function (d) {
                             return (d.y === e ?
                               indicatorColor.fill : defaultColor.fill) })
+                          .style("stroke", function (d) {
+                            return (d.y === e ?
+                              indicatorColor.stroke : defaultColor.stroke) });
+              }
+              firstTick = false;
+          }
+
+          // On tick of the main charts storyboard -- when selected
+          function onTickSelect(e) {
+              if (!firstTick) {
+                  // Color all shapes the same
+                  s.shapes
+                          .transition()
+                          .duration(frame / 2)
+                          .style("fill", function (d) {
+                            return (d.y === e ?
+                              selectedColor.fill : defaultColor.fill) })
                           .style("stroke", function (d) {
                             return (d.y === e ?
                               indicatorColor.stroke : defaultColor.stroke) });
