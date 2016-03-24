@@ -4,7 +4,7 @@ In this project I have studied the intermediate dataset [Flights](https://www.go
 
 The data comes originally from [RITA](http://www.transtats.bts.gov/OT_Delay/OT_DelayCause1.asp). Detailed information about the dataset can be found on the RITA website. The website hosts flight performance between 1987 and 2008. The data can be downloaded in the website.
 
-The visualization can be seen at http://bl.ocks.org/ruimaranhao/raw/3155b6bf1f832835cb31/ ([gist](https://gist.github.com/ruimaranhao/3155b6bf1f832835cb31), [http://bl.ocks.org/](http://bl.ocks.org/ruimaranhao/3155b6bf1f832835cb31)). The visualization shows that flight cancellations are constant throughout the year (roughly 19% as shown in the size of the bar in the legend). Severe flight cancellations are usually because of extreme weather conditions and/or the carriers themselves. National Airspace System Delays are also prevalent, but in many cases these delays are also related to (non-extreme) weather conditions. (it also include: airport operations, heavy traffic volume, air traffic control).
+The visualization can be seen at http://bl.ocks.org/ruimaranhao/raw/3155b6bf1f832835cb31/ ([gist](https://gist.github.com/ruimaranhao/3155b6bf1f832835cb31), [http://bl.ocks.org/](http://bl.ocks.org/ruimaranhao/3155b6bf1f832835cb31)). The visualization shows that flight cancellations are more prevalent in the winter months (January, February, December). Severe flight cancellations are usually because of extreme weather conditions and/or the carriers themselves. National Airspace System Delays are also prevalent, but in many cases these delays are also related to (non-extreme) weather conditions. (it also include: airport operations, heavy traffic volume, air traffic control).
 
 ### Variable descriptions
 
@@ -99,7 +99,7 @@ Given this feedback, I decided analyze the data and find something interesting t
 After another round of feedback, the I have updated the plot as follows:
 
 1. I converted the legend into percentage values so we will be able to see what month has more delays percentage
-2. I (partially) avoided X scaling, by making x-axis log scale
+2. I (partially) avoided X scaling, by just making chart two times bigger
 
 # Summary of Findings
 
