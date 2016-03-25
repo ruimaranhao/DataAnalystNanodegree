@@ -43,11 +43,11 @@ website.
           // Pick blue as the default and orange for the selected month
           var defaultColor = indicator.defaultColors[0];
           var indicatorColor = indicator.defaultColors[2];
+          // Pick purple as the select color for month
           var selectedColor = indicator.defaultColors[9];
 
           // The frame duration for the animation in milliseconds
           var frame = 3000;
-
           var firstTick = true;
 
           // Place the indicator bar chart to the right
@@ -110,13 +110,23 @@ website.
           // Draw the main chart
           var bubbles = new dimple.chart(svg, data);
 
-          //make x-axis log scale
-          //var x = bubbles.addLogAxis("x", "Total Flights");
-          x.showGridlines = false;
-          bubbles.addMeasureAxis("x", "Total Flights");
-
           bubbles.setBounds(60, 50, 680, 410)
-          bubbles.addMeasureAxis("y", "Percentage Cancelled");
+          x.showGridlines = false;
+
+          //make x-axis log scale
+          //bubbles.addLogAxis("x", "Total Flights");
+          var xx = bubbles.addMeasureAxis("x", "Total Flights");
+          //fix x-axis range [0,11000]
+          xx.overrideMin=0
+          xx.overrideMax=110000
+
+
+          var yy = bubbles.addMeasureAxis("y", "Percentage Cancelled");
+          //fix x-axis range [0,0.07]
+          yy.overrideMin=0
+          yy.overrideMax=0.07
+
+
           bubbles.addSeries(["Cancelled", "Total Flights", "Distance",
                              "UniqueCarrier", "CancellationCode"],
                                 dimple.plot.bubble)
@@ -173,19 +183,15 @@ website.
 
           // On tick of the main charts storyboard -- when selected
           function onTickSelect(e) {
-              if (!firstTick) {
-                  // Color all shapes the same
-                  s.shapes
-                          .transition()
-                          .duration(frame / 2)
-                          .style("fill", function (d) {
-                            return (d.y === e ?
-                              selectedColor.fill : defaultColor.fill) })
-                          .style("stroke", function (d) {
-                            return (d.y === e ?
-                              indicatorColor.stroke : defaultColor.stroke) });
-              }
-              firstTick = false;
+            s.shapes
+                    .transition()
+                    .duration(frame / 2)
+                    .style("fill", function (d) {
+                        return (d.y === e ?
+                          selectedColor.fill : defaultColor.fill) })
+                    .style("stroke", function (d) {
+                        return (d.y === e ?
+                          indicatorColor.stroke : defaultColor.stroke) });
           }
       });
   </script>

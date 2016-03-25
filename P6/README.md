@@ -101,7 +101,7 @@ After another round of feedback, the I have updated the plot as follows:
 1. I converted the legend into percentage values so we will be able to see what month has more delays percentage
 2. I (partially) avoided X scaling, by just making chart two times bigger
 
-I've got feedback from another colleague and updated the plot accordingly: change to a different color when the month is selected (and animation is paused).
+After fixing the plot with the the suggestions in the UDACITY review, I've got feedback from another colleague and updated the plot accordingly: change to a different color when the month is selected (and animation is paused).
 
 # Summary of Findings
 
