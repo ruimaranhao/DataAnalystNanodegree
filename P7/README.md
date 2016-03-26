@@ -5,11 +5,13 @@
 ### Metric Choice
 
 >Which of the following metrics would you choose to measure for this experiment
-and why? For each metric you choose, indicate whether you would use it as an
-invariant metric or an evaluation metric.
+and why?
 
 * **Invariant metrics:** Number of cookies, Number of clicks, Click-through-probability
 * **Evaluation metrics:** Gross conversion, Net conversion
+
+>For each metric you choose, indicate whether you would use it as an
+invariant metric or an evaluation metric.
 
 * **Number of cookies:** Suitable invariant metric because the visits happen before the user
 sees the experiment;
