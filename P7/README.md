@@ -200,7 +200,7 @@ this metric also passes the sanity check.
 * Experiment group, Click-through-probability: 28325 / 344660 = 0.0822
 
 ```
-SD = sqrt(0.0821 x (1-0.0821) / 344660) = 0.0005
+SD = sqrt(0.0821 x (1-0.0821) / 345543) = 0.0005
 margin of error = SD x 1.96 = 0.0009
 cinterval = (0.0821 - 0.0009, 0.0821 + 0.0009) = (0.0812, 0.0830)
 ```
@@ -320,3 +320,8 @@ Cancellation rate would be defined as the number of users who click “Start fre
 and cancel enrollment in 14-days divided by number of users who click “Start free trial”
 button. This metric will be used as evaluation. Invariant metrics are the same as the
 previous experiment.
+
+### Misc
+
+Google docs [link](https://docs.google.com/spreadsheets/d/1w0xCOmdBMAmm6mqIBMDZB5WPN4dgyOX1r59j6HyOEPI/edit?usp=sharing)
+with data and auxiliary calculations. 
