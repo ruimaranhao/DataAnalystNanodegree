@@ -196,12 +196,16 @@ interval.
 As this metric equals the number of clicks divided by the number of cookies,
 this metric also passes the sanity check.
 
+* Control group, Click-through-probability: 28378 / 345543 = 0.0821
+* Experiment group, Click-through-probability: 28325 / 344660 = 0.0822
+
 ```
-SD = sqrt(0.5 x 0.5 / (2033 + 1945)) = 0.0079
-margin of error = SD x 1.96 = 0.0155
-cinterval = (0.5 - 0.0155, 0.5 + 0.0115) = (0.4885, 0.5115)
-p = 2033 / (2033 + 1945) = 0.5111
+SD = sqrt(0.0821 x (1-0.0821) / 344660) = 0.0005
+margin of error = SD x 1.96 = 0.0009
+cinterval = (0.0821 - 0.0009, 0.0821 + 0.0009) = (0.0812, 0.0830)
 ```
+The observed, experiment **Click-through-probability** is within the bounds, and
+therefore this invariant metric passes the sanity check.
 
 #### Effect Sizes
 
@@ -315,4 +319,4 @@ For this experiment, I think that user-ids as unit of diversion is more appropri
 Cancellation rate would be defined as the number of users who click “Start free trial”
 and cancel enrollment in 14-days divided by number of users who click “Start free trial”
 button. This metric will be used as evaluation. Invariant metrics are the same as the
-previous experiment. 
+previous experiment.
