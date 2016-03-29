@@ -24,8 +24,8 @@ groups and clicks clicks happen before the experiment.
 number of cookies, and those metrics are invariants, this metric is an invariant metric.
 * **Gross conversion:** In the experiment group, when people click to start the free trial,
 if they indicate that they will not be able to work more than 5 hours per week, they are
-suggested not to enroll. Gross conversion is about probability to succeed, and this seems to
-be a suitable evaluation metric.
+suggested not to enroll. Gross conversion is about probability to succeed, and it is a
+suitable evaluation metric because it is directly dependent on the effect of the experiment.
 * **Retention:** Not a suitable invariant metric because the number of users who enroll in the free
 trial is dependent on the experiment. Suitable evaluation metric because it is directly dependent on
 the effect of the experiment.
@@ -35,15 +35,13 @@ on the effect of the experiment.
 
 In summary, the invariant metrics are **number of cookies**, **number of clicks**,
 **click-through probability**, and the evaluation metrics are **gross conversion**,
-**retention** and **net conversion**. In the experiment, the goal is to reduce the
-number of paying people because lack of availability to dedicate to the course, while
-not decreasing the number of payments.
+**retention** and **net conversion**. In the experiment, the goal is to reduce number
+of enrollments, while not decreasing the number of payments.
 
 I would launch the experiment only when we reduce number of enrollments but do not
 reduce number of payments. This is to say that to launch the experiment, I require
 **Gross conversion** to have a statistically significant decrease, and
-**Net conversion** to have a statistically significant increase. Note that retention
-equals net conversion divided by gross conversion.
+**Net conversion** to statistically remain the same (or increase).
 
 >You should also decide now what results you will be looking for in order to
 launch the experiment. Would a change in any one of your evaluation metrics be
@@ -91,10 +89,11 @@ stddev = sqrt(0.53 * (1-0.53) / 82.5) = 0.0549
 ```
 
 For **gross conversion** and **net conversion**, their denominators are number of
-clicks, which is also unit of diversion, so their analytic variance are likely to
-match their empirical variance. For **retention**, its denominator is
-**number of enrollments**, which is not the unit of diversion in the experiment,
-so its empirical variance would be much higher than analytic variance.
+cookies (unique cookies that click the "start free trial"), which is also unit of
+diversion, so their analytic variance are likely to match their empirical variance.
+For **retention**, its denominator is **number of enrollments**, which is not the
+unit of diversion in the experiment, so its empirical variance might be much higher
+than analytic variance.
 
 ### Sizing
 
@@ -105,7 +104,10 @@ so its empirical variance would be much higher than analytic variance.
 I did not use the Bonferroni correction: We want gross conversion significantly
 decrease _and_ net conversion to not significantly decrease. Bonferroni
 correction is suitable when we are dealing with an _or_ and it is not suitable
-when use _and_.
+when use _and_. This is to say that the Bonferroni correction is an adjustment
+made to P values when several dependent or independent statistical tests are
+being performed simultaneously on a single data set -- which is not the case in
+this experiment.
 
 >Give the number of pageviews you will need to power you experiment appropriately.
 (These should be the answers from the "Calculating Number of Pageviews" quiz.)
@@ -301,27 +303,36 @@ decrease **net conversion**. That is to say that the change would significantly 
 non-paying enrollment, but will not significantly reduce paying enrollment.
 
 The experiment's **net conversion** in both groups does not differ significantly.
-Hence, it is unclear whether this experiment would not decrease **net conversion**.
-Therefore, with current evidence, the conclusion is that the experiment could not be
-launched.
+Thus, it is unclear whether this experiment would not decrease **net conversion**,
+hence posing a business risk, because the confidence interval contains the negative
+of the practical significance boundary (−0.0116, 0.0019). Therefore, with current
+evidence, the conclusion is that the experiment could not be launched.
 
 ### Follow-Up Experiment: How to Reduce Early Cancellations
 
 I think that gamification of the course might potentially keep students engaged in
 the course, thus reducing early cancellations. Gamification could be something
-similar to what websites like kaggle do: show a ranked list of students performance.
+similar to what websites like [kaggle](https://www.kaggle.com/) do: show a ranked
+list of students performance.
 
-Another option would be to provide a discount every time the student finishes a
-major deadline. Something like, the student would not pay the full amount that
-particular month.
+The hypothesis is: _a page showing the global ranking of student performance
+helps to keep users engaged_.
 
-For this experiment, I think that user-ids as unit of diversion is more appropriate.
-Cancellation rate would be defined as the number of users who click “Start free trial”
-and cancel enrollment in 14-days divided by number of users who click “Start free trial”
-button. This metric will be used as evaluation. Invariant metrics are the same as the
-previous experiment.
+For this experiment, I think that **user-ids** (i.e., number of enrollments) as unit
+of diversion is more appropriate.
+
+As evaluation metrics, I will use **cancellation rate** which will be measured by
+the number of enrollments that are cancelled before completing 1/3 of the course,
+as well as **retention** (That is, number of user-ids to remain enrolled past the
+1/3 boundary divided by the total number of user-ids). I would also use the **number
+of enrollments finishing the course**. 
+
+Invariant metric would be the number of **number of views of the ranking-page**.
 
 ### Misc
 
 Google docs [link](https://docs.google.com/spreadsheets/d/1w0xCOmdBMAmm6mqIBMDZB5WPN4dgyOX1r59j6HyOEPI/edit?usp=sharing)
-with data and auxiliary calculations. 
+with data and auxiliary calculations.
+
+[Invited Review Paper](http://onlinelibrary.wiley.com/doi/10.1111/opo.12131/epdf)
+on "When to use the Bonferroni correction" by Richard A. Armstrong.
