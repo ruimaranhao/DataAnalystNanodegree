@@ -103,11 +103,13 @@ than analytic variance.
 
 I did not use the Bonferroni correction: We want gross conversion significantly
 decrease _and_ net conversion to not significantly decrease. Bonferroni
-correction is suitable when we are dealing with an _or_ and it is not suitable
-when use _and_. This is to say that the Bonferroni correction is an adjustment
-made to P values when several dependent or independent statistical tests are
-being performed simultaneously on a single data set -- which is not the case in
-this experiment.
+correction is suitable when we are dealing with an _or_ case and it is not suitable
+when use _and_ case. That is, as in this experiment we have an _and_ case for our
+metrics, we are more concerned with false negatives than false positives (Bonferroni
+correction controls for false positives). Furthermore, the use of the Bonfferoni
+reduces statistical power, so, if we used it, it would not help control for what
+we are concerned about (false negatives) and would serve only to reduce power
+(so we might miss differences that actually exist).
 
 >Give the number of pageviews you will need to power you experiment appropriately.
 (These should be the answers from the "Calculating Number of Pageviews" quiz.)
@@ -325,9 +327,12 @@ As evaluation metrics, I will use **cancellation rate** which will be measured b
 the number of enrollments that are cancelled before completing 1/3 of the course,
 as well as **retention** (That is, number of user-ids to remain enrolled past the
 1/3 boundary divided by the total number of user-ids). I would also use the **number
-of enrollments finishing the course**. 
+of enrollments finishing the course**.
 
-Invariant metric would be the number of **number of views of the ranking-page**.
+Invariant metric would be:
+* **Number of clicks:** Number of unique **user-ids** to click the "Ranking Page" button.
+* **Click-through-probability:** Number of unique **user-ids** to click the
+"Ranking Page" button divided by number of unique **user-ids** to view the course page.
 
 ### Misc
 
