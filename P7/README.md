@@ -317,11 +317,17 @@ the course, thus reducing early cancellations. Gamification could be something
 similar to what websites like [kaggle](https://www.kaggle.com/) do: show a ranked
 list of students performance.
 
+To summarize the experiment, this is how it will work:
+* There are two groups, experiment and control. The experiment group can view a
+ranking page, whereas the control group cannot.
+* Users are diverted by user ID to one of the groups, at enrollment.
+* Cancellation and retention are compared, between experiment and control
+
 The hypothesis is: _a page showing the global ranking of student performance
 helps to keep users engaged_.
 
-For this experiment, I think that **user-ids** (i.e., number of enrollments) as unit
-of diversion is more appropriate.
+For this experiment, I think that **user-ids** (i.e., number of enrollments) as
+unit of diversion is more appropriate.
 
 As evaluation metrics, I will use **cancellation rate** which will be measured by
 the number of enrollments that are cancelled before completing 1/3 of the course,
@@ -329,10 +335,10 @@ as well as **retention** (That is, number of user-ids to remain enrolled past th
 1/3 boundary divided by the total number of user-ids). I would also use the **number
 of enrollments finishing the course**.
 
-Invariant metric would be:
-* **Number of clicks:** Number of unique **user-ids** to click the "Ranking Page" button.
-* **Click-through-probability:** Number of unique **user-ids** to click the
-"Ranking Page" button divided by number of unique **user-ids** to view the course page.
+Invariant metric would be **user-ids**. This metric is also the unit of diversion
+and one would expect it to evenly divide between the two groups. If results showed
+an uneven distribution, then we would know something went wrong with the experiment.
+
 
 ### Misc
 
